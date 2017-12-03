@@ -1,0 +1,9 @@
+revision;file;renamedMethod;invokers
+/home/paper219/Desktop/analysis/demonstration//projects/servo/revisions/rev_fc7c719_f23a28a/rev_fc7c719-f23a28a;/servo-core/src/main/java/com/netflix/servo/aws/AwsInjectableTag;getUrlValue(String);private static String getUrlValue(String path) {;AwsInjectableTag.java => static String getInstanceId(){
+  return getUrlValue("/instance-id");
+}
+
+/home/paper219/Desktop/analysis/demonstration//projects/servo/revisions/rev_fc7c719_f23a28a/rev_fc7c719-f23a28a;/servo-core/src/main/java/com/netflix/servo/aws/AwsInjectableTag;getUrlValue(String);private static String getUrlValue(String path) {;AwsInjectableTag.java => static String getZone(){
+  return getUrlValue("/placement/availability-zone");
+}
+

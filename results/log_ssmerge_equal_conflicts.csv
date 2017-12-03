@@ -1,0 +1,961 @@
+file;ssmergeConf;linedbasedConf
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+        if ((mIsShiftingMode || mIsTabletMode) && v.getTag().equals(TAG_BOTTOM_BAR_VIEW_INACTIVE)) {
+            Toast.makeText(mContext, mItems[findItemPosition(v)].getTitle(mContext), Toast.LENGTH_SHORT).show();
+=======
+        if (mIsShiftingMode && v.getTag().equals(TAG_BOTTOM_BAR_VIEW_INACTIVE)) {
+            Toast.makeText(getContext(), mItems[findItemPosition(v)].getTitle(getContext()), Toast.LENGTH_SHORT).show();
+>>>>>>> YOURS;<<<<<<< MINE
+        if ((mIsShiftingMode || mIsTabletMode) && v.getTag().equals(TAG_BOTTOM_BAR_VIEW_INACTIVE)) {
+            Toast.makeText(mContext, mItems[findItemPosition(v)].getTitle(mContext), Toast.LENGTH_SHORT).show();
+=======
+        if (mIsShiftingMode && v.getTag().equals(TAG_BOTTOM_BAR_VIEW_INACTIVE)) {
+            Toast.makeText(getContext(), mItems[findItemPosition(v)].getTitle(getContext()), Toast.LENGTH_SHORT).show();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+            int layoutResource;
+=======
+            ViewGroup bottomBarView = (ViewGroup) View.inflate(getContext(), mIsShiftingMode ?
+                    R.layout.bb_bottom_bar_item_shifting : R.layout.bb_bottom_bar_item_fixed, null);
+>>>>>>> YOURS;<<<<<<< MINE
+            int layoutResource;
+=======
+            ViewGroup bottomBarView = (ViewGroup) View.inflate(getContext(), mIsShiftingMode ?
+                    R.layout.bb_bottom_bar_item_shifting : R.layout.bb_bottom_bar_item_fixed, null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+            icon.setImageDrawable(bottomBarItemBase.getIcon(mContext));
+=======
+            icon.setImageDrawable(bottomBarItemBase.getIcon(getContext()));
+            title.setText(bottomBarItemBase.getTitle(getContext()));
+>>>>>>> YOURS;<<<<<<< MINE
+            icon.setImageDrawable(bottomBarItemBase.getIcon(mContext));
+=======
+            icon.setImageDrawable(bottomBarItemBase.getIcon(getContext()));
+            title.setText(bottomBarItemBase.getTitle(getContext()));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+        if (!mIsTabletMode) {
+            int proposedItemWidth = Math.min(
+                    MiscUtils.dpToPixel(mContext, mScreenWidth / bottomBarItems.length),
+                    mMaxFixedItemWidth
+            );
+
+            LinearLayout.LayoutParams params = new LinearLayout
+                    .LayoutParams(proposedItemWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            for (View bottomBarView : viewsToAdd) {
+                bottomBarView.setLayoutParams(params);
+                mItemContainer.addView(bottomBarView);
+            }
+=======
+        int screenWidth = MiscUtils.getScreenWidth(getContext());
+        int proposedItemWidth = Math.min(
+                MiscUtils.dpToPixel(getContext(), screenWidth / bottomBarItems.length),
+                mMaxFixedItemWidth
+        );
+
+        LinearLayout.LayoutParams params = new LinearLayout
+                .LayoutParams(proposedItemWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        for (View bottomBarView : viewsToAdd) {
+            bottomBarView.setLayoutParams(params);
+            mItemContainer.addView(bottomBarView);
+>>>>>>> YOURS;<<<<<<< MINE
+        if (!mIsTabletMode) {
+            int proposedItemWidth = Math.min(
+                    MiscUtils.dpToPixel(mContext, mScreenWidth / bottomBarItems.length),
+                    mMaxFixedItemWidth
+            );
+
+            LinearLayout.LayoutParams params = new LinearLayout
+                    .LayoutParams(proposedItemWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            for (View bottomBarView : viewsToAdd) {
+                bottomBarView.setLayoutParams(params);
+                mItemContainer.addView(bottomBarView);
+            }
+=======
+        int screenWidth = MiscUtils.getScreenWidth(getContext());
+        int proposedItemWidth = Math.min(
+                MiscUtils.dpToPixel(getContext(), screenWidth / bottomBarItems.length),
+                mMaxFixedItemWidth
+        );
+
+        LinearLayout.LayoutParams params = new LinearLayout
+                .LayoutParams(proposedItemWidth, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+        for (View bottomBarView : viewsToAdd) {
+            bottomBarView.setLayoutParams(params);
+            mItemContainer.addView(bottomBarView);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_0d5677b_09c2b0c/rev_0d5677b-09c2b0c/modules/swagger-jaxrs/src/main/scala/com/wordnik/swagger/jaxrs/ApiHelpMessageBodyWriter.java;<<<<<<< MINE
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(entityStream));
+        bw.write(getStringRepresentation(documentation));
+        bw.flush();
+=======
+        entityStream.write(getStringRepresentation(documentation).getBytes());
+        entityStream.flush();
+>>>>>>> YOURS;<<<<<<< MINE
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(entityStream));
+        bw.write(getStringRepresentation(documentation));
+        bw.flush();
+=======
+        entityStream.write(getStringRepresentation(documentation).getBytes());
+        entityStream.flush();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_c8ad293_8de5579/rev_c8ad293-8de5579/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+
+        if (tabXmlResource != 0) {
+            setItems(tabXmlResource);
+        }
+=======
+>>>>>>> YOURS;<<<<<<< MINE
+
+        if (tabXmlResource != 0) {
+            setItems(tabXmlResource);
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_62f911d_a5ea4f1/rev_62f911d-a5ea4f1/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/Reader.java;<<<<<<< MINE
+    if( apiOperation != null && StringUtils.isNotEmpty( apiOperation.responseReference() )){
+      Response response = new Response().description(SUCCESSFUL_OPERATION);
+      response.schema( new RefProperty( apiOperation.responseReference() ));
+      operation.addResponse(String.valueOf(apiOperation.code()), response);
+    }
+    else if(responseClass == null ) {
+=======
+    if(responseType == null) {
+>>>>>>> YOURS;<<<<<<< MINE
+    if( apiOperation != null && StringUtils.isNotEmpty( apiOperation.responseReference() )){
+      Response response = new Response().description(SUCCESSFUL_OPERATION);
+      response.schema( new RefProperty( apiOperation.responseReference() ));
+      operation.addResponse(String.valueOf(apiOperation.code()), response);
+    }
+    else if(responseClass == null ) {
+=======
+    if(responseType == null) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_62f911d_a5ea4f1/rev_62f911d-a5ea4f1/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/Reader.java;<<<<<<< MINE
+        responseClass = apiResponse.response();
+
+        if( StringUtils.isNotEmpty( apiResponse.reference() )){
+          response.schema( new RefProperty( apiResponse.reference() ));
+        }
+        else if(responseClass != null && !responseClass.equals(java.lang.Void.class)) {
+          Map<String, Model> models = ModelConverters.getInstance().read(responseClass);
+=======
+        responseType = apiResponse.response();
+        if(responseType != null && !isVoid(responseType)) {
+          Map<String, Model> models = ModelConverters.getInstance().read(responseType);
+>>>>>>> YOURS;<<<<<<< MINE
+        responseClass = apiResponse.response();
+
+        if( StringUtils.isNotEmpty( apiResponse.reference() )){
+          response.schema( new RefProperty( apiResponse.reference() ));
+        }
+        else if(responseClass != null && !responseClass.equals(java.lang.Void.class)) {
+          Map<String, Model> models = ModelConverters.getInstance().read(responseClass);
+=======
+        responseType = apiResponse.response();
+        if(responseType != null && !isVoid(responseType)) {
+          Map<String, Model> models = ModelConverters.getInstance().read(responseType);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_62f911d_a5ea4f1/rev_62f911d-a5ea4f1/modules/swagger-core/src/main/java/com/wordnik/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+    ApiModel apiModel = beanDesc.getClassAnnotations().get(ApiModel.class);
+    // TODO
+    if (apiModel != null) {
+      if(apiModel.value() != null && !"".equals(apiModel.value())) {
+        name = apiModel.value();
+        model.setName(name);
+
+      }
+
+      if(StringUtils.isNotEmpty( apiModel.reference())) {
+        model.setReference(apiModel.reference());
+      }
+
+      Class<?> parent = apiModel.parent();
+      if (parent != Void.class) {
+        // model.setBaseModel(_typeName(_mapper.constructType(parent)));
+      }
+    }
+
+=======
+>>>>>>> YOURS;<<<<<<< MINE
+    ApiModel apiModel = beanDesc.getClassAnnotations().get(ApiModel.class);
+    // TODO
+    if (apiModel != null) {
+      if(apiModel.value() != null && !"".equals(apiModel.value())) {
+        name = apiModel.value();
+        model.setName(name);
+
+      }
+
+      if(StringUtils.isNotEmpty( apiModel.reference())) {
+        model.setReference(apiModel.reference());
+      }
+
+      Class<?> parent = apiModel.parent();
+      if (parent != Void.class) {
+        // model.setBaseModel(_typeName(_mapper.constructType(parent)));
+      }
+    }
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_b4fbe3f_253bd9b/rev_b4fbe3f-253bd9b/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java;<<<<<<< MINE
+            if (method.getName().equals(methodToSearch) && method.getReturnType().isAssignableFrom(methodToFind.getReturnType())) {
+                Class<?>[] srcParameterTypes = method.getParameterTypes();
+                Type[] srcGenericParameterTypes = method.getGenericParameterTypes();
+                if (soughtForParameterType.length == srcParameterTypes.length &&
+                        soughtForGenericParameterType.length == srcGenericParameterTypes.length) {
+                    if (hasIdenticalParameters(srcParameterTypes, soughtForParameterType, srcGenericParameterTypes, soughtForGenericParameterType)) {
+                        return method;
+                    }
+=======
+            if (
+            	!method.getName().equals(methodToSearch) || 
+            	!method.getReturnType().isAssignableFrom(methodToFind.getReturnType()) ||
+            	method.getParameterTypes().length != pTypes.length
+            	) {
+                continue;
+            }
+            Class<?>[] pt = method.getParameterTypes();
+            Type[] gpt = method.getGenericParameterTypes();
+            for (int j = 0; j < pTypes.length; j++) {
+                Class<?> parameterType = pTypes[j];
+                if (!(pt[j].equals(parameterType) || (!gpt[j].equals(gpTypes[j]) && pt[j].isAssignableFrom(parameterType)))) {
+                    continue methodLoop;
+>>>>>>> YOURS;<<<<<<< MINE
+            if (method.getName().equals(methodToSearch) && method.getReturnType().isAssignableFrom(methodToFind.getReturnType())) {
+                Class<?>[] srcParameterTypes = method.getParameterTypes();
+                Type[] srcGenericParameterTypes = method.getGenericParameterTypes();
+                if (soughtForParameterType.length == srcParameterTypes.length &&
+                        soughtForGenericParameterType.length == srcGenericParameterTypes.length) {
+                    if (hasIdenticalParameters(srcParameterTypes, soughtForParameterType, srcGenericParameterTypes, soughtForGenericParameterType)) {
+                        return method;
+                    }
+=======
+            if (
+            	!method.getName().equals(methodToSearch) || 
+            	!method.getReturnType().isAssignableFrom(methodToFind.getReturnType()) ||
+            	method.getParameterTypes().length != pTypes.length
+            	) {
+                continue;
+            }
+            Class<?>[] pt = method.getParameterTypes();
+            Type[] gpt = method.getGenericParameterTypes();
+            for (int j = 0; j < pTypes.length; j++) {
+                Class<?> parameterType = pTypes[j];
+                if (!(pt[j].equals(parameterType) || (!gpt[j].equals(gpTypes[j]) && pt[j].isAssignableFrom(parameterType)))) {
+                    continue methodLoop;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_a3c2f11_1f47fb1/rev_a3c2f11-1f47fb1/modules/swagger-models/src/main/java/io/swagger/models/properties/StringProperty.java;<<<<<<< MINE
+        boolean formatMatchStringType = "uri".equals(format) || "url".equals(format);
+        if ("string".equals(type) && (format == null || formatMatchStringType)) {
+            return true;
+        } else {
+            return false;
+        }
+=======
+        return TYPE.equals(type) && (format == null || Format.fromName(format) != null);
+>>>>>>> YOURS;<<<<<<< MINE
+        boolean formatMatchStringType = "uri".equals(format) || "url".equals(format);
+        if ("string".equals(type) && (format == null || formatMatchStringType)) {
+            return true;
+        } else {
+            return false;
+        }
+=======
+        return TYPE.equals(type) && (format == null || Format.fromName(format) != null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_e199bff_cc4e4f4/rev_e199bff-cc4e4f4/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+        args.put(PropertyBuilder.PropertyId.VENDOR_EXTENSIONS, getVendorExtensions(node));
+=======
+        args.put(PropertyBuilder.PropertyId.READ_ONLY, getBoolean(node, PropertyBuilder.PropertyId.READ_ONLY));
+>>>>>>> YOURS;<<<<<<< MINE
+        args.put(PropertyBuilder.PropertyId.VENDOR_EXTENSIONS, getVendorExtensions(node));
+=======
+        args.put(PropertyBuilder.PropertyId.READ_ONLY, getBoolean(node, PropertyBuilder.PropertyId.READ_ONLY));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/test/java/io/swagger/ObjectPropertyTest.java;<<<<<<< MINE
+        String json = "{" +
+                "   \"properties\":{" +
+                "      \"id\":{" +
+                "         \"type\":\"string\"" +
+                "      }," +
+                "      \"someObject\":{" +
+                "         \"type\":\"object\"," +
+                "        \"x-foo\": \"vendor x\"," +
+                "         \"properties\":{" +
+                "            \"innerId\":{" +
+                "               \"type\":\"string\"" +
+                "            }" +
+                "         }" +
+                "      }" +
+                "   }" +
+                "}";
+=======
+        String json = "{" +
+                "   \"properties\":{" +
+                "      \"id\":{" +
+                "         \"type\":\"string\"" +
+                "      }," +
+                "      \"someObject\":{" +
+                "         \"type\":\"object\"," +
+                "         \"properties\":{" +
+                "            \"innerId\":{" +
+                "               \"type\":\"string\"" +
+                "            }" +
+                "         }" +
+                "      }" +
+                "   }" +
+                "}";
+>>>>>>> YOURS;<<<<<<< MINE
+        String json = "{" +
+                "   \"properties\":{" +
+                "      \"id\":{" +
+                "         \"type\":\"string\"" +
+                "      }," +
+                "      \"someObject\":{" +
+                "         \"type\":\"object\"," +
+                "        \"x-foo\": \"vendor x\"," +
+                "         \"properties\":{" +
+                "            \"innerId\":{" +
+                "               \"type\":\"string\"" +
+                "            }" +
+                "         }" +
+                "      }" +
+                "   }" +
+                "}";
+=======
+        String json = "{" +
+                "   \"properties\":{" +
+                "      \"id\":{" +
+                "         \"type\":\"string\"" +
+                "      }," +
+                "      \"someObject\":{" +
+                "         \"type\":\"object\"," +
+                "         \"properties\":{" +
+                "            \"innerId\":{" +
+                "               \"type\":\"string\"" +
+                "            }" +
+                "         }" +
+                "      }" +
+                "   }" +
+                "}";
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_a906dec_941a0e8/rev_a906dec-941a0e8/modules/swagger-core/src/main/java/io/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_a906dec_941a0e8/rev_a906dec-941a0e8/modules/swagger-core/src/main/java/io/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+
+        if (!resolveSubtypes(model, beanDesc, context)) {
+            model.setDiscriminator(null);
+        }
+
+=======
+
+        /**
+         * This must be done after model.setProperties so that the model's set
+         * of properties is available to filter from any subtypes
+         **/
+        if (!resolveSubtypes(model, beanDesc, context)) {
+            model.setDiscriminator(null);
+        }
+>>>>>>> YOURS;<<<<<<< MINE
+
+        if (!resolveSubtypes(model, beanDesc, context)) {
+            model.setDiscriminator(null);
+        }
+
+=======
+
+        /**
+         * This must be done after model.setProperties so that the model's set
+         * of properties is available to filter from any subtypes
+         **/
+        if (!resolveSubtypes(model, beanDesc, context)) {
+            model.setDiscriminator(null);
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_0011790_17587ab/rev_0011790-17587ab/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/config/WebXMLReader.java;<<<<<<< MINE
+        basePath = servletConfig.getInitParameter("swagger.api.basepath");
+        title = servletConfig.getInitParameter("swagger.api.title");
+=======
+        String shouldPrettyPrint = servletConfig.getInitParameter("swagger.pretty.print");
+        if (shouldPrettyPrint != null) {
+            scanner.setPrettyPrint(Boolean.parseBoolean(shouldPrettyPrint));
+        }
+
+        // we support full base path (i.e full URL to the server) or just base path
+        this.host = servletConfig.getInitParameter("swagger.api.host");
+        String schemesString = servletConfig.getInitParameter("swagger.api.schemes");
+
+        // split the CSV string and update the `schemes` variable
+        if(schemesString != null) {
+            String[] parts = schemesString.split(",");
+            List<String> schemes = new ArrayList<String>();
+            for(String scheme : parts) {
+                String s = scheme.trim();
+                if(!s.isEmpty()) {
+                    schemes.add(s);
+                }
+            }
+            this.schemes = schemes.toArray(new String[schemes.size()]);
+        }
+        this.title = servletConfig.getInitParameter("swagger.api.title");
+
+>>>>>>> YOURS;<<<<<<< MINE
+        basePath = servletConfig.getInitParameter("swagger.api.basepath");
+        title = servletConfig.getInitParameter("swagger.api.title");
+=======
+        String shouldPrettyPrint = servletConfig.getInitParameter("swagger.pretty.print");
+        if (shouldPrettyPrint != null) {
+            scanner.setPrettyPrint(Boolean.parseBoolean(shouldPrettyPrint));
+        }
+
+        // we support full base path (i.e full URL to the server) or just base path
+        this.host = servletConfig.getInitParameter("swagger.api.host");
+        String schemesString = servletConfig.getInitParameter("swagger.api.schemes");
+
+        // split the CSV string and update the `schemes` variable
+        if(schemesString != null) {
+            String[] parts = schemesString.split(",");
+            List<String> schemes = new ArrayList<String>();
+            for(String scheme : parts) {
+                String s = scheme.trim();
+                if(!s.isEmpty()) {
+                    schemes.add(s);
+                }
+            }
+            this.schemes = schemes.toArray(new String[schemes.size()]);
+        }
+        this.title = servletConfig.getInitParameter("swagger.api.title");
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_ba73b01_b51406c/rev_ba73b01-b51406c/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+                arrayProperty.setMinItems(getInteger(node, PropertyBuilder.PropertyId.MIN_ITEMS));
+                arrayProperty.setMaxItems(getInteger(node, PropertyBuilder.PropertyId.MAX_ITEMS));
+                arrayProperty.setUniqueItems(getBoolean(node, PropertyBuilder.PropertyId.UNIQUE_ITEMS));
+=======
+                PropertyBuilder.merge(arrayProperty, argsFromNode(node));
+>>>>>>> YOURS;<<<<<<< MINE
+                arrayProperty.setMinItems(getInteger(node, PropertyBuilder.PropertyId.MIN_ITEMS));
+                arrayProperty.setMaxItems(getInteger(node, PropertyBuilder.PropertyId.MAX_ITEMS));
+                arrayProperty.setUniqueItems(getBoolean(node, PropertyBuilder.PropertyId.UNIQUE_ITEMS));
+=======
+                PropertyBuilder.merge(arrayProperty, argsFromNode(node));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_0ed8dce_ca27b61/rev_0ed8dce-ca27b61/modules/swagger-core/src/main/java/io/swagger/util/ParameterProcessor.java;<<<<<<< MINE
+                } else {
+                    p.setType(param.getDataType());
+                }
+            }
+            if (helper.getMin() != null || helper.getDecimalMin() != null) {
+                p.setMinimum(helper.getMin() != null ? new Double(helper.getMin()) : helper.getDecimalMin());
+                if (helper.isMinExclusive()) {
+                    p.setExclusiveMinimum(true);
+                }
+            }
+
+            if (helper.getMax() != null || helper.getDecimalMax() != null) {
+                p.setMaximum(helper.getMax() != null ? new Double(helper.getMax()) : helper.getDecimalMax());
+                if (helper.isMaxExclusive()) {
+                    p.setExclusiveMaximum(true);
+=======
+                } else if("long".equalsIgnoreCase(param.getDataType())) {
+                    p.setProperty(new LongProperty());
+                } else {
+                    p.setType(param.getDataType());
+>>>>>>> YOURS;<<<<<<< MINE
+                } else {
+                    p.setType(param.getDataType());
+                }
+            }
+            if (helper.getMin() != null || helper.getDecimalMin() != null) {
+                p.setMinimum(helper.getMin() != null ? new Double(helper.getMin()) : helper.getDecimalMin());
+                if (helper.isMinExclusive()) {
+                    p.setExclusiveMinimum(true);
+                }
+            }
+
+            if (helper.getMax() != null || helper.getDecimalMax() != null) {
+                p.setMaximum(helper.getMax() != null ? new Double(helper.getMax()) : helper.getDecimalMax());
+                if (helper.isMaxExclusive()) {
+                    p.setExclusiveMaximum(true);
+=======
+                } else if("long".equalsIgnoreCase(param.getDataType())) {
+                    p.setProperty(new LongProperty());
+                } else {
+                    p.setType(param.getDataType());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_84c80ba_f95e775/rev_84c80ba-f95e775/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+                JsonNode example = getDetailNode( node, PropertyBuilder.PropertyId.EXAMPLE);
+                if( example != null ) {
+                    arrayProperty.setExample( Json.mapper().convertValue(example, Object.class));
+                }
+
+=======
+
+                PropertyBuilder.merge(arrayProperty, argsFromNode(node));
+>>>>>>> YOURS;<<<<<<< MINE
+                JsonNode example = getDetailNode( node, PropertyBuilder.PropertyId.EXAMPLE);
+                if( example != null ) {
+                    arrayProperty.setExample( Json.mapper().convertValue(example, Object.class));
+                }
+
+=======
+
+                PropertyBuilder.merge(arrayProperty, argsFromNode(node));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_440b2d2_b9aae06/rev_440b2d2-b9aae06/src/com/google/bitcoin/examples/PingService.java;<<<<<<< MINE
+        NetworkConnection conn = new NetworkConnection(InetAddress.getByName("plan99.net"), params,
+                                                       blockStore.getChainHead().getHeight(), 60000);
+=======
+>>>>>>> YOURS;<<<<<<< MINE
+        NetworkConnection conn = new NetworkConnection(InetAddress.getByName("plan99.net"), params,
+                                                       blockStore.getChainHead().getHeight(), 60000);
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_6459f15_7cc23e3/rev_6459f15-7cc23e3/src/com/google/bitcoin/core/Transaction.java;<<<<<<< MINE
+                s.append(" / ");
+                s.append(in.getOutpoint().toString());
+=======
+                s.append(" / ");
+                s.append(in.getOutpoint().getHash());
+                s.append(":");
+                s.append(in.getOutpoint().getIndex());
+>>>>>>> YOURS;<<<<<<< MINE
+                s.append(" / ");
+                s.append(in.getOutpoint().toString());
+=======
+                s.append(" / ");
+                s.append(in.getOutpoint().getHash());
+                s.append(":");
+                s.append(in.getOutpoint().getIndex());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_4f20749_ae32b4c/rev_4f20749-ae32b4c/src/main/java/org/junit/contrib/truth/subjects/StringSubject.java;<<<<<<< MINE
+public And<StringSubject> contains(String string) {
+    if (!getSubject().contains(string)) {
+=======
+public StringSubject contains(String string) {
+    if (getSubject() == null) {
+      if (string != null) {
+        fail("contains", string);
+      }
+    } else if (!getSubject().contains(string)) {
+>>>>>>> YOURS;<<<<<<< MINE
+  public And<StringSubject> contains(String string) {
+    if (!getSubject().contains(string)) {
+=======
+  public StringSubject contains(String string) {
+    if (getSubject() == null) {
+      if (string != null) {
+        fail("contains", string);
+      }
+    } else if (!getSubject().contains(string)) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_4f20749_ae32b4c/rev_4f20749-ae32b4c/src/test/java/org/junit/contrib/truth/ExpectTest.java;<<<<<<< MINE
+    EXPECT.that("abc").contains("x")
+          .and().contains("y")
+          .and().contains("z");
+=======
+    EXPECT.that("abc").contains("x").contains("y").contains("z");
+    EXPECT.that(Arrays.asList(new String[]{"a", "b", "c"})).containsAnyOf("a", "c");
+>>>>>>> YOURS;<<<<<<< MINE
+    EXPECT.that("abc").contains("x")
+          .and().contains("y")
+          .and().contains("z");
+=======
+    EXPECT.that("abc").contains("x").contains("y").contains("z");
+    EXPECT.that(Arrays.asList(new String[]{"a", "b", "c"})).containsAnyOf("a", "c");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_9d94784_8f1681d/rev_9d94784-8f1681d/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+
+        ExecutionId executionId = idProvider.generate(requestString, operationName, context);
+
+        Execution execution = new Execution(executionStrategy);
+        return execution.execute(executionId, graphQLSchema, context, document, operationName, arguments);
+=======
+        Execution execution = new Execution(queryStrategy, mutationStrategy);
+        return execution.execute(graphQLSchema, context, document, operationName, arguments);
+>>>>>>> YOURS;<<<<<<< MINE
+
+        ExecutionId executionId = idProvider.generate(requestString, operationName, context);
+
+        Execution execution = new Execution(executionStrategy);
+        return execution.execute(executionId, graphQLSchema, context, document, operationName, arguments);
+=======
+        Execution execution = new Execution(queryStrategy, mutationStrategy);
+        return execution.execute(graphQLSchema, context, document, operationName, arguments);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_d4097e9_a339c65/rev_d4097e9-a339c65/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+        //noinspection deprecation
+        this(graphQLSchema, null);
+=======
+        this(graphQLSchema, null, null);
+>>>>>>> YOURS;<<<<<<< MINE
+        //noinspection deprecation
+        this(graphQLSchema, null);
+=======
+        this(graphQLSchema, null, null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+
+            parseCtx.onEnd(e);
+            return new ExecutionResultImpl(Collections.singletonList(invalidSyntaxError));
+=======
+            return new ExecutionResultImpl(Collections.singletonList(invalidSyntaxError));
+>>>>>>> YOURS;<<<<<<< MINE
+
+            parseCtx.onEnd(e);
+            return new ExecutionResultImpl(Collections.singletonList(invalidSyntaxError));
+=======
+            return new ExecutionResultImpl(Collections.singletonList(invalidSyntaxError));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_a48f27d_5e9f899/rev_a48f27d-5e9f899/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+            //noinspection deprecation
+            return new GraphQL(graphQLSchema, queryExecutionStrategy, mutationExecutionStrategy, instrumentation);
+=======
+            return new GraphQL(graphQLSchema, queryExecutionStrategy, mutationExecutionStrategy, idProvider);
+>>>>>>> YOURS;<<<<<<< MINE
+            //noinspection deprecation
+            return new GraphQL(graphQLSchema, queryExecutionStrategy, mutationExecutionStrategy, instrumentation);
+=======
+            return new GraphQL(graphQLSchema, queryExecutionStrategy, mutationExecutionStrategy, idProvider);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_198b8cc_f863c8f/rev_198b8cc-f863c8f/src/main/java/graphql/execution/Execution.java;<<<<<<< MINE
+        try {
+            if (operationDefinition.getOperation() == OperationDefinition.Operation.MUTATION) {
+                result = mutationStrategy.execute(executionContext, parameters);
+            } else {
+                result = queryStrategy.execute(executionContext, parameters);
+            }
+        } catch (NonNullableFieldWasNullException e) {
+            // this means it was non null types all the way from an offending non null type
+            // up to the root object type and there was a a null value some where.
+            //
+            // The spec says we should return null for the data in this case
+            //
+            // http://facebook.github.io/graphql/#sec-Errors-and-Non-Nullability
+            //
+            result = new ExecutionResultImpl(null, executionContext.getErrors());
+=======
+        if (operation == MUTATION) {
+            result = mutationStrategy.execute(executionContext, operationRootType, root, fields);
+        } else {
+            result = queryStrategy.execute(executionContext, operationRootType, root, fields);
+>>>>>>> YOURS;<<<<<<< MINE
+        try {
+            if (operationDefinition.getOperation() == OperationDefinition.Operation.MUTATION) {
+                result = mutationStrategy.execute(executionContext, parameters);
+            } else {
+                result = queryStrategy.execute(executionContext, parameters);
+            }
+        } catch (NonNullableFieldWasNullException e) {
+            // this means it was non null types all the way from an offending non null type
+            // up to the root object type and there was a a null value some where.
+            //
+            // The spec says we should return null for the data in this case
+            //
+            // http://facebook.github.io/graphql/#sec-Errors-and-Non-Nullability
+            //
+            result = new ExecutionResultImpl(null, executionContext.getErrors());
+=======
+        if (operation == MUTATION) {
+            result = mutationStrategy.execute(executionContext, operationRootType, root, fields);
+        } else {
+            result = queryStrategy.execute(executionContext, operationRootType, root, fields);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_0537297_34bb99e/rev_0537297-34bb99e/servo-core/src/main/java/com/netflix/servo/publish/CounterToRateMetricTransform.java;<<<<<<< MINE
+@edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SE_BAD_FIELD_INNER_CLASS",
+            justification = "ignore that LinkedHashMap is serializable")
+=======
+@edu.umd.cs.findbugs.annotations.SuppressWarnings(
+        value = "SE_BAD_FIELD_INNER_CLASS",
+        justification = "We don't use serialization - ignore that LinkedHashMap is serializable")
+>>>>>>> YOURS;<<<<<<< MINE
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SE_BAD_FIELD_INNER_CLASS",
+            justification = "ignore that LinkedHashMap is serializable")
+=======
+    @edu.umd.cs.findbugs.annotations.SuppressWarnings(
+        value = "SE_BAD_FIELD_INNER_CLASS",
+        justification = "We don't use serialization - ignore that LinkedHashMap is serializable")
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_76a9a85_f82768d/rev_76a9a85-f82768d/servo-aws/src/main/java/com/netflix/servo/tag/aws/AwsInjectableTag.java;<<<<<<< MINE
+            String credFileProperty = System.getProperties().getProperty(AwsPropertyKeys.AWS_CREDENTIALS_FILE.getBundle());
+=======
+            String credFileProperty = System.getProperties().getProperty(AwsPropertyKeys.AWS_CREDENTIALS_FILE);
+>>>>>>> YOURS;<<<<<<< MINE
+            String credFileProperty = System.getProperties().getProperty(AwsPropertyKeys.AWS_CREDENTIALS_FILE.getBundle());
+=======
+            String credFileProperty = System.getProperties().getProperty(AwsPropertyKeys.AWS_CREDENTIALS_FILE);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_bad3ed8_210f741/rev_bad3ed8-210f741/entity-store/src/main/java/jetbrains/exodus/entitystore/EntityIterableCacheAdapter.java;<<<<<<< MINE
+        this.config = config;
+=======
+        maxSizeOfDirectValue = config.getEntityIterableCacheMaxSizeOfDirectValue();
+>>>>>>> YOURS;<<<<<<< MINE
+        this.config = config;
+=======
+        maxSizeOfDirectValue = config.getEntityIterableCacheMaxSizeOfDirectValue();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_bad3ed8_210f741/rev_bad3ed8-210f741/entity-store/src/main/java/jetbrains/exodus/entitystore/EntityIterableCacheAdapter.java;<<<<<<< MINE
+        config = source.config;
+=======
+        maxSizeOfDirectValue = source.maxSizeOfDirectValue;
+>>>>>>> YOURS;<<<<<<< MINE
+        config = source.config;
+=======
+        maxSizeOfDirectValue = source.maxSizeOfDirectValue;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_bad3ed8_210f741/rev_bad3ed8-210f741/entity-store/src/main/java/jetbrains/exodus/entitystore/EntityIterableCacheAdapter.java;<<<<<<< MINE
+        if (isHandleTooLong(key)) {
+            return;
+        }
+        cache.cacheObject(key, new CacheItem(it, config.getEntityIterableCacheMaxSizeOfDirectValue()));
+=======
+        cache.cacheObject(key, new CacheItem(it, maxSizeOfDirectValue));
+>>>>>>> YOURS;<<<<<<< MINE
+        if (isHandleTooLong(key)) {
+            return;
+        }
+        cache.cacheObject(key, new CacheItem(it, config.getEntityIterableCacheMaxSizeOfDirectValue()));
+=======
+        cache.cacheObject(key, new CacheItem(it, maxSizeOfDirectValue));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_bad3ed8_210f741/rev_bad3ed8-210f741/entity-store/src/main/java/jetbrains/exodus/entitystore/EntityIterableCacheAdapter.java;<<<<<<< MINE
+boolean isHandleTooLong(@NotNull final EntityIterableHandle handle) {
+        return handle.getStringHandle().length() > config.getEntityIterableCacheMaxKeySize();
+    }
+=======
+>>>>>>> YOURS;<<<<<<< MINE
+    boolean isHandleTooLong(@NotNull final EntityIterableHandle handle) {
+        return handle.getStringHandle().length() > config.getEntityIterableCacheMaxKeySize();
+    }
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_477d065_6206cf0/rev_477d065-6206cf0/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+                            if(ch != null) {
+                                ch.close().sync();
+                            }
+=======
+                            if (connectionPromise.channel() != null) {
+                                connectionPromise.channel().close().sync();
+                            }
+>>>>>>> YOURS;<<<<<<< MINE
+                            if(ch != null) {
+                                ch.close().sync();
+                            }
+=======
+                            if (connectionPromise.channel() != null) {
+                                connectionPromise.channel().close().sync();
+                            }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_a9019b9_0ac52d6/rev_a9019b9-0ac52d6/openAPI/src/main/java/jetbrains/exodus/env/EnvironmentConfig.java;<<<<<<< MINE
+                new Pair(GC_USE_EXCLUSIVE_TRANSACTION, true),
+=======
+                new Pair(GC_FILES_DELETION_DELAY, 0),
+>>>>>>> YOURS;<<<<<<< MINE
+                new Pair(GC_USE_EXCLUSIVE_TRANSACTION, true),
+=======
+                new Pair(GC_FILES_DELETION_DELAY, 0),
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_cade836_8895c6b/rev_cade836-8895c6b/src/main/java/io/reactivex/netty/protocol/http/client/HttpRequest.java;<<<<<<< MINE
+        if (!contentSet.compareAndSet(false, true)) {
+            throw new IllegalStateException("Content has already been set");
+        }
+        if (!headers.isContentLengthSet()) {
+            headers.set(HttpHeaders.Names.TRANSFER_ENCODING, "chunked");
+        }
+        contentFactory = new SimpleContentSourceFactory<T>(new ContentSource.SingletonSource<T>(content));
+=======
+        contentSource = new ContentSource.SingletonSource<T>(content);
+>>>>>>> YOURS;<<<<<<< MINE
+        if (!contentSet.compareAndSet(false, true)) {
+            throw new IllegalStateException("Content has already been set");
+        }
+        if (!headers.isContentLengthSet()) {
+            headers.set(HttpHeaders.Names.TRANSFER_ENCODING, "chunked");
+        }
+        contentFactory = new SimpleContentSourceFactory<T>(new ContentSource.SingletonSource<T>(content));
+=======
+        contentSource = new ContentSource.SingletonSource<T>(content);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+		MathObservable.sumInteger(ro1).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(ro1).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS;<<<<<<< MINE
+		MathObservable.sumInteger(ro1).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(ro1).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS;<<<<<<< MINE
+		MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+=======
+        MathObservable.sumInteger(oc).toBlockingObservable().forEach(new Action1<Integer>(){
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/client/ClientChannelFactoryImpl.java;<<<<<<< MINE
+                                 final ClientConnectionFactory<I, O,? extends ObservableConnection<I, O>> connectionFactory) {
+        final long startTimeMillis = Clock.newStartTimeMillis();
+        eventsSubject.onEvent(ClientMetricsEvent.CONNECT_START);
+=======
+                                 final ClientConnectionFactory<I, O, ? extends ObservableConnection<I, O>> connectionFactory) {
+>>>>>>> YOURS;<<<<<<< MINE
+                                 final ClientConnectionFactory<I, O,? extends ObservableConnection<I, O>> connectionFactory) {
+        final long startTimeMillis = Clock.newStartTimeMillis();
+        eventsSubject.onEvent(ClientMetricsEvent.CONNECT_START);
+=======
+                                 final ClientConnectionFactory<I, O, ? extends ObservableConnection<I, O>> connectionFactory) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/client/AbstractClientBuilder.java;<<<<<<< MINE
+        C client = createClient();
+        if (null != eventListenersFactory) {
+            MetricEventsListener<? extends ClientMetricsEvent<?>> listener =
+                    newMetricsListener(eventListenersFactory, client);
+            client.subscribe(listener);
+        }
+        return client;
+=======
+        if(null != sslEngineFactory) {
+            appendPipelineConfigurator(PipelineConfigurators.<O,I>sslConfigurator(sslEngineFactory));
+        }
+        return createClient();
+>>>>>>> YOURS;<<<<<<< MINE
+        C client = createClient();
+        if (null != eventListenersFactory) {
+            MetricEventsListener<? extends ClientMetricsEvent<?>> listener =
+                    newMetricsListener(eventListenersFactory, client);
+            client.subscribe(listener);
+        }
+        return client;
+=======
+        if(null != sslEngineFactory) {
+            appendPipelineConfigurator(PipelineConfigurators.<O,I>sslConfigurator(sslEngineFactory));
+        }
+        return createClient();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/server/ConnectionLifecycleHandler.java;<<<<<<< MINE
+        connection = connectionFactory.newConnection(ctx);
+        final long startTimeMillis = Clock.newStartTimeMillis();
+        eventsSubject.onEvent(ServerMetricsEvent.NEW_CLIENT_CONNECTED);
+=======
+            super.channelActive(ctx); // Called before connection handler call to finish the pipeline before the connection
+                                      // is handled.
+>>>>>>> YOURS;<<<<<<< MINE
+        connection = connectionFactory.newConnection(ctx);
+        final long startTimeMillis = Clock.newStartTimeMillis();
+        eventsSubject.onEvent(ServerMetricsEvent.NEW_CLIENT_CONNECTED);
+=======
+            super.channelActive(ctx); // Called before connection handler call to finish the pipeline before the connection
+                                      // is handled.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/server/AbstractServerBuilder.java;<<<<<<< MINE
+        S server = createServer();
+        if (null != eventListenersFactory) {
+            MetricEventsListener<? extends ServerMetricsEvent<?>> listener = newMetricsListener(eventListenersFactory,
+                                                                                             server);
+            server.subscribe(listener);
+        }
+        return server;
+=======
+        if(null != sslEngineFactory) {
+            appendPipelineConfigurator(PipelineConfigurators.<I, O>sslConfigurator(sslEngineFactory));
+        }
+        return createServer();
+>>>>>>> YOURS;<<<<<<< MINE
+        S server = createServer();
+        if (null != eventListenersFactory) {
+            MetricEventsListener<? extends ServerMetricsEvent<?>> listener = newMetricsListener(eventListenersFactory,
+                                                                                             server);
+            server.subscribe(listener);
+        }
+        return server;
+=======
+        if(null != sslEngineFactory) {
+            appendPipelineConfigurator(PipelineConfigurators.<I, O>sslConfigurator(sslEngineFactory));
+        }
+        return createServer();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_d9d306a_4f8a41d/rev_d9d306a-4f8a41d/rxnetty/src/main/java/io/reactivex/netty/protocol/http/UnicastContentSubject.java;<<<<<<< MINE
+            Subscriber<T> noOpSub = Subscribers.empty();
+
+            state.buffer.sendAllNotifications(noOpSub);
+            state.setObserverRef(noOpSub); // All future notifications are not sent anywhere.
+=======
+            state.bufferedSubject.subscribe(Subscribers.empty()); // Drain all items so that ByteBuf gets released.
+
+>>>>>>> YOURS;<<<<<<< MINE
+            Subscriber<T> noOpSub = Subscribers.empty();
+
+            state.buffer.sendAllNotifications(noOpSub);
+            state.setObserverRef(noOpSub); // All future notifications are not sent anywhere.
+=======
+            state.bufferedSubject.subscribe(Subscribers.empty()); // Drain all items so that ByteBuf gets released.
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_d9d306a_4f8a41d/rev_d9d306a-4f8a41d/rxnetty/src/main/java/io/reactivex/netty/protocol/http/UnicastContentSubject.java;<<<<<<< MINE
+                // drain queued notifications before subscription
+                state.buffer.sendAllNotifications(subscriber);
+
+                state.setObserverRef(subscriber);
+=======
+>>>>>>> YOURS;<<<<<<< MINE
+                // drain queued notifications before subscription
+                state.buffer.sendAllNotifications(subscriber);
+
+                state.setObserverRef(subscriber);
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_d9d306a_4f8a41d/rev_d9d306a-4f8a41d/rxnetty/src/main/java/io/reactivex/netty/protocol/http/UnicastContentSubject.java;<<<<<<< MINE
+                state.buffer.sendAllNotifications(state.observerRef);
+=======
+
+                state.bufferedSubject.lift(new AutoReleaseByteBufOperator()).subscribe(subscriber);
+
+>>>>>>> YOURS;<<<<<<< MINE
+                state.buffer.sendAllNotifications(state.observerRef);
+=======
+
+                state.bufferedSubject.lift(new AutoReleaseByteBufOperator()).subscribe(subscriber);
+
+>>>>>>> YOURS

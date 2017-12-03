@@ -1,0 +1,11 @@
+project;mergeScenarios;fpOrderingMergeScenarios;fpRenamingMergeScenarios;fnDuplicationMergeScenarios;fnImportMergeScenarios;textualConfUnmerge;textualConfSsmerge;fpOrderingConf;fpRenamingConf;fnDuplicationMissed;fnImportMissed;fpRenamingConfDup;fpConsLines;fpSpacing;fpConsSpac;fpRenamingConfDupMergeScenarios;fpConsLinesMergeScenarios;fpSpacingMergeScenarios;fpConsSpacMergeScenarios;fnNewArtRefOldOneMergeScnarios;fnNewArtRefOldOneConf;fnAnonymous;fnAnonymousMergeScnarios;minfpam;minfpamScenarios;fnAcidental;fnAcidentalScenarios;crosscutingConflicts;crosscutingScenarios;equalConfs
+BottomBar;131;1;1;0;0;13;7;1;1;0;0;0;2;1;0;0;1;1;0;0;0;0;0;6;2;6;2;4;2;5
+Swagger-core;624;26;7;1;0;777;48;287;25;1;0;2;6;101;0;1;6;14;0;0;0;1;1;20;15;447;18;373;14;14
+graphql-java;189;7;2;0;0;185;18;51;4;0;0;0;5;34;0;0;5;2;0;0;0;0;0;13;7;120;8;105;8;5
+bitcoinj;10;1;0;0;0;11;5;1;0;0;0;0;2;29;1;0;1;2;1;0;0;0;0;5;4;7;2;2;1;2
+truth;164;6;3;0;0;51;8;15;6;0;0;0;0;5;0;0;0;1;0;0;0;0;0;2;1;31;10;25;9;2
+servo;320;7;3;0;0;102;11;50;5;0;0;0;1;42;1;0;1;4;1;0;0;0;0;6;4;42;7;35;6;2
+dagger;385;6;1;1;0;381;5;139;1;2;0;0;0;230;0;0;0;4;0;0;0;0;0;2;1;239;6;163;3;0
+volley;1816;1;0;0;0;12;0;5;0;0;0;0;0;5;0;0;0;5;0;0;0;0;0;0;0;7;5;2;2;0
+xodus;78;9;2;0;0;30;15;11;5;0;0;0;2;6;0;0;2;5;0;1;2;0;0;8;5;8;6;2;2;5
+RxNetty;238;9;3;0;0;440;36;93;16;0;0;0;6;314;1;0;2;8;1;0;0;0;0;20;8;313;8;186;7;14

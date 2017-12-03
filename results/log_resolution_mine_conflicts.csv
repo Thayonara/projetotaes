@@ -1,0 +1,2296 @@
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_aa164a0_7f0c347/rev_aa164a0-7f0c347/bottom-bar/src/main/java/com/roughike/bottombar/scrollsweetness/BottomNavigationBehavior.java;<<<<<<< MINE
+=======
+                if (ViewCompat.getTranslationY(child) != 0) return;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiResponse.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiOperation.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiModelProperty.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParam.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParams.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiModel.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiResponses.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Authorization.java;<<<<<<< MINE
+=======
+/**
+ * Declares an authorization scheme to be used on a resource or an operation.
+ * <p/>
+ * The authorization scheme used needs to be defined in the Resource Listing's authorization
+ * section.
+ * <p/>
+ * This annotation is not used directly and will not be parsed by Swagger. It should be used
+ * within either {@link com.wordnik.swagger.annotations.Api} or {@link com.wordnik.swagger.annotations.ApiOperation}.
+ *
+ * @see com.wordnik.swagger.annotations.ApiOperation
+ * @see com.wordnik.swagger.annotations.Api
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Authorization.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiParam.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+=======
+/**
+ * Describes an OAuth2 authorization scope.
+ * <p/>
+ * Used to declare an authorization scope that is used by a resource or an operation for
+ * a defined authorization scheme.
+ * <p/>
+ * This annotation is not used directly and will not be parsed by Swagger. It should be used
+ * within the {@link com.wordnik.swagger.annotations.Authorization}.
+ *
+ * @see com.wordnik.swagger.annotations.Authorization
+ * @see com.wordnik.swagger.annotations.ApiOperation
+ * @see com.wordnik.swagger.annotations.Api
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   * 
+   * @return the document location value, or empty string if not set
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return the array of tags associated with this Api
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return a longer description about this API
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return the basePath for this operation
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+  @Deprecated
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   * As of swagger-spec 2.0, this value is no longer used
+   *
+   *
+   * @return the position of this API in the resource listing
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+  @Deprecated
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return the supported media types supported by the server, or an empty string if not set
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   * 
+   * @return the consumes value, or empty string if not set
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   * 
+   * @return the protocols supported by the server
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return an array of authorizations required by the server, or a single, empty authorization value if not set
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   *
+   * @return true if the api should be hidden from the swagger documentation
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParam.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParams.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiModel.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+@Inherited
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiResponse.java;<<<<<<< MINE
+=======
+  /**
+   * A list of possible headers provided alongside the response.
+   *
+   * @return a list of response headers.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiOperation.java;<<<<<<< MINE
+=======
+   * A non-empty value will override the value received from {@link Api#value()} or {@link Api#tags()}
+   * for this operation.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiOperation.java;<<<<<<< MINE
+=======
+  /**
+   * A list of possible headers provided alongside the response.
+   *
+   * @return a list of response headers.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParam.java;<<<<<<< MINE
+=======
+   *<p/>
+   * See com.wordnik.swagger.core.filter.SwaggerSpecFilter for further details.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiResponses.java;<<<<<<< MINE
+=======
+  /**
+   * A list of {@link com.wordnik.swagger.annotations.ApiResponse}s provided by the API operation.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+   * <p/>
+   * A non-empty value will override the value provided in {@link #value()}.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Api.java;<<<<<<< MINE
+=======
+  @Deprecated
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Authorization.java;<<<<<<< MINE
+=======
+/**
+ * Defines an authorization scheme to be used on a resource or an operation.
+ * <p/>
+ * The authorization scheme used needs to be declared at the Swagger root level first.
+ * <p/>
+ * This annotation is not used directly and will not be parsed by Swagger. It should be used
+ * within either {@link com.wordnik.swagger.annotations.Api} or {@link com.wordnik.swagger.annotations.ApiOperation}.
+ *
+ * @see com.wordnik.swagger.annotations.ApiOperation
+ * @see com.wordnik.swagger.annotations.Api
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/Authorization.java;<<<<<<< MINE
+=======
+  /**
+   * The name of the authorization scheme to be used on this resource/operation.
+   * <p/>
+   * The name must be defined in the Resource Listing's authorization section,
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+=======
+/**
+ * Describes an OAuth2 authorization scope.
+ * <p/>
+ * Used to define an authorization scope that is used by an operation for
+ * a defined authorization scheme.
+ * <p/>
+ * This annotation is not used directly and will not be parsed by Swagger. It should be used
+ * within the {@link com.wordnik.swagger.annotations.Authorization}.
+ *
+ * @see com.wordnik.swagger.annotations.Authorization
+ * @see com.wordnik.swagger.annotations.ApiOperation
+ * @see com.wordnik.swagger.annotations.Api
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+=======
+  /**
+   * The scope of the OAuth2 Authorization scheme to be used.
+   * <p/>
+   * The scope should be previously declared in the Swagger Object's securityDefinition section.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+=======
+
+
+  /**
+   * Not used in 1.5.X, kept for legacy support.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/test/java/io/swagger/util/JsonDeserializationTest.java;<<<<<<< MINE
+=======
+
+        //check for vendor extensions in array property types
+        vendorExtensions = swagger.getDefinitions().get("Health").getProperties().get("array").getVendorExtensions();
+
+        xStringValue = (String) vendorExtensions.get("x-string-value");
+        assertNotNull(xStringValue);
+        assertEquals(xStringValue, "string_value");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-models/src/main/java/io/swagger/models/Path.java;<<<<<<< MINE
+=======
+        if (head != null) {
+            result.put(HttpMethod.HEAD, head);
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-models/src/main/java/io/swagger/models/HttpMethod.java;<<<<<<< MINE
+=======
+    HEAD,
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-models/src/main/java/io/swagger/models/properties/PropertyBuilder.java;<<<<<<< MINE
+=======
+                if(args.containsKey(PropertyId.ENUM)) {
+                    final List<String> values = PropertyId.ENUM.findValue(args);
+                    if(values != null) {
+                        if(property instanceof IntegerProperty) {
+                            IntegerProperty p = (IntegerProperty) property;
+                            for(String value : values) {
+                              try {
+                                p._enum(Integer.parseInt(value));
+                              }
+                              catch(Exception e) {
+                                // continue
+                              }
+                            }                            
+                        }
+                        if(property instanceof LongProperty) {
+                          LongProperty p = (LongProperty) property;
+                          for(String value : values) {
+                            try {
+                              p._enum(Long.parseLong(value));
+                            }
+                            catch(Exception e) {
+                              // continue
+                            }
+                          }                            
+                        }
+                        if(property instanceof DoubleProperty) {
+                            DoubleProperty p = (DoubleProperty) property;
+                            for(String value : values) {
+                              try {
+                                p._enum(Double.parseDouble(value));
+                              }
+                              catch(Exception e) {
+                                // continue
+                              }
+                            }                            
+                        }
+                        if(property instanceof FloatProperty) {
+                          FloatProperty p = (FloatProperty) property;
+                          for(String value : values) {
+                            try {
+                              p._enum(Float.parseFloat(value));
+                            }
+                            catch(Exception e) {
+                              // continue
+                            }
+                          }                            
+                       }
+                       if(property instanceof DateProperty) {
+                          DateProperty p = (DateProperty) property;
+                          for(String value : values) {
+                            try {
+                              p._enum(value);
+                            }
+                            catch(Exception e) {
+                              // continue
+                            }
+                          }                            
+                       }
+                       if(property instanceof DateTimeProperty) {
+                         DateTimeProperty p = (DateTimeProperty) property;
+                         for(String value : values) {
+                           try {
+                             p._enum(value);
+                           }
+                           catch(Exception e) {
+                             // continue
+                           }
+                         }                            
+                       }
+                       if(property instanceof UUIDProperty) {
+                         UUIDProperty p = (UUIDProperty) property;
+                         for(String value : values) {
+                           try {
+                             p._enum(value);
+                           }
+                           catch(Exception e) {
+                             // continue
+                           }
+                         }                            
+                       }
+                    }
+                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-jersey2-jaxrs/src/main/java/io/swagger/jersey/SwaggerJersey2Jaxrs.java;<<<<<<< MINE
+=======
+                } else {
+                    final FormParameter fp = new FormParameter().name(fd.value());
+                    final Property schema = ModelConverters.getInstance().readAsProperty(type);
+                    if (schema != null) {
+                        fp.setProperty(schema);
+                    }
+                    parameters.add(fp);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/BitcoinSerializer.java;<<<<<<< MINE
+=======
+        } else if (command.equals("alert")) {
+            log.info("alert payload " + Utils.bytesToHexString(payloadBytes));
+            return new AlertMessage(params, payloadBytes);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/NetworkParameters.java;<<<<<<< MINE
+=======
+        n.alertSigningKey = SATOSHI_KEY;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/NetworkParameters.java;<<<<<<< MINE
+=======
+        n.alertSigningKey = SATOSHI_KEY;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_fc02737_02699ce/rev_fc02737-02699ce/src/main/java/org/junit/contrib/truth/Expect.java;<<<<<<< MINE
+=======
+@GwtIncompatible("JUnit4")
+@SuppressWarnings("deprecation") 
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/execution/Execution.java;<<<<<<< MINE
+=======
+    public Execution(ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
+        this.queryStrategy = queryStrategy != null ? queryStrategy : new SimpleExecutionStrategy();
+        this.mutationStrategy = mutationStrategy != null ? mutationStrategy : new SimpleExecutionStrategy();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+=======
+        ExecutionId executionId = idProvider.provide(requestString, operationName, context);
+
+        Execution execution = new Execution(queryStrategy, mutationStrategy);
+        return execution.execute(executionId, graphQLSchema, context, document, operationName, arguments);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/Scalars.java;<<<<<<< MINE
+=======
+            } else if (isNumberIsh(input)) {
+                return toNumber(input).intValue();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/Scalars.java;<<<<<<< MINE
+=======
+            return value.shortValue();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/Scalars.java;<<<<<<< MINE
+=======
+
+            return null;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/injector/internal/AtInjectBinding.java;<<<<<<< MINE
+=======
+    this.supertype = supertype;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/injector/internal/AtInjectBinding.java;<<<<<<< MINE
+=======
+
+    // Supertype binding.
+    if (supertype != null && !Keys.isPlatformType(supertype.getName())) {
+      supertypeBinding = (Binding<? super T>) linker.requestBinding(
+          Keys.getMembersKey(supertype), membersKey);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/injector/internal/AtInjectBinding.java;<<<<<<< MINE
+=======
+      if (supertypeBinding != null) {
+        supertypeBinding.injectMembers(t);
+      }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/codegen/GeneratorKeys.java;<<<<<<< MINE
+=======
+  /** Returns the provider key for {@code type}. */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/codegen/GeneratorKeys.java;<<<<<<< MINE
+=======
+  /** Returns the provided key for {@code method}. */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/codegen/GeneratorKeys.java;<<<<<<< MINE
+=======
+  /** Returns the provider key for {@code parameter}. */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_1f4b98b_56ea0e3/rev_1f4b98b-56ea0e3/entity-store/src/main/java/jetbrains/exodus/entitystore/iterate/PropertyValueIterable.java;<<<<<<< MINE
+=======
+                if (value instanceof ComparableSet) {
+                    return ((ComparableSet) value).containsItem(PropertyValueIterable.this.value);
+                }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_f4c3310_e47d8bc/rev_f4c3310-e47d8bc/openAPI/src/main/java/jetbrains/exodus/entitystore/StoreTransaction.java;<<<<<<< MINE
+=======
+    @Deprecated
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_41b74a4_68b45ff/rev_41b74a4-68b45ff/openAPI/src/main/java/jetbrains/exodus/entitystore/StoreTransaction.java;<<<<<<< MINE
+=======
+    @Deprecated
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolInsightProvider.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/CompositePoolStats.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/CompositePoolLimitDeterminationStrategy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PooledConnection.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolStatsProvider.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ClientChannelFactoryImpl.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolStats.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ClientConnectionHandler.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ConnectionReuseEvent.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolLimitDeterminationStrategy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolExhaustedException.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ClientChannelFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolStatsImpl.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ConnectionPoolImpl.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/RxClientThreadFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/ConnectionPool.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/PoolConfig.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/client/MaxConnectionsBasedStrategy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/server/ErrorHandler.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/server/RxServerThreadFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/server/AbstractServerBuilder.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/client/HttpClientChannelFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/client/FollowRedirectHttpClientImpl.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/CookiesHolder.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/server/HttpConnectionHandler.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/server/DefaultErrorResponseGenerator.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/server/ErrorResponseGenerator.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/protocol/http/server/UriInfoHolder.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/RxDefaultThreadFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/ChannelWriter.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/NewRxConnectionEvent.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/DefaultChannelWriter.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/ObservableConnectionFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/RxEventLoopProvider.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/UnpooledConnectionFactory.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/channel/SingleNioLoopProvider.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/pipeline/DefaultErrorHandler.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/main/java/io/reactivex/netty/pipeline/ByteArrayPipelineConfigurator.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/client/PoolLimitStrategyTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/client/ConnectionPoolTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/client/CompositeStatsTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/client/TrackableStateChangeListener.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/ChannelCloseListener.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/NoOpChannelHandlerContext.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/client/HttpClientPoolTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/client/CookieTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/server/UriTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/server/HttpErrorHandlerTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/server/UnexpectedErrorsTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty/src/test/java/io/reactivex/netty/protocol/http/server/CookieTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ingress/InetAddressWhiteListIngressPolicy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ingress/IngressPolicies.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ingress/IngressPolicy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteRxServer.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/codec/Codecs.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/codec/Encoder.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/codec/Decoder.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/codec/Codec.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ConnectParams.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteObservableConfiguration.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteRxEvent.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ConnectConfiguration.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/filter/ServerSideFilters.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/MutableReference.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/SlotAssignment.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/SlottingStrategies.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/SlotValuePair.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/SlottingStrategy.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/NoSlotting.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/slotting/HashCodeSlotting.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ClientConfig.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/SubscribeInfo.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteObservable.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ServerMetrics.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteObservableConnectionHandler.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteRxNumerusEvent.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RxEventPipelineConfigurator.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteRxConnection.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteObservableException.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/RemoteUnsubscribe.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/main/java/io/reactivex/netty/ConnectionMetrics.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/test/java/io/reactivex/netty/MetricsTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_76e4e41_ff9381b/rev_76e4e41-ff9381b/rx-netty-remote-observable/src/test/java/io/reactivex/netty/RemoteObservableTest.java;<<<<<<< MINE
+=======
+/*
+ * Copyright 2014 Netflix, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_52f2378_825850e/rev_52f2378-825850e/rx-netty/src/main/java/io/reactivex/netty/channel/ObservableConnection.java;<<<<<<< MINE
+=======
+    @Override
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/internal/KeysTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/MembersInjectorTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/InjectStaticsTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/SetBindingTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/LazyInjectionTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/InjectionTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/InjectionTest.java;<<<<<<< MINE
+=======
+  @Test public void noConstructorInjectionsForClassesWithTypeParameters() {
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/ProblemDetectorTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/ModuleIncludesTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/InjectionOfLazyTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/core/src/test/java/dagger/ExtensionTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/androidmanifest/src/test/java/dagger/androidmanifest/ModuleGeneratorTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/compiler/src/test/java/dagger/internal/codegen/DotWriterTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_9f9d8ca_91e8564/rev_9f9d8ca-91e8564/compiler/src/test/java/dagger/internal/codegen/GraphVisualizerTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClient.java;<<<<<<< MINE
+=======
+     * Creates a request for the passed HTTP method and URI.
+     *
+     * @param uri The URI for the request. The URI can be relative or absolute. If the URI is relative
+     *            (missing host and port information), the target host and port are inferred from the {@link HttpClient}
+     *            that created the request. If the URI is absolute, the host and port are used from the URI.
+     *
+     * @return New {@link HttpClientRequest}.
+     */
+    public abstract HttpClientRequest<I, O> createRequest(HttpMethod method, String uri);
+    /**
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+=======
+
+ * <h2>Trailing headers</h2>
+ *
+ * One can write HTTP trailing headers by using
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/tcp/client/PooledClientConnectionFactoryImpl.java;<<<<<<< MINE
+=======
+                                                        .doOnSubscribe(new Action0() {
+                                                            @Override
+                                                            public void call() {
+                                                                metricsEventSubject.onEvent(POOL_ACQUIRE_START);
+                                                            }
+                                                        })
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/DefaultChannelOperations.java;<<<<<<< MINE
+=======
+                        if (subscriber.isUnsubscribed()) {
+                            /*short-circuit if subscriber is unsubscribed*/
+                            return;
+                        }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/ServerConnectionToChannelBridge.java;<<<<<<< MINE
+=======
+                    logger.error("Error processing connection.", e);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_f7e49e7_153d71b/rev_f7e49e7-153d71b/rxnetty/src/main/java/io/reactivex/netty/protocol/tcp/client/ConnectionProvider.java;<<<<<<< MINE
+=======
+     * Starts this connection provider.
+     *
+     * <b>This method is idempotent, so can be called multiple times without any side-effects</b>
+     *
+     * Implementations can override {@link #doStart()} to implement any startup logic, {@link #doStart()} gets called
+     * exactly once.
+     *
+     * @return {@code Observable} which completes when the factory is successfully started.
+     */
+    public final Observable<Void> start() {
+        Observable<Void> _toReturn;
+        synchronized (this) {
+            if (!startCalled) {
+                startCalled = true;
+                startObservable = doStart().doOnTerminate(new Action0() {
+                    @Override
+                    public void call() {
+                        started = true; /*Only one subscription as it uses cache*/
+                    }
+                }).cache();
+            }
+            _toReturn = startObservable;
+        }
+        return _toReturn;
+    }
+
+    /**
+     * Shutdown this connection provider.
+     *
+     * <b>This method is idempotent, so can be called multiple times without any side-effects</b>
+     *
+     * Implementations can override {@link #doShutdown()} to implement any shutdown logic, {@link #doShutdown()} gets
+     * called exactly once.
+     *
+     * @return {@code Observable} which completes when the factory is successfully shutdown.
+     */
+    public final Observable<Void> shutdown() {
+        Observable<Void> _toReturn;
+        synchronized (this) {
+            if (!shutdownCalled) {
+                shutdownCalled = true;
+                shutdownObservable = doShutdown().doOnTerminate(new Action0() {
+                    @Override
+                    public void call() {
+                        shutdown = true; /*Only one subscription as it uses cache*/
+                    }
+                }).cache();
+            }
+            _toReturn = shutdownObservable;
+        }
+        return _toReturn;
+    }
+
+    /**
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_f207ab4_a0e40f0/rev_f207ab4-a0e40f0/core/src/test/java/dagger/UnusedProviderTest.java;<<<<<<< MINE
+=======
+@RunWith(JUnit4.class)
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_5a31bed_886ce2b/rev_5a31bed-886ce2b/compiler/src/main/java/dagger/internal/codegen/GraphAnalysisInjectBinding.java;<<<<<<< MINE
+=======
+          if (hasAtSingleton(enclosed)) {
+            throw new IllegalArgumentException("Singleton annotations have no effect on "
+                + "constructors. Did you mean to annotate the class? "
+                + type.getQualifiedName().toString());
+          }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+   *
+   * This method may only be called before {@link #linkAll()}. Subsequent calls to
+   * {@link #installBindings(BindingsGroup)} will throw an {@link IllegalStateException}.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+    assertLockHeld();
+    if (linkedBindings != null) {
+      return linkedBindings;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+   *
+   * @throws AssertionError if this method is not called within a synchronized block which
+   *     holds this {@link Linker} as the lock object.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/SetBinding.java;<<<<<<< MINE
+=======
+    parent = null;
+    contributors = new ArrayList<Binding<?>>();
+  }
+
+  /**
+   * Creates a new {@code SetBinding} with all of the contributing bindings of the provided
+   * original {@code SetBinding}.
+   */
+  public SetBinding(SetBinding<T> original) {
+    super(original.provideKey, null, false, original.requiredBy);
+    parent = original;
+    this.setLibrary(original.library());
+    this.setDependedOn(original.dependedOn());
+    contributors = new ArrayList<Binding<?>>();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+=======
+  // TODO(cgruber): Move this internal implementation of ObjectGraph into the internal package.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+=======
+      Map<String, Binding<?>> bindings = linker.fullyLinkedBindings();
+      if (bindings != null) {
+        return bindings;
+      }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+=======
+        if ((bindings = linker.fullyLinkedBindings()) != null) {
+          return bindings;
+        }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/test/java/dagger/internal/TestingModuleAdapter.java;<<<<<<< MINE
+=======
+        moduleClass,
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/ModuleAdapterProcessor.java;<<<<<<< MINE
+=======
+      i.remove();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/ModuleAdapterProcessor.java;<<<<<<< MINE
+=======
+      imports.add(ProvidesBinding.class.getCanonicalName());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/ModuleAdapterProcessor.java;<<<<<<< MINE
+=======
+      imports.add(Binding.class.getCanonicalName());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+=======
+ * Copyright (C) 2013 Google, Inc.
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+=======
+    writer.emitImports(findImports(dependent, injectMembers, constructor != null));
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+=======
+  private void writeMemberBindingsFields(
+      JavaWriter writer, List<Element> fields, boolean disambiguateFields) throws IOException {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+=======
+    writer.emitEmptyLine();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/GeneratorKeys.java;<<<<<<< MINE
+=======
+  /** Does not test for multiple qualifiers. This is tested in {@code ValidationProcessor}.  */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/GraphAnalysisProcessor.java;<<<<<<< MINE
+
+=======
+      if (annotation == null) {
+        error("Missing @Module annotation.", moduleType);
+        continue;
+      }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/GraphAnalysisProcessor.java;<<<<<<< MINE
+=======
+          String providerKey = GeneratorKeys.get(injectableType);
+          injectsProvisionKeys.add(providerKey);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/test/java/dagger/internal/codegen/GraphVisualizerTest.java;<<<<<<< MINE
+=======
+  @SuppressWarnings("qualifiers")
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/test/java/dagger/internal/codegen/GraphVisualizerTest.java;<<<<<<< MINE
+=======
+  @SuppressWarnings("qualifiers")
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/test/java/dagger/internal/codegen/GraphVisualizerTest.java;<<<<<<< MINE
+=======
+  @SuppressWarnings("qualifiers")
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/test/java/dagger/testing/it/BuildLogValidator.java;<<<<<<< MINE
+=======
+    String buildOutput = getBuildOutput(buildLogfile);
+
+    StringBuilder sb = new StringBuilder("Build output did not contain expected error text:");
+    boolean missing = false;
+
+    for (String expected : expectedStrings) {
+      if (!buildOutput.contains(expected)) {
+        missing = true;
+        sb.append("\n    \"").append(expected).append("\"");
+      }
+    }
+    if (missing) {
+      appendBuildStatus(sb, buildOutput);
+      throw new Exception(sb.toString());
+    }
+  }
+
+  /**
+   * Processes a log file, ensuring it does not contain any of the provided strings within it.
+   *
+   * @param buildLogfile a log file to be searched
+   * @param unexpectedStrings the strings that must not be present in the log file for it to be
+   *        valid
+   */
+  public void assertDoesNotHaveText(File buildLogfile, String... unexpectedStrings)
+      throws Throwable {
+    String buildOutput = getBuildOutput(buildLogfile);
+
+    StringBuilder sb = new StringBuilder("Build output contained unexpected text:");
+    boolean found = false;
+
+    for (String unexpected : unexpectedStrings) {
+      if (buildOutput.contains(unexpected)) {
+        found = true;
+        sb.append("\n    \"").append(unexpected).append("\"");
+      }
+    }
+    if (found) {
+      appendBuildStatus(sb, buildOutput);
+      throw new Exception(sb.toString());
+    }
+  }
+
+  private String getBuildOutput(File buildLogfile) throws Throwable {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/test/java/dagger/testing/it/BuildLogValidator.java;<<<<<<< MINE
+=======
+    return buildOutput;
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/volley/revisions/rev_0d6df2e_331e52b/rev_0d6df2e-331e52b/src/test/java/com/android/volley/toolbox/ImageRequestTest.java;<<<<<<< MINE
+=======
+        assertEquals(ImageRequest.DEFAULT_IMAGE_TIMEOUT_MS, 1000);
+        assertEquals(ImageRequest.DEFAULT_IMAGE_MAX_RETRIES, 2);
+        assertEquals(ImageRequest.DEFAULT_IMAGE_BACKOFF_MULT, 2f);
+>>>>>>> YOURS

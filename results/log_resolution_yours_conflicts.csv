@@ -1,0 +1,266 @@
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_c5aa988_8c15d2a/rev_c5aa988-8c15d2a/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/ParameterProcessor.java;<<<<<<< MINE
+            System.out.println(param.required());
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiOperation.java;<<<<<<< MINE
+  /** authorizations required by this Api */
+  //String authorizations() default "";
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParam.java;<<<<<<< MINE
+   * <li>If {@code paramType} is "body", the name should be "body".</li>
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-models/src/main/java/io/swagger/models/Path.java;<<<<<<< MINE
+            result.put(HttpMethod.OPTIONS, options);
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_05a141c_0767b54/rev_05a141c-0767b54/src/main/java/org/junit/contrib/truth/subjects/IntegerSubject.java;<<<<<<< MINE
+    if (!(lower < getSubject() && getSubject() < upper)) {
+      fail("is in between", lower, upper);
+    }
+    return nextChain();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_a48f27d_5e9f899/rev_a48f27d-5e9f899/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+    @SuppressWarnings("DeprecatedIsStillUsed")
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+    @SuppressWarnings("DeprecatedIsStillUsed")
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/Scalars.java;<<<<<<< MINE
+
+            return null;
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/Scalars.java;<<<<<<< MINE
+            return null;
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_fccb0d6_bbd39e3/rev_fccb0d6-bbd39e3/rx-netty/src/test/java/io/reactivex/netty/client/ConnectionPoolTest.java;<<<<<<< MINE
+        connection.close();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClient.java;<<<<<<< MINE
+     * eventLoopGroup for all the connections created by the newly created client instance.
+     *
+     * @param eventLoopGroup {@link EventLoopGroup} to use.
+     *
+     * @return A new {@link HttpClient} instance.
+     */
+    public abstract HttpClient<I, O> eventLoop(EventLoopGroup eventLoopGroup);
+
+    /**
+     * Creates a new client instances, inheriting all configurations from this client and using the passed
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/tcp/client/IdleConnectionsHolder.java;<<<<<<< MINE
+        metricEventsSubject.onEvent(ClientMetricsEvent.POOLED_CONNECTION_EVICTION);
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/DefaultChannelOperations.java;<<<<<<< MINE
+                flushObservable.add(writeFuture);
+            }
+        });
+    }
+
+    private Observable<Void> _writeAndFlush(final Object msg) {
+        return Observable.create(new OnSubscribe<Void>() {
+            @Override
+            public void call(final Subscriber<? super Void> subscriber) {
+                flushObservable.add(nettyChannel.write(msg)
+                                                .addListener(new ChannelFutureListener() {
+                                                    @Override
+                                                    public void operationComplete(ChannelFuture future)
+                                                            throws Exception {
+                                                        /**
+                                                         * The semantics here are that the error on this write
+                                                         * must only propagate to the subscriber.
+                                                         * This is why, the subscriber is not directly
+                                                         * subscribed to the flushObservable.
+                                                         * This code is propagating this write failure and
+                                                         * flushWithWriteObservable propagates completion.
+                                                         */
+                                                        if (!future.isSuccess()) {
+                                                            subscriber.onError(future.cause());
+                                                        }
+                                                    }
+                                                }));
+
+                /*
+                 * Flushes and connects completion to the subscriber. Error for this write is propagated via the
+                 * channel listener above.
+                 */
+                flushWithWriteObservable.subscribe(subscriber);
+            }
+        });
+    }
+
+    private Observable<Void> _writeAndFlushStream(final Observable<W> msg) {
+        return Observable.create(new OnSubscribe<Void>() {
+            @Override
+            public void call(final Subscriber<? super Void> subscriber) {
+                Observable<W> msgStream = msg.doOnTerminate(new Action0() {
+                    @Override
+                    public void call() {
+                        /*
+                         * Flushes and connects completion to the subscriber. Error for this write is propagated via the
+                         * channel listener below.
+                         */
+                        flushWithWriteObservable.subscribe(subscriber);
+                    }
+                });
+
+                flushObservable.add(nettyChannel.write(msgStream)
+                                                .addListener(new ChannelFutureListener() {
+                                                    @Override
+                                                    public void operationComplete(ChannelFuture future)
+                                                            throws Exception {
+                                                        /**
+                                                         * The semantics here are that the error on this write
+                                                         * must only propagate to the subscriber.
+                                                         * This is why, the subscriber is not directly
+                                                         * subscribed to the flushObservable.
+                                                         * This code is propagating this write failure and
+                                                         * flushWithWriteObservable propagates completion.
+                                                         */
+                                                        if (!future.isSuccess()) {
+                                                            subscriber.onError(future.cause());
+                                                        }
+                                                    }
+                                                }));
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/Connection.java;<<<<<<< MINE
+ * <h2>Backpressure</h2>
+ *
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+    if (binding instanceof SingletonBinding) throw new AssertionError();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/SetBinding.java;<<<<<<< MINE
+    setBinding.contributors.add(Linker.scope(binding));
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Loader.java;<<<<<<< MINE
+    }
+  };
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Loader.java;<<<<<<< MINE
+    } catch (InvocationTargetException e) {
+      throw new RuntimeException("Error while initializing " + name, e.getCause());
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+        Map<String, Binding<?>> addTo = moduleAdapter.overrides ? overrideBindings : baseBindings;
+        moduleAdapter.getBindings(addTo);
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/test/java/dagger/internal/TestingModuleAdapter.java;<<<<<<< MINE
+    this.moduleClass = moduleClass;
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/test/java/dagger/internal/TestingLoader.java;<<<<<<< MINE
+    adapter.module = (instance != null) ? instance : adapter.newModule();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/ModuleAdapterProcessor.java;<<<<<<< MINE
+    writer.emitEmptyLine();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+    writer.emitEmptyLine();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/GeneratorKeys.java;<<<<<<< MINE
+      if (qualifier != null) {
+        throw new IllegalArgumentException("Too many qualifier annotations on " + member);
+      }
+=======
+>>>>>>> YOURS

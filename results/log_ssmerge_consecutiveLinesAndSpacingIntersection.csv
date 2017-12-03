@@ -1,0 +1,26 @@
+revision;file;methodsignature;leftbody;basebody;rightbody
+/home/paper219/Desktop/analysis/demonstration//projects/bitcoinj/revisions/rev_29d996b_e990bcd/rev_29d996b-e990bcd;/src/com/google/bitcoin/core/Peer;startBlockChainDownload();public void startBlockChainDownload() throws IOException {
+        for (PeerEventListener listener : eventListeners) {
+            synchronized (listener) {
+                listener.onChainDownloadStarted(this, getPeerBlocksToGet());
+            };public CountDownLatch startBlockChainDownload() throws IOException {
+        // Chain will overflow signed int blocks in ~41,000 years.
+        int chainHeight = (int) conn.getVersionMessage().bestHeight;
+        if (chainHeight <= 0) {
+            // This should not happen because we shouldn't have given the user a Peer that is to another client-mode
+            // node. If that happens it means the user overrode us somewhere.
+            throw new  RuntimeException("Peer does not have block chain");;public CountDownLatch startBlockChainDownload() throws IOException {
+        // Chain will overflow signed int blocks in ~41,000 years.
+        int chainHeight = (int) conn.getVersionMessage().bestHeight;
+        if (chainHeight <= 0) {
+            // This should not happen because we shouldn't have given the user a Peer that is to another client-mode
+            // node. If that happens it means the user overrode us somewhere.
+            throw new RuntimeException("Peer does not have block chain");
+/home/paper219/Desktop/analysis/demonstration//projects/servo/revisions/rev_0537297_34bb99e/rev_0537297-34bb99e;/servo-core/src/main/java/com/netflix/servo/publish/CounterToRateMetricTransform;CounterToRateMetricTransform(MetricObserver,long,TimeUnit);@edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SE_BAD_FIELD_INNER_CLASS",
+            justification = "ignore that LinkedHashMap is serializable");@edu.umd.cs.findbugs.annotations.SuppressWarnings(value = "SE_BAD_FIELD_INNER_CLASS",
+            justification = "We don't use serialization - ignore that LinkedHashMap is serializable");@edu.umd.cs.findbugs.annotations.SuppressWarnings(
+        value = "SE_BAD_FIELD_INNER_CLASS",
+        justification = "We don't use serialization - ignore that LinkedHashMap is serializable")
+/home/paper219/Desktop/analysis/demonstration//projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056;/rx-netty/src/main/java/io/reactivex/netty/client/ClientChannelFactoryImpl;connect(Subscriber<?superObservableConnection<I,O>>,RxClient.ServerInfo,ClientConnectionFactory<I,O,?extendsObservableConnection<I,O>>);                                 final ClientConnectionFactory<I, O,? extends ObservableConnection<I, O>> connectionFactory) {
+        final long startTimeMillis = Clock.newStartTimeMillis();
+        eventsSubject.onEvent(ClientMetricsEvent.CONNECT_START);;                                 final ClientConnectionFactory<I, O,? extends ObservableConnection<I, O>> connectionFactory) {;                                 final ClientConnectionFactory<I, O, ? extends ObservableConnection<I, O>> connectionFactory) {

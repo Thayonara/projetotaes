@@ -1,0 +1,10 @@
+/home/paper219/Desktop/analysis/demonstration//projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639;/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Order;isComplete();;public boolean isComplete() {
+        return complete;
+    };public boolean isComplete() {
+    return complete;
+  }
+/home/paper219/Desktop/analysis/demonstration//projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639;/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Order;setComplete(boolean);;public void setComplete(boolean complete) {
+        this.complete = complete;
+    };public void setComplete(boolean complete) {
+    this.complete = complete;
+  }

@@ -1,0 +1,2824 @@
+file;ssmergeConf
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+
+        mRootView = (RelativeLayout) View.inflate(mContext,
+                R.layout.bb_bottom_bar_item_container, null);
+
+        mIsTabletMode = mRootView.findViewById(R.id.bb_tablet_right_border) != null;
+        mUserContentContainer = (FrameLayout) mRootView.findViewById(R.id.bb_user_content_container);
+        mItemContainer = (LinearLayout) mRootView.findViewById(R.id.bb_bottom_bar_item_container);
+
+        addView(mRootView, params);
+=======
+        mItemContainer = (LinearLayout) View.inflate(getContext(), R.layout.bb_bottom_bar_item_container, null);
+        addView(mItemContainer, params);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/BottomBar/revisions/rev_9f16fe4_dbbaa12/rev_9f16fe4-dbbaa12/bottom-bar/src/main/java/com/roughike/bottombar/BottomBar.java;<<<<<<< MINE
+private void init(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+        mContext = context;
+
+        mPrimaryColor = MiscUtils.getColor(mContext, R.attr.colorPrimary);
+        mInActiveColor = ContextCompat.getColor(mContext, R.color.bb_inActiveBottomBarItemColor);
+        mWhiteColor = ContextCompat.getColor(mContext, R.color.white);
+
+        mScreenWidth = MiscUtils.getScreenWidth(mContext);
+        mTwoDp = MiscUtils.dpToPixel(mContext, 2);
+        mTenDp = MiscUtils.dpToPixel(mContext, 10);
+        mMaxFixedItemWidth = MiscUtils.dpToPixel(mContext, 168);
+
+        initializeViews();
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_52d21ee_0cd5aaf/rev_52d21ee-0cd5aaf/modules/swagger-oauth2-auth-server/src/main/scala/com/wordnik/swagger/auth/service/TokenScope.java;<<<<<<< MINE
+public static Long getUsername() {
+    return (Long)userThreadLocal.get();
+  }
+=======
+public static String getUsername() {
+    return (String)userThreadLocal.get();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_fd6c7c7_935aedc/rev_fd6c7c7-935aedc/modules/swagger-core/src/main/java/com/wordnik/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+public Model resolve(JavaType type) {
+    final BeanDescription beanDesc = _mapper.getSerializationConfig().introspect(type);
+    
+    // Couple of possibilities for defining
+    String name = _typeName(type, beanDesc);
+    if("Object".equals(name)) {
+	    return new ModelImpl();
+    }
+    
+    if(type.isMapLikeType()) {
+      return null;
+    }
+
+    // if processed already, return it or return null
+    if(processedInnerTypes.contains(name))
+      return innerTypes.get(name);
+
+    // avoid recursion on failures
+    processedInnerTypes.add(name);
+
+    ModelImpl model = new ModelImpl()
+      .name(name)
+      .description(_description(beanDesc.getClassInfo()));
+
+    // if XmlRootElement annotation, construct an Xml object and attach it to the model
+    XmlRootElement rootAnnotation = beanDesc.getClassAnnotations().get(XmlRootElement.class);
+    if(rootAnnotation != null && rootAnnotation.name() != null && !"".equals(rootAnnotation.name())) {
+      Xml xml = new Xml()
+        .name(rootAnnotation.name());
+      if(rootAnnotation.namespace() != null && !"".equals(rootAnnotation.namespace()) && !"##default".equals(rootAnnotation.namespace()))
+        xml.namespace(rootAnnotation.namespace());
+      model.xml(xml);
+    }
+
+    ApiModel apiModel = beanDesc.getClassAnnotations().get(ApiModel.class);
+    // TODO
+    if (apiModel != null) {
+      if(apiModel.value() != null && !"".equals(apiModel.value())) {
+        name = apiModel.value();
+        model.setName(name);
+      }
+      Class<?> parent = apiModel.parent();
+      if (parent != Void.class) {
+        // model.setBaseModel(_typeName(_mapper.constructType(parent)));
+      }
+    }
+
+    String disc = (apiModel == null) ? "" : apiModel.discriminator();
+    if (disc.isEmpty()) {
+      // longer method would involve AnnotationIntrospector.findTypeResolver(...) but:
+      JsonTypeInfo typeInfo = beanDesc.getClassAnnotations().get(JsonTypeInfo.class);
+      if (typeInfo != null) {
+        disc = typeInfo.property();
+      }
+    }
+    if (!disc.isEmpty()) {
+      model.setDiscriminator(disc);
+    }
+
+    List<Property> props = new ArrayList<Property>();
+    for (BeanPropertyDefinition propDef : beanDesc.findProperties()) {
+      Property property = null;
+      String propName = propDef.getName();
+
+      PropertyMetadata md = propDef.getMetadata();
+
+      final AnnotatedMember member = propDef.getPrimaryMember();
+      if(member != null) {
+        JavaType propType = member.getType(beanDesc.bindingsForBeanType());
+        property = resolveProperty(propType);
+
+        if(property != null) {
+          property.setName(propName);
+
+          Boolean required = md.getRequired();
+          if(required != null)
+            property.setRequired(required);
+
+          String description = _intr.findPropertyDescription(member);
+          if(description != null && !"".equals(description))
+            property.setDescription(description);
+
+          Integer index = _intr.findPropertyIndex(member);
+          if (index != null) {
+            property.setPosition(index);
+          }
+          property.setExample(_findExampleValue(member));
+
+          if(property != null) {
+            // check for XML annotations
+            XmlElementWrapper wrapper = member.getAnnotation(XmlElementWrapper.class);
+
+            if(wrapper != null) {
+              Xml xml = new Xml();
+              xml.setWrapped(true);
+
+              if(wrapper.name() != null && !"".equals(wrapper.name()))
+                xml.setName(wrapper.name());
+              if(wrapper.namespace() != null && !"".equals(wrapper.namespace()) && !"##default".equals(wrapper.namespace()))
+                xml.setNamespace(wrapper.namespace());
+
+              property.setXml(xml);
+            }
+
+            XmlElement element = member.getAnnotation(XmlElement.class);
+            if(element != null) {
+              if(element.name() != null && !"".equals(element.name())) {
+                Xml xml = property.getXml();
+                if(xml == null) {
+                  xml = new Xml();
+                  property.setXml(xml);
+                }
+                xml.setName(element.name());
+              }
+            }
+          }
+
+          props.add(property);
+          // model.property(propName, property);
+        }
+      }
+    }
+
+
+    List<NamedType> nts = _intr.findSubtypes(beanDesc.getClassInfo());
+    if (nts != null) {
+      ArrayList<String> subtypeNames = new ArrayList<String>();
+      for (NamedType subtype : nts) {
+        Model subtypeModel = resolve(subtype.getType());
+
+        if(subtypeModel instanceof ModelImpl && subtypeModel != null) {
+          ModelImpl impl = (ModelImpl) subtypeModel;
+
+          // remove shared properties defined in the parent
+          if(model.getProperties() != null) {
+            for(String propertyName : model.getProperties().keySet()) {
+              if(impl.getProperties().containsKey(propertyName)) {
+                impl.getProperties().remove(propertyName);
+              }
+            }
+          }
+
+          impl.setDiscriminator(null);
+          innerTypes.put(impl.getName(), new ComposedModel()
+            .parent(new RefModel(name))
+            .child(impl));
+        }
+      }
+    }
+
+    Collections.sort(props, getPropertyComparator());
+
+    Map<String, Property> modelProps = new LinkedHashMap<String, Property>();
+    for (Property prop : props) {
+      modelProps.put(prop.getName(), prop);
+    }
+    model.setProperties(modelProps);
+    innerTypes.put(name, model);
+    return model;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-jersey2-guice/src/main/java/com/wordnik/swagger/sample/SwaggerExampleGuiceContextListener.java;<<<<<<< MINE
+=======
+@Override
+    protected Injector getInjector() {
+        return Guice.createInjector(new ServletModule() {
+            @Override
+            protected void configureServlets() {
+                bind(ServletContainer.class).in(Singleton.class);
+                bind(ApiOriginFilter.class).in(Singleton.class);
+
+                Map<String, String> props = new HashMap<String, String>();
+                props.put("javax.ws.rs.Application", Application.class.getName());
+                props.put("jersey.config.server.wadl.disableWadl", "true");
+                serve("/api/*").with(ServletContainer.class, props);
+
+                ReflectiveJaxrsScanner scanner = new ReflectiveJaxrsScanner();
+                scanner.setResourcePackage(getClass().getPackage().getName());
+                ScannerFactory.setScanner(scanner);
+                SwaggerConfig config = ConfigFactory.config();
+                config.setApiVersion("1.0.0");
+
+                String basePath = "http://localhost:8002/api";
+                if (System.getProperties().contains("swagger.basePath")) {
+                    basePath = System.getProperty("swagger.basePath");
+                }
+                config.setBasePath(basePath);
+                ConfigFactory.setConfig(config);
+
+                FilterFactory.setFilter(new ApiAuthorizationFilterImpl());
+                ScannerFactory.setScanner(new DefaultJaxrsScanner());
+                ClassReaders.setReader(new DefaultJaxrsApiReader());
+
+                bootstrap();
+
+                filter("/*").through(ApiOriginFilter.class);
+            }
+        });
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-jersey2-guice/src/main/java/com/wordnik/swagger/sample/SwaggerExampleGuiceContextListener.java;<<<<<<< MINE
+=======
+private void bootstrap() {
+        FilterFactory.setFilter(new CustomFilter());
+
+        ApiInfo info = new ApiInfo(
+                "Swagger Sample App",                             /* title */
+                "This is a sample server Petstore server.  You can find out more about Swagger " +
+                        "at <a href=\"http://swagger.io\">http://swagger.io</a> or on irc.freenode.net, #swagger.  For this sample, " +
+                        "you can use the api key \"special-key\" to test the authorization filters",
+                "http://helloreverb.com/terms/",                  /* TOS URL */
+                "apiteam@wordnik.com",                            /* Contact */
+                "Apache 2.0",                                     /* license */
+                "http://www.apache.org/licenses/LICENSE-2.0.html" /* license URL */
+        );
+
+        List<AuthorizationScope> scopes = new ArrayList<AuthorizationScope>();
+        scopes.add(new AuthorizationScope("email", "Access to your email address"));
+        scopes.add(new AuthorizationScope("pets", "Access to your pets"));
+
+
+        List<GrantType> grantTypes = new ArrayList<GrantType>();
+
+        ImplicitGrant implicitGrant = new ImplicitGrant(
+                new LoginEndpoint("http://localhost:8002/oauth/dialog"),
+                "access_code");
+
+        grantTypes.add(implicitGrant);
+
+        AuthorizationType oauth = new OAuthBuilder().scopes(scopes).grantTypes(grantTypes).build();
+
+        //  ConfigFactory.config().addAuthorization(oauth);
+        ConfigFactory.config().setApiInfo(info);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-play2/app/controllers/BaseApiController.java;<<<<<<< MINE
+=======
+public static Result JsonResponse(Object obj, int code) {
+        StringWriter w = new StringWriter();
+        try {
+            mapper.writeValue(w, obj);
+        } catch (Exception e) {
+            // TODO: handle proper return code
+            e.printStackTrace();
+        }
+
+        response().setContentType("application/json");
+        response().setHeader("Access-Control-Allow-Origin", "*");
+        response().setHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT");
+        response().setHeader("Access-Control-Allow-Headers", "Content-Type, api_key, Authorization");
+
+        return status(code, w.toString());
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-jaxrs-no-annotations/src/main/java/com/wordnik/swagger/sample/resource/PetStoreResource.java;<<<<<<< MINE
+=======
+@DELETE
+  @Path("/order/{orderId}")
+  public Response deleteOrder(@PathParam("orderId") String orderId) {
+    storeData.deleteOrder(ru.getLong(0, 10000, 0, orderId));
+    return Response.ok().entity("").build();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-jaxrs-no-annotations/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java;<<<<<<< MINE
+=======
+@GET
+  @Path("/{petId}")
+  public Response getPetById(@PathParam("petId") String petId)
+      throws NotFoundException {
+    Pet pet = petData.getPetbyId(ru.getLong(0, 100000, 0, petId));
+    if (null != pet) {
+      return Response.ok().entity(pet).build();
+    } else {
+      throw new NotFoundException(404, "Pet not found");
+    }
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/samples/java-jaxrs-no-annotations/src/main/java/com/wordnik/swagger/sample/resource/PetResource.java;<<<<<<< MINE
+=======
+@GET
+  @Path("/findByStatus")
+  public Response findPetsByStatus(@QueryParam("status") String status) {
+    return Response.ok(petData.findPetByStatus(status)).build();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-resteasy/src/main/java/com/wordnik/swagger/sample/PetStoreApplication.java;<<<<<<< MINE
+@Override
+    public Set<Class<?>> getClasses() {
+        HashSet<Class<?>> set = new HashSet<Class<?>>();
+
+        set.add(PetResource.class);
+        set.add(UserResource.class);
+        set.add(PetStoreResource.class);
+
+        set.add(com.wordnik.swagger.jaxrs.listing.ApiListingResource.class);
+        set.add(com.wordnik.swagger.jaxrs.listing.SwaggerSerializers.class);
+
+        return set;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-resteasy/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isOperationAllowed(Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if(isAuthorized) {
+      return true;
+    }
+    else {
+      if(!"GET".equalsIgnoreCase(api.getMethod()) || api.getPath().indexOf("/store") != -1) {
+        return false;
+      }
+      else return true;
+    }
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-resteasy/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isParamAllowed(Parameter parameter, Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if("internal".equals(parameter.getAccess()) && !isAuthorized)
+      return false;
+    else
+      return true;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-jersey-spring/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isOperationAllowed(Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if(isAuthorized) {
+      return true;
+    }
+    else {
+      if(!"GET".equalsIgnoreCase(api.getMethod()) || api.getPath().indexOf("/store") != -1) {
+        return false;
+      }
+      else return true;
+    }
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-jersey-spring/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isParamAllowed(Parameter parameter, Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if("internal".equals(parameter.getAccess()) && !isAuthorized)
+      return false;
+    else 
+      return true;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-jaxrs-wink/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isOperationAllowed(Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if(isAuthorized) {
+      return true;
+    }
+    else {
+      if(!"GET".equalsIgnoreCase(api.getMethod()) || api.getPath().indexOf("/store") != -1) {
+        return false;
+      }
+      else return true;
+    }
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-jaxrs-wink/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isParamAllowed(Parameter parameter, Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if("internal".equals(parameter.getAccess()) && !isAuthorized)
+      return false;
+    else
+      return true;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-jaxrs-wink/src/main/java/com/wordnik/swagger/sample/resources/ResourceConfiguration.java;<<<<<<< MINE
+@Override
+    public Set<Class<?>> getClasses() {
+        Set<Class<?>> classes = new HashSet<Class<?>>();
+
+        classes.add(com.wordnik.swagger.jaxrs.listing.ApiListingResource.class);
+        classes.add(com.wordnik.swagger.jaxrs.listing.SwaggerSerializers.class);
+
+        addRestResources(classes);
+
+        return classes;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Pet.java;<<<<<<< MINE
+@XmlElement(name = "name")
+  @ApiModelProperty(example = "doggie", required = true)
+  public String getName() {
+    return name;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Pet.java;<<<<<<< MINE
+@XmlElementWrapper(name = "photoUrls")
+  @XmlElement(name = "photoUrl", required = true)
+  public List<String> getPhotoUrls() {
+    return photoUrls;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Order.java;<<<<<<< MINE
+public boolean isComplete() {
+    return complete;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/model/Order.java;<<<<<<< MINE
+public void setComplete(boolean complete) {
+    this.complete = complete;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/data/PetData.java;<<<<<<< MINE
+public Pet addPet(Pet pet) {
+    if(pet.getId() == 0) {
+      long maxId = 0;
+      for (int i = pets.size() - 1; i >= 0; i--) {
+        if(pets.get(i).getId() > maxId) {
+          maxId = pets.get(i).getId();
+        }
+      }
+      pet.setId(maxId + 1);
+    }
+    if (pets.size() > 0) {
+      for (int i = pets.size() - 1; i >= 0; i--) {
+        if (pets.get(i).getId() == pet.getId()) {
+          pets.remove(i);
+        }
+      }
+    }
+    pets.add(pet);
+    return pet;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-mule/src/main/java/com/wordnik/swagger/sample/data/StoreData.java;<<<<<<< MINE
+public Order placeOrder(Order order) {
+    if (orders.size() > 0) {
+      for (int i = orders.size() - 1; i >= 0; i--) {
+        if (orders.get(i).getId() == order.getId()) {
+          orders.remove(i);
+        }
+      }
+    }
+    orders.add(order);
+    return order;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-resteasy-spring/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isOperationAllowed(Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if(isAuthorized) {
+      return true;
+    }
+    else {
+      if(!"GET".equalsIgnoreCase(api.getMethod()) || api.getPath().indexOf("/store") != -1) {
+        return false;
+      }
+      else return true;
+    }
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_7222e10_ee0b639/rev_7222e10-ee0b639/samples/java-resteasy-spring/src/main/java/com/wordnik/swagger/sample/util/ApiAuthorizationFilterImpl.java;<<<<<<< MINE
+public boolean isParamAllowed(Parameter parameter, Operation operation, ApiDescription api, Map<String, List<String>> params, Map<String, String> cookies, Map<String, List<String>> headers) {
+    boolean isAuthorized = checkKey(params, headers);
+    if("internal".equals(parameter.getAccess()) && !isAuthorized)
+      return false;
+    else
+      return true;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_4cc76fb_66d9203/rev_4cc76fb-66d9203/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/ParameterProcessor.java;<<<<<<< MINE
+public AnnotationsHelper(Annotation[] annotations) {
+      for (Annotation item : annotations) {
+        if (item instanceof Context) {
+          context = true;
+        } else if (item instanceof ApiParam) {
+          apiParam = new ApiParamWrapper((ApiParam) item);
+        } else if (item instanceof ApiImplicitParam) {
+          apiParam = new ApiImplicitParamWrapper((ApiImplicitParam) item);
+        }
+      }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_4cc76fb_66d9203/rev_4cc76fb-66d9203/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/ParameterProcessor.java;<<<<<<< MINE
+public static Parameter applyAnnotations(Swagger swagger, Parameter parameter, Class<?> cls, Annotation[] annotations, boolean isArray) {
+    final AnnotationsHelper helper = new AnnotationsHelper(annotations);
+    if (helper.isContext()) {
+      return null;
+    }
+    final ParamWrapper<?> param = helper.getApiParam();
+    if (parameter instanceof AbstractSerializableParameter) {
+      final AbstractSerializableParameter<?> p = (AbstractSerializableParameter<?>) parameter;
+
+      if (param.isRequired()) {
+        p.setRequired(true);
+      }
+      if (StringUtils.isNotEmpty(param.getName())) {
+        p.setName(param.getName());
+      }
+      if (StringUtils.isNotEmpty(param.getDescription())) {
+        p.setDescription(param.getDescription());
+      }
+      if (StringUtils.isNotEmpty(param.getAccess())) {
+        p.setAccess(param.getAccess());
+      }
+      if( StringUtils.isNotEmpty(param.getDataType()) ){
+         p.setType(param.getDataType());
+      }
+
+      AllowableValues allowableValues = null;
+      if (StringUtils.isNotEmpty(param.getAllowableValues())) {
+        allowableValues = AllowableRangeValues.create(param.getAllowableValues());
+        if (allowableValues == null) {
+          allowableValues = AllowableEnumValues.create(param.getAllowableValues());
+        }
+      }
+
+      final String defaultValue = param.getDefaultValue();
+      if (param.isAllowMultiple() || isArray) {
+        final Map<PropertyBuilder.PropertyId, Object> args = new EnumMap<PropertyBuilder.PropertyId, Object>(PropertyBuilder.PropertyId.class);
+        if (!defaultValue.isEmpty()) {
+          args.put(PropertyBuilder.PropertyId.DEFAULT, defaultValue);
+        }
+        if (allowableValues != null) {
+          processAllowedValues(allowableValues, true, args);
+        }
+
+        p.items(PropertyBuilder.build(p.getType(), p.getFormat(), args))
+          .type(ArrayProperty.TYPE)
+          .format(null)
+          .collectionFormat("multi");
+      } else {
+        if (!defaultValue.isEmpty()) {
+          p.setDefaultValue(defaultValue);
+        }
+        if (allowableValues != null) {
+          processAllowedValues(allowableValues, false, p);
+        }
+      }
+    } else {
+      // must be a body param
+      BodyParameter bp = new BodyParameter();
+      bp.setRequired(param.isRequired());
+      bp.setName(StringUtils.isNotEmpty(param.getName()) ? param.getName() : "body");
+      if (StringUtils.isNotEmpty(param.getDescription())) {
+        bp.setDescription(param.getDescription());
+      }
+
+      if(cls.isArray() || isArray) {
+        final Class<?> innerType;
+        if(isArray) {// array has already been detected
+          innerType = cls;
+        } else {
+          innerType = cls.getComponentType();
+        }
+        Property innerProperty = ModelConverters.getInstance().readAsProperty(innerType);
+        if(innerProperty == null) {
+          Map<String, Model> models = ModelConverters.getInstance().read(innerType);
+          if(models.size() > 0) {
+            for(String name: models.keySet()) {
+              if(name.indexOf("java.util") == -1) {
+                bp.setSchema(
+                  new ArrayModel().items(new RefProperty().asDefault(name)));
+                if(swagger != null)
+                  swagger.addDefinition(name, models.get(name));
+              }
+            }
+          }
+          models = ModelConverters.getInstance().readAll(innerType);
+          if(swagger != null) {
+            for(String key : models.keySet()) {
+              swagger.model(key, models.get(key));
+            }
+          }
+        }
+        else {
+          LOGGER.debug("found inner property " + innerProperty);
+          bp.setSchema(new ArrayModel().items(innerProperty));
+
+          // creation of ref property doesn't add model to definitions - do it now instead
+          if( innerProperty instanceof RefProperty && swagger != null) {
+              Map<String, Model> models = ModelConverters.getInstance().read(innerType);
+              String name = ((RefProperty)innerProperty).getSimpleRef();
+              swagger.addDefinition(name, models.get(name));
+
+            LOGGER.debug("added model definition for RefProperty " + name);
+          }
+        }
+      }
+      else {
+        Map<String, Model> models = ModelConverters.getInstance().read(cls);
+        if(models.size() > 0) {
+          for(String name: models.keySet()) {
+            if(name.indexOf("java.util") == -1) {
+              if(isArray)
+                bp.setSchema(new ArrayModel().items(new RefProperty().asDefault(name)));
+              else
+                bp.setSchema(new RefModel().asDefault(name));
+              if(swagger != null)
+                swagger.addDefinition(name, models.get(name));
+            }
+          }
+          models = ModelConverters.getInstance().readAll(cls);
+          if(swagger != null) {
+            for(String key : models.keySet()) {
+              swagger.model(key, models.get(key));
+            }
+          }
+        }
+        else {
+          Property prop = ModelConverters.getInstance().readAsProperty(cls);
+          if(prop != null) {
+            ModelImpl model = new ModelImpl();
+            model.setType(prop.getType());
+            model.setFormat(prop.getFormat());
+            model.setDescription(prop.getDescription());
+            bp.setSchema(model);
+          }
+        }
+      }
+      parameter = bp;
+    }
+    return parameter;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_fbc78e9_3b06d82/rev_fbc78e9-3b06d82/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java;<<<<<<< MINE
+    return parseMethod(method, Collections.<Parameter> emptyList());
+=======
+    Operation operation = new Operation();
+
+    ApiOperation apiOperation = getAnnotation(method, ApiOperation.class);
+    ApiResponses responseAnnotation = getAnnotation(method, ApiResponses.class);
+
+    String operationId = method.getName();
+    String responseContainer = null;
+
+    Type responseType = null;
+    Map<String,Property> defaultResponseHeaders = new HashMap<String, Property>();
+
+    if(apiOperation != null) {
+      if(apiOperation.hidden())
+        return null;
+      if(!"".equals(apiOperation.nickname()))
+        operationId = method.getName();
+
+      defaultResponseHeaders = parseResponseHeaders(apiOperation.responseHeaders());
+
+      operation
+        .summary(apiOperation.value())
+        .description(apiOperation.notes());
+
+      if(apiOperation.response() != null && !isVoid(apiOperation.response()))
+        responseType = apiOperation.response();
+      if(!"".equals(apiOperation.responseContainer()))
+        responseContainer = apiOperation.responseContainer();
+      if(apiOperation.authorizations()!= null) {
+        List<SecurityRequirement> securities = new ArrayList<SecurityRequirement>();
+        for(Authorization auth : apiOperation.authorizations()) {
+          if(auth.value() != null && !"".equals(auth.value())) {
+            SecurityRequirement security = new SecurityRequirement();
+            security.setName(auth.value());
+            AuthorizationScope[] scopes = auth.scopes();
+            for(AuthorizationScope scope : scopes) {
+              if(scope.scope() != null && !"".equals(scope.scope())) {
+                security.addScope(scope.scope());
+              }
+            }
+            securities.add(security);
+          }
+        }
+        if(securities.size() > 0) {
+          for(SecurityRequirement sec : securities)
+            operation.security(sec);
+        }
+      }
+      if (apiOperation.consumes() != null && !apiOperation.consumes().isEmpty()) {
+        operation.consumes(apiOperation.consumes());
+      }
+      if (apiOperation.produces() != null && !apiOperation.produces().isEmpty()) {
+        operation.produces(apiOperation.produces());
+      }
+    }
+
+    if( apiOperation != null && StringUtils.isNotEmpty( apiOperation.responseReference() )){
+      Response response = new Response().description(SUCCESSFUL_OPERATION);
+      response.schema( new RefProperty( apiOperation.responseReference() ));
+      operation.addResponse(String.valueOf(apiOperation.code()), response);
+    }
+    else if(responseType == null) {
+      // pick out response from method declaration
+      LOGGER.debug("picking up response class from method " + method);
+      responseType = method.getGenericReturnType();
+    }
+    if(isValidResponse(responseType)) {
+      final Property property = ModelConverters.getInstance().readAsProperty(responseType);
+      if (property != null) {
+        final Property responseProperty = ContainerWrapper.wrapContainer(responseContainer, property);
+        final int responseCode = apiOperation == null ? 200 : apiOperation.code();
+        operation.response(responseCode, new Response().description(SUCCESSFUL_OPERATION).schema(responseProperty)
+            .headers(defaultResponseHeaders));
+        appendModels(responseType);
+      }
+    }
+
+    operation.operationId(operationId);
+
+    Annotation annotation;
+    if (apiOperation != null && apiOperation.consumes() != null && apiOperation.consumes().isEmpty()) {
+      annotation = getAnnotation(method, Consumes.class);
+      if(annotation != null) {
+        String[] apiConsumes = ((Consumes)annotation).value();
+        for(String mediaType: apiConsumes)
+          operation.consumes(mediaType);
+      }
+    }
+
+    if (apiOperation != null && apiOperation.produces() != null && apiOperation.produces().isEmpty()) {
+      annotation = getAnnotation(method, Produces.class);
+      if(annotation != null) {
+        String[] apiProduces = ((Produces)annotation).value();
+        for(String mediaType: apiProduces)
+          operation.produces(mediaType);
+      }
+    }
+
+    List<ApiResponse> apiResponses = new ArrayList<ApiResponse>();
+    if(responseAnnotation != null) {
+      for(ApiResponse apiResponse: responseAnnotation.value()) {
+        Map<String,Property> responseHeaders = parseResponseHeaders(apiResponse.responseHeaders());
+
+        Response response = new Response()
+          .description(apiResponse.message())
+          .headers(responseHeaders);
+
+        if(apiResponse.code() == 0)
+          operation.defaultResponse(response);
+        else
+          operation.response(apiResponse.code(), response);
+
+        if( StringUtils.isNotEmpty( apiResponse.reference() )){
+          response.schema( new RefProperty( apiResponse.reference() ));
+        } else if (!isVoid(apiResponse.response())) {
+          responseType = apiResponse.response();
+          final Property property = ModelConverters.getInstance().readAsProperty(responseType);
+          if (property != null) {
+            response.schema(ContainerWrapper.wrapContainer(apiResponse.responseContainer(), property));
+            appendModels(responseType);
+          }
+        }
+      }
+    }
+    boolean isDeprecated = false;
+    annotation = method.getAnnotation(Deprecated.class);
+    if(annotation != null)
+      isDeprecated = true;
+
+    boolean hidden = false;
+    if(apiOperation != null)
+      hidden = apiOperation.hidden();
+
+    // process parameters
+    Type[] genericParameterTypes = method.getGenericParameterTypes();
+    Annotation[][] paramAnnotations = method.getParameterAnnotations();
+    for(int i = 0; i < genericParameterTypes.length; i++) {
+      Type type = genericParameterTypes[i];
+      List<Parameter> parameters = getParameters(type,Arrays.asList(paramAnnotations[i]));
+
+      for(Parameter parameter : parameters) {
+        operation.parameter(parameter);
+      }
+    }
+
+    if(operation.getResponses() == null) {
+      Response response = new Response().description(SUCCESSFUL_OPERATION);
+      operation.defaultResponse(response);
+    }
+    return operation;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_71a04d0_06cfbe1/rev_71a04d0-06cfbe1/modules/swagger-models/src/main/java/com/wordnik/swagger/models/properties/PropertyBuilder.java;<<<<<<< MINE
+public static Property build(String type, String format, Map<PropertyId, Object> args) {
+    if(args == null) {
+      args = Collections.emptyMap();
+    }
+
+    List<String> _enum = PropertyId.ENUM.findValue(args);
+    String title = PropertyId.TITLE.findValue(args);
+    String description = PropertyId.DESCRIPTION.findValue(args);
+    String _default = PropertyId.DEFAULT.findValue(args);
+    String pattern = PropertyId.PATTERN.findValue(args);
+    Integer minLength = PropertyId.MIN_LENGTH.findValue(args);
+    Integer maxLength = PropertyId.MAX_LENGTH.findValue(args);
+    Double minimum = PropertyId.MINIMUM.findValue(args);
+    Double maximum = PropertyId.MAXIMUM.findValue(args);
+    Boolean exclusiveMinimum = PropertyId.EXCLUSIVE_MINIMUM.findValue(args);
+    Boolean exclusiveMaximum = PropertyId.EXCLUSIVE_MAXIMUM.findValue(args);
+
+    AbstractProperty property = null;
+    if(BooleanProperty.isType(type, format)) {
+      property = new BooleanProperty()
+        ._default(_default);
+    }
+    if(DateProperty.isType(type, format))
+      property = new DateProperty();
+    if(DateTimeProperty.isType(type, format))
+      property = new DateTimeProperty();
+    if(DoubleProperty.isType(type, format)) {
+      property = new DoubleProperty()
+        ._default(_default)
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    }
+    if(FloatProperty.isType(type, format)) {
+      property = new FloatProperty()
+        ._default(_default)
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    }
+    if(FileProperty.isType(type, format)) {
+      property = new FileProperty();
+    }
+    if(DecimalProperty.isType(type, format))
+      property = new DecimalProperty()
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    if(IntegerProperty.isType(type, format)) {
+      property = new IntegerProperty()
+        ._default(_default)
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    }
+    if(LongProperty.isType(type, format)) {
+      property = new LongProperty()
+        ._default(_default)
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    }
+    if(RefProperty.isType(type, format))
+      property = new RefProperty();
+    if(EmailProperty.isType(type, format))
+      property = new EmailProperty()
+        .minLength(minLength)
+        .maxLength(maxLength)
+        .pattern(pattern)
+        ._enum(_enum);
+    if(StringProperty.isType(type, format)) {
+      property = new StringProperty()
+        ._default(_default)
+        .minLength(minLength)
+        .maxLength(maxLength)
+        .pattern(pattern)
+        ._enum(_enum);
+    }
+    if(UUIDProperty.isType(type, format)) {
+      property = new UUIDProperty()
+        ._default(_default)
+        .minLength(minLength)
+        .maxLength(maxLength)
+        .pattern(pattern);
+    }
+    if(ByteArrayProperty.isType(type, format)){
+        property = new ByteArrayProperty();
+    }
+    // general properties
+    if(property != null) {
+      property
+        .title(title)
+        .description(description);
+      String example = PropertyId.EXAMPLE.findValue (args);
+      if (example != null) {
+        property.setExample(example);
+      }
+    }
+    // fallbacks
+    if("integer".equals(type) && format == null) {
+        // fall back to Integer if type is integer and format is missing
+      LOGGER.debug("no format specified for integer type, falling back to int32");
+      property = new IntegerProperty()
+        ._default(_default)
+        .minimum(minimum)
+        .maximum(maximum)
+        .exclusiveMinimum(exclusiveMinimum)
+        .exclusiveMaximum(exclusiveMaximum);
+    }
+    if(ObjectProperty.isType(type) && format == null) {
+        // fall back to Map if type is object and format is missing
+      LOGGER.debug("no format specified for object type, falling back to object");
+      property = new ObjectProperty();
+    }    
+    if(property == null)
+      LOGGER.debug("no property for " + type + ", " + format);
+    return property;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_71a04d0_06cfbe1/rev_71a04d0-06cfbe1/modules/swagger-models/src/main/java/com/wordnik/swagger/models/properties/StringProperty.java;<<<<<<< MINE
+public static boolean isType(String type, String format) {
+    boolean formatMatchStringType = "uri".equals(format) || "url".equals(format);
+    if("string".equals(type) && (format == null || formatMatchStringType))
+      return true;
+    else return false;
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_47535a5_5a3f677/rev_47535a5-5a3f677/modules/swagger-jaxrs/src/test/scala/resources/ResourceWithConfigAndExtensions.java;<<<<<<< MINE
+@ApiOperation(value = "test.", tags = {"tagwithextensions", "mytag", "testingtag"}, extensions = {
+            @Extension(properties = @ExtensionProperty(name = "test", value = "value"))
+    })
+    @GET
+    public void getTest(@ApiParam(value = "test") ArrayList<String> tenantId) {
+        return;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_500c792_efd7ef6/rev_500c792-efd7ef6/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java;<<<<<<< MINE
+        Api api = (Api) cls.getAnnotation(Api.class);
+        Map<String, SecurityScope> globalScopes = new HashMap<String, SecurityScope>();
+
+        Map<String, Tag> tags = new HashMap<String, Tag>();
+        List<SecurityRequirement> securities = new ArrayList<SecurityRequirement>();
+
+        String[] consumes = new String[0];
+        String[] produces = new String[0];
+        final Set<Scheme> globalSchemes = EnumSet.noneOf(Scheme.class);
+
+        // only read if allowing hidden apis OR api is not marked as hidden
+        final boolean readable = (api != null && readHidden) || (api != null && !api.hidden());
+        if (readable) {
+            // the value will be used as a tag for 2.0 UNLESS a Tags annotation is present
+            Set<String> tagStrings = extractTags(api);
+            for (String tagString : tagStrings) {
+                Tag tag = new Tag().name(tagString);
+                tags.put(tagString, tag);
+            }
+            if (parentTags != null) {
+                tags.putAll(parentTags);
+            }
+            for (String tagName : tags.keySet()) {
+                swagger.tag(tags.get(tagName));
+            }
+
+            if (!api.produces().isEmpty()) {
+                produces = new String[]{api.produces()};
+            } else if (cls.getAnnotation(Produces.class) != null) {
+                produces = ((Produces) cls.getAnnotation(Produces.class)).value();
+            }
+            if (!api.consumes().isEmpty()) {
+                consumes = new String[]{api.consumes()};
+            } else if (cls.getAnnotation(Consumes.class) != null) {
+                consumes = ((Consumes) cls.getAnnotation(Consumes.class)).value();
+            }
+            globalSchemes.addAll(parseSchemes(api.protocols()));
+            Authorization[] authorizations = api.authorizations();
+
+            for (Authorization auth : authorizations) {
+                if (auth.value() != null && !"".equals(auth.value())) {
+                    SecurityRequirement security = new SecurityRequirement();
+                    security.setName(auth.value());
+                    AuthorizationScope[] scopes = auth.scopes();
+                    for (AuthorizationScope scope : scopes) {
+                        if (scope.scope() != null && !"".equals(scope.scope())) {
+                            security.addScope(scope.scope());
+                        }
+                    }
+                    securities.add(security);
+                }
+            }
+        }
+
+        // allow reading the JAX-RS APIs without @Api annotation
+        if (readable || (api == null && config.isScanAllResources())) {
+            // merge consumes, produces
+
+            // look for method-level annotated properties
+
+            // handle sub-resources by looking at return type
+
+            final List<Parameter> globalParameters = new ArrayList<Parameter>();
+
+            // look for constructor-level annotated properties
+            globalParameters.addAll(ReaderUtils.collectConstructorParameters(cls, swagger));
+
+            // look for field-level annotated properties
+            globalParameters.addAll(ReaderUtils.collectFieldParameters(cls, swagger));
+
+            // parse the method
+            final javax.ws.rs.Path apiPath = cls.getAnnotation(javax.ws.rs.Path.class);
+            Method methods[] = cls.getMethods();
+            for (Method method : methods) {
+                if (ReflectionUtils.isOverriddenMethod(method, cls)) {
+                    continue;
+                }
+                javax.ws.rs.Path methodPath = ReflectionUtils.getAnnotation(method, javax.ws.rs.Path.class);
+
+                String operationPath = getPath(apiPath, methodPath, parentPath);
+                Map<String, String> regexMap = new HashMap<String, String>();
+                operationPath = PathUtils.parsePath(operationPath, regexMap);
+                if (operationPath != null) {
+                    if (isIgnored(operationPath)) {
+                        continue;
+                    }
+
+                    final ApiOperation apiOperation = ReflectionUtils.getAnnotation(method, ApiOperation.class);
+                    String httpMethod = extractOperationMethod(apiOperation, method, SwaggerExtensions.chain());
+
+                    Operation operation = null;
+                    if(apiOperation != null || config.isScanAllResources() || httpMethod != null || methodPath != null) { 
+                        operation = parseMethod(cls, method, globalParameters);
+                    }
+                    if (operation == null) {
+                        continue;
+                    }
+                    if (parentParameters != null) {
+                        for (Parameter param : parentParameters) {
+                            operation.parameter(param);
+                        }
+                    }
+                    for (Parameter param : operation.getParameters()) {
+                        if (regexMap.get(param.getName()) != null) {
+                            String pattern = regexMap.get(param.getName());
+                            param.setPattern(pattern);
+                        }
+                    }
+
+                    if (apiOperation != null) {
+                        for (Scheme scheme : parseSchemes(apiOperation.protocols())) {
+                            operation.scheme(scheme);
+                        }
+                    }
+
+                    if (operation.getSchemes() == null || operation.getSchemes().isEmpty()) {
+                        for (Scheme scheme : globalSchemes) {
+                            operation.scheme(scheme);
+                        }
+                    }
+
+                    String[] apiConsumes = consumes;
+                    if (parentConsumes != null) {
+                        Set<String> both = new HashSet<String>(Arrays.asList(apiConsumes));
+                        both.addAll(new HashSet<String>(Arrays.asList(parentConsumes)));
+                        if (operation.getConsumes() != null) {
+                            both.addAll(new HashSet<String>(operation.getConsumes()));
+                        }
+                        apiConsumes = both.toArray(new String[both.size()]);
+                    }
+
+                    String[] apiProduces = produces;
+                    if (parentProduces != null) {
+                        Set<String> both = new HashSet<String>(Arrays.asList(apiProduces));
+                        both.addAll(new HashSet<String>(Arrays.asList(parentProduces)));
+                        if (operation.getProduces() != null) {
+                            both.addAll(new HashSet<String>(operation.getProduces()));
+                        }
+                        apiProduces = both.toArray(new String[both.size()]);
+                    }
+                    final Class<?> subResource = getSubResource(method);
+                    if (subResource != null) {
+                        read(subResource, operationPath, httpMethod, true, apiConsumes, apiProduces, tags, operation.getParameters());
+                    }
+
+                    // can't continue without a valid http method
+                    httpMethod = httpMethod == null ? parentMethod : httpMethod;
+                    if (httpMethod != null) {
+                        if (apiOperation != null) {
+                            boolean hasExplicitTag = false;
+                            for (String tag : apiOperation.tags()) {
+                                if (!"".equals(tag)) {
+                                    operation.tag(tag);
+                                    swagger.tag(new Tag().name(tag));
+                                }
+                            }
+
+                            if (operation != null) {
+                                addExtensionProperties(apiOperation.extensions(), operation.getVendorExtensions());
+                            }
+                        }
+                        if (operation != null) {
+                            if (operation.getConsumes() == null) {
+                                for (String mediaType : apiConsumes) {
+                                    operation.consumes(mediaType);
+                                }
+                            }
+                            if (operation.getProduces() == null) {
+                                for (String mediaType : apiProduces) {
+                                    operation.produces(mediaType);
+                                }
+                            }
+
+                            if (operation.getTags() == null) {
+                                for (String tagString : tags.keySet()) {
+                                    operation.tag(tagString);
+                                }
+                            }
+                            // Only add global @Api securities if operation doesn't already have more specific securities
+                            if (operation.getSecurity() == null) {
+                                for (SecurityRequirement security : securities) {
+                                    operation.security(security);
+                                }
+                            }
+
+                            Path path = swagger.getPath(operationPath);
+                            if (path == null) {
+                                path = new Path();
+                                swagger.path(operationPath, path);
+                            }
+                            path.set(httpMethod, operation);
+
+                            readImplicitParameters(method, operation);
+                        }
+                    }
+                }
+            }
+        }
+
+        return swagger;
+=======
+        return read(cls, parentPath, parentMethod, readHidden, parentConsumes, parentProduces, parentTags, parentParameters, new HashSet<Class<?>>());
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_6de2d16_6f801c0/rev_6de2d16-6f801c0/modules/swagger-models/src/main/java/io/swagger/models/Operation.java;<<<<<<< MINE
+@Override
+    public String toString() {
+        return super.toString() + "[" + operationId + "]";
+    }
+=======
+@Override
+	public String toString() {
+		return super.toString() + "[" + operationId + "]";
+	}
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_c7ef057_c69228b/rev_c7ef057-c69228b/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java;<<<<<<< MINE
+private Operation parseMethod(Class<?> cls, Method method, List<Parameter> globalParameters) {
+        Operation operation = new Operation();
+
+        ApiOperation apiOperation = ReflectionUtils.getAnnotation(method, ApiOperation.class);
+        ApiResponses responseAnnotation = ReflectionUtils.getAnnotation(method, ApiResponses.class);
+
+        String operationId = method.getName();
+        String responseContainer = null;
+
+        Type responseType = null;
+        Map<String, Property> defaultResponseHeaders = new HashMap<String, Property>();
+
+        if (apiOperation != null) {
+            if (apiOperation.hidden()) {
+                return null;
+            }
+            if (!"".equals(apiOperation.nickname())) {
+                operationId = apiOperation.nickname();
+            }
+
+            defaultResponseHeaders = parseResponseHeaders(apiOperation.responseHeaders());
+
+            operation
+                    .summary(apiOperation.value())
+                    .description(apiOperation.notes());
+
+            if (apiOperation.response() != null && !isVoid(apiOperation.response())) {
+                responseType = apiOperation.response();
+            }
+            if (!"".equals(apiOperation.responseContainer())) {
+                responseContainer = apiOperation.responseContainer();
+            }
+            if (apiOperation.authorizations() != null) {
+                List<SecurityRequirement> securities = new ArrayList<SecurityRequirement>();
+                for (Authorization auth : apiOperation.authorizations()) {
+                    if (auth.value() != null && !"".equals(auth.value())) {
+                        SecurityRequirement security = new SecurityRequirement();
+                        security.setName(auth.value());
+                        AuthorizationScope[] scopes = auth.scopes();
+                        for (AuthorizationScope scope : scopes) {
+                            if (scope.scope() != null && !"".equals(scope.scope())) {
+                                security.addScope(scope.scope());
+                            }
+                        }
+                        securities.add(security);
+                    }
+                }
+                if (securities.size() > 0) {
+                    for (SecurityRequirement sec : securities) {
+                        operation.security(sec);
+                    }
+                }
+            }
+            if (apiOperation.consumes() != null && !apiOperation.consumes().isEmpty()) {
+                String[] consumesAr = ReaderUtils.splitContentValues(new String[] {apiOperation.consumes()});
+                for (String consume: consumesAr) {
+                    operation.consumes(consume);
+                }
+            }
+            if (apiOperation.produces() != null && !apiOperation.produces().isEmpty()) {
+                String[] producesAr = ReaderUtils.splitContentValues(new String[] {apiOperation.produces()});
+                for (String produce: producesAr) {
+                    operation.produces(produce);
+                }
+            }
+        }
+
+        if (apiOperation != null && StringUtils.isNotEmpty(apiOperation.responseReference())) {
+            Response response = new Response().description(SUCCESSFUL_OPERATION);
+            response.schema(new RefProperty(apiOperation.responseReference()));
+            operation.addResponse(String.valueOf(apiOperation.code()), response);
+        } else if (responseType == null) {
+            // pick out response from method declaration
+            LOGGER.debug("picking up response class from method " + method);
+            responseType = method.getGenericReturnType();
+        }
+        if (isValidResponse(responseType)) {
+            final Property property = ModelConverters.getInstance().readAsProperty(responseType);
+            if (property != null) {
+                final Property responseProperty = ContainerWrapper.wrapContainer(responseContainer, property);
+                final int responseCode = apiOperation == null ? 200 : apiOperation.code();
+                operation.response(responseCode, new Response().description(SUCCESSFUL_OPERATION).schema(responseProperty)
+                        .headers(defaultResponseHeaders));
+                appendModels(responseType);
+            }
+        }
+
+        operation.operationId(operationId);
+
+        if (operation.getConsumes() == null || operation.getConsumes().isEmpty()) {
+            final Consumes consumes = ReflectionUtils.getAnnotation(method, Consumes.class);
+            if (consumes != null) {
+                for (String mediaType : ReaderUtils.splitContentValues(consumes.value())) {
+                    operation.consumes(mediaType);
+                }
+            }
+        }
+
+        if (operation.getProduces() == null || operation.getProduces().isEmpty()) {
+            final Produces produces = ReflectionUtils.getAnnotation(method, Produces.class);
+            if (produces != null) {
+                for (String mediaType : ReaderUtils.splitContentValues(produces.value())) {
+                    operation.produces(mediaType);
+                }
+            }
+        }
+
+        List<ApiResponse> apiResponses = new ArrayList<ApiResponse>();
+        if (responseAnnotation != null) {
+            apiResponses.addAll(Arrays.asList(responseAnnotation.value()));
+        }
+
+        Class<?>[] exceptionTypes = method.getExceptionTypes();
+        for (Class<?> exceptionType : exceptionTypes) {
+            ApiResponses exceptionResponses = ReflectionUtils.getAnnotation(exceptionType, ApiResponses.class);
+            if (exceptionResponses != null) {
+                apiResponses.addAll(Arrays.asList(exceptionResponses.value()));
+            }
+        }
+
+        for (ApiResponse apiResponse : apiResponses) {
+            Map<String, Property> responseHeaders = parseResponseHeaders(apiResponse.responseHeaders());
+
+            Response response = new Response()
+                    .description(apiResponse.message())
+                    .headers(responseHeaders);
+
+            if (apiResponse.code() == 0) {
+                operation.defaultResponse(response);
+            } else {
+                operation.response(apiResponse.code(), response);
+            }
+
+            if (StringUtils.isNotEmpty(apiResponse.reference())) {
+                response.schema(new RefProperty(apiResponse.reference()));
+            } else if (!isVoid(apiResponse.response())) {
+                responseType = apiResponse.response();
+                final Property property = ModelConverters.getInstance().readAsProperty(responseType);
+                if (property != null) {
+                    response.schema(ContainerWrapper.wrapContainer(apiResponse.responseContainer(), property));
+                    appendModels(responseType);
+                }
+            }
+        }
+        if (ReflectionUtils.getAnnotation(method, Deprecated.class) != null) {
+            operation.setDeprecated(true);
+        }
+
+        // process parameters
+        for (Parameter globalParameter : globalParameters) {
+            operation.parameter(globalParameter);
+        }
+
+        Type[] genericParameterTypes = method.getGenericParameterTypes();
+        Annotation[][] paramAnnotations = method.getParameterAnnotations();
+        for (int i = 0; i < genericParameterTypes.length; i++) {
+            final Type type = TypeFactory.defaultInstance().constructType(genericParameterTypes[i], cls);
+            List<Parameter> parameters = getParameters(type, Arrays.asList(paramAnnotations[i]));
+
+            for (Parameter parameter : parameters) {
+                operation.parameter(parameter);
+            }
+        }
+
+        if (operation.getResponses() == null) {
+            Response response = new Response().description(SUCCESSFUL_OPERATION);
+            operation.defaultResponse(response);
+        }
+        return operation;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_24eb6a9_4e7a777/rev_24eb6a9-4e7a777/modules/swagger-core/src/main/java/io/swagger/util/ParameterProcessor.java;<<<<<<< MINE
+public AnnotationsHelper(List<Annotation> annotations) {
+            String rsDefault = null;
+            for (Annotation item : annotations) {
+                if ("javax.ws.rs.core.Context".equals(item.annotationType().getName())) {
+                    context = true;
+                } else if (item instanceof ApiParam) {
+                    apiParam = new ApiParamWrapper((ApiParam) item);
+                } else if (item instanceof ApiImplicitParam) {
+                    apiParam = new ApiImplicitParamWrapper((ApiImplicitParam) item);
+                } else if ("javax.ws.rs.DefaultValue".equals(item.annotationType().getName())) {
+                    try {
+                        rsDefault = (String) item.getClass().getMethod("value").invoke(item);
+                    } catch (Exception ex) {
+                        LOGGER.error("Invocation of value method failed", ex);
+                    }
+                } else if (item instanceof Size) {
+                    final Size size = (Size) item;
+                    minItems = size.min();
+                    maxItems = size.max();
+                } else if (item instanceof NotNull) {
+                    required = true;
+                } else if (item instanceof Min) {
+                    min = ((Min)item).value();
+                } else if (item instanceof Max) {
+                    max = ((Max)item).value();
+                }
+            }
+            defaultValue = StringUtils.isNotEmpty(apiParam.getDefaultValue()) ? apiParam.getDefaultValue() : rsDefault;
+            type = StringUtils.isNotEmpty(apiParam.getType()) ? apiParam.getType() : null;
+            format = StringUtils.isNotEmpty(apiParam.getFormat()) ? apiParam.getFormat() : null;
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_29d996b_e990bcd/rev_29d996b-e990bcd/src/com/google/bitcoin/core/Peer.java;<<<<<<< MINE
+public void startBlockChainDownload() throws IOException {
+        for (PeerEventListener listener : eventListeners) {
+            synchronized (listener) {
+                listener.onChainDownloadStarted(this, getPeerBlocksToGet());
+            }
+=======
+public CountDownLatch startBlockChainDownload() throws IOException {
+        // Chain will overflow signed int blocks in ~41,000 years.
+        int chainHeight = (int) conn.getVersionMessage().bestHeight;
+        if (chainHeight <= 0) {
+            // This should not happen because we shouldn't have given the user a Peer that is to another client-mode
+            // node. If that happens it means the user overrode us somewhere.
+            throw new RuntimeException("Peer does not have block chain");
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_29d996b_e990bcd/rev_29d996b-e990bcd/src/com/google/bitcoin/core/Peer.java;<<<<<<< MINE
+
+        if (getPeerBlocksToGet() > 0) {
+=======
+        int blocksToGet = chainHeight - blockChain.getChainHead().getHeight();
+        if (blocksToGet < 0) {
+            // This peer has fewer blocks than we do. It isn't usable.
+            // TODO: We can't do the right thing here until Mirons patch lands. For now just return a zero latch.
+            return new CountDownLatch(0);
+        }
+        chainCompletionLatch = new CountDownLatch(blocksToGet);
+        if (blocksToGet > 0) {
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/AlertMessage.java;<<<<<<< MINE
+@Override
+    void parse() throws ProtocolException {
+        // Alerts are formatted in two levels. The top level contains two byte arrays: a signature, and a serialized
+        // data structure containing the actual alert data.
+        int startPos = cursor;
+        content = readByteArray();
+        signature = readByteArray();
+        // Now we need to parse out the contents of the embedded structure. Rewind back to the start of the message.
+        cursor = startPos;
+        readVarInt();  // Skip the length field on the content array.
+        // We're inside the embedded structure.
+        version = readUint32();
+        // Read the timestamps. Bitcoin uses seconds since the epoch.
+        relayUntil = new Date(readUint64().longValue() * 1000);
+        expiration = new Date(readUint64().longValue() * 1000);
+        id = readUint32();
+        cancel = readUint32();
+        // Sets are serialized as <len><item><item><item>....
+        long cancelSetSize = readVarInt();
+        if (cancelSetSize < 0 || cancelSetSize > MAX_SET_SIZE) {
+            throw new ProtocolException("Bad cancel set size: " + cancelSetSize);
+        }
+        // Using a hashset here is very inefficient given that this will normally be only one item. But Java doesn't
+        // make it easy to do better. What we really want is just an array-backed set.
+        cancelSet = new HashSet<Long>((int)cancelSetSize);
+        for (long i = 0; i < cancelSetSize; i++) {
+            cancelSet.add(readUint32());
+        }
+        minVer = readUint32();
+        maxVer = readUint32();
+        // Read the subver matching set.
+        long subverSetSize = readVarInt();
+        if (subverSetSize < 0 || subverSetSize > MAX_SET_SIZE) {
+            throw new ProtocolException("Bad subver set size: " + subverSetSize);
+        }
+        matchingSubVers = new HashSet<String>((int)subverSetSize);
+        for (long i = 0; i < subverSetSize; i++) {
+            matchingSubVers.add(readStr());
+        }
+        priority = readUint32();
+        comment = readStr();
+        statusBar = readStr();
+        reserved = readStr();
+
+        length = cursor - offset;
+    }
+=======
+@Override
+    void parse() throws ProtocolException {
+        // Alerts are formatted in two levels. The top level contains two byte arrays: a signature, and a serialized
+        // data structure containing the actual alert data.
+        int startPos = cursor;
+        content = readByteArray();
+        signature = readByteArray();
+        // Now we need to parse out the contents of the embedded structure. Rewind back to the start of the message.
+        cursor = startPos;
+        readVarInt();  // Skip the length field on the content array.
+        // We're inside the embedded structure.
+        version = readUint32();
+        // Read the timestamps. Bitcoin uses seconds since the epoch.
+        relayUntil = new Date(readUint64().longValue() * 1000);
+        expiration = new Date(readUint64().longValue() * 1000);
+        id = readUint32();
+        cancel = readUint32();
+        // Sets are serialized as <len><item><item><item>....
+        long cancelSetSize = readVarInt();
+        if (cancelSetSize < 0 || cancelSetSize > MAX_SET_SIZE) {
+            throw new ProtocolException("Bad cancel set size: " + cancelSetSize);
+        }
+        // Using a hashset here is very inefficient given that this will normally be only one item. But Java doesn't
+        // make it easy to do better. What we really want is just an array-backed set.
+        cancelSet = new HashSet<Long>((int)cancelSetSize);
+        for (long i = 0; i < cancelSetSize; i++) {
+            cancelSet.add(readUint32());
+        }
+        minVer = readUint32();
+        maxVer = readUint32();
+        // Read the subver matching set.
+        long subverSetSize = readVarInt();
+        if (subverSetSize < 0 || subverSetSize > MAX_SET_SIZE) {
+            throw new ProtocolException("Bad subver set size: " + subverSetSize);
+        }
+        matchingSubVers = new HashSet<String>((int)subverSetSize);
+        for (long i = 0; i < subverSetSize; i++) {
+            matchingSubVers.add(readStr());
+        }
+        priority = readUint32();
+        comment = readStr();
+        statusBar = readStr();
+        reserved = readStr();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_4f20749_ae32b4c/rev_4f20749-ae32b4c/src/main/java/org/junit/contrib/truth/subjects/Subject.java;<<<<<<< MINE
+=======
+public Subject<T> is(Object other) {
+
+    if (getSubject() == null) { 
+      if(other != null) {
+        fail("is", other);
+      }
+    } else {
+      if (!getSubject().equals(other)) {
+        fail("is", other);
+      }
+    }
+    return this;
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_4f20749_ae32b4c/rev_4f20749-ae32b4c/src/test/java/org/junit/contrib/truth/IntegerTest.java;<<<<<<< MINE
+@Test public void addition() {
+    ASSERT.that(2 + 2).is(4).and().isBetween(3, 5);
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_78dc0b2_e299b19/rev_78dc0b2-e299b19/src/main/java/com/netflix/servo/jmx/DefaultMonitorRegistry.java;<<<<<<< MINE
+public static MonitorRegistry getInstance() {
+        return INSTANCE;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_d976c7e_8244a00/rev_d976c7e-8244a00/src/main/java/org/junit/contrib/truth/subjects/IntSubject.java;<<<<<<< MINE
+public And<IntSubject> isInclusivelyInRange(int lower, int upper) {
+    if (lower > upper) {
+      throw new IllegalArgumentException(String.format(
+          RANGE_BOUNDS_OUT_OF_ORDER_MSG, lower, upper));
+    }
+    if (!(lower <= getSubject() && getSubject() <= upper)) {
+      fail("is inclusively in range", lower, upper);
+    }
+    return nextChain();
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_d976c7e_8244a00/rev_d976c7e-8244a00/src/main/java/org/junit/contrib/truth/subjects/IntSubject.java;<<<<<<< MINE
+public And<IntSubject> isBetween(int lower, int upper) {
+    if (lower > upper) {
+      throw new IllegalArgumentException(String.format(
+          RANGE_BOUNDS_OUT_OF_ORDER_MSG, lower, upper));
+    }
+    if (!(lower < getSubject() && getSubject() < upper)) {
+      fail("is in between", lower, upper);
+    }
+    return nextChain();
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/MemoryMetricObserver.java;<<<<<<< MINE
+=======
+public List<List<Metric>> getObservations() {
+        ImmutableList.Builder<List<Metric>> builder = ImmutableList.builder();
+        int pos = mNext;
+        for (int i = 0; i < mObservations.length; ++i) {
+            if (mObservations[pos] != null) {
+                builder.add(mObservations[pos]);
+            }
+            pos = (pos + 1) % mObservations.length;
+        }
+        return builder.build();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/AsyncMetricObserver.java;<<<<<<< MINE
+=======
+public AsyncMetricObserver(String name, MetricObserver observer) {
+        this(name, observer, Integer.MAX_VALUE, Long.MAX_VALUE);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/AsyncMetricObserver.java;<<<<<<< MINE
+=======
+public AsyncMetricObserver(String name, MetricObserver observer, int queueSize) {
+        this(name, observer, queueSize, Long.MAX_VALUE);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/AsyncMetricObserver.java;<<<<<<< MINE
+=======
+private void processUpdate() {
+        TimestampedUpdate update;
+        try {
+            update = updateQueue.take();
+
+            long cutoff = System.currentTimeMillis() - expireTime;
+            if (update.getTimestamp() < cutoff) {
+                expiredUpdateCount.incrementAndGet();
+                return;
+            }
+
+            wrappedObserver.update(update.getMetrics());
+        } catch (InterruptedException ie){
+            log.warn("Interrupted while adding to queue, update dropped");
+            failedUpdateCount.incrementAndGet();
+        } catch (Throwable t) {
+            log.warn("update failed for downstream queue", t);
+            failedUpdateCount.incrementAndGet();
+        } finally {
+            updateCount.incrementAndGet();
+        }
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/FileMetricObserver.java;<<<<<<< MINE
+=======
+public FileMetricObserver(String name, File dir) {
+        this(name, dir, String.format("'%s'_%s'.log'", name, FILE_DATE_FORMAT));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_7a765fc_e22534f/rev_7a765fc-e22534f/src/main/java/com/netflix/servo/publish/FileMetricObserver.java;<<<<<<< MINE
+=======
+public void update(List<Metric> metrics) {
+        Preconditions.checkNotNull(metrics);
+        File file = new File(dir, fileFormat.format(new Date()));
+        Writer out = null;
+        try {
+            LOGGER.debug("writing %d metrics to file %s", metrics.size(), file);
+            out = new FileWriter(file, true);
+            for (Metric m : metrics) {
+                String timestamp = isoFormat.format(new Date(m.timestamp()));
+                out.append(m.name()).append('\t')
+                   .append(m.tags().toString()).append('\t')
+                   .append(timestamp).append('\t')
+                   .append(m.value().toString()).append('\n');
+            }
+        } catch (IOException e) {
+            LOGGER.error("failed to write update to file " + file, e);
+        } finally {
+            Closeables.closeQuietly(out);
+        }
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_05a141c_0767b54/rev_05a141c-0767b54/src/main/java/org/junit/contrib/truth/subjects/IntegerSubject.java;<<<<<<< MINE
+=======
+public Subject<Long> isInclusivelyInRange(long lower, long upper) {
+    ensureOrderedBoundaries(lower, upper);
+    if (!(lower <= getSubject() && getSubject() <= upper)) {
+      fail("is inclusively in range", lower, upper);
+    }
+    return this;
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_05a141c_0767b54/rev_05a141c-0767b54/src/main/java/org/junit/contrib/truth/subjects/IntegerSubject.java;<<<<<<< MINE
+=======
+public Subject<Long> isBetween(long lower, long upper) {
+    ensureOrderedBoundaries(lower, upper);
+    if (!(lower < getSubject() && getSubject() < upper)) {
+      fail("is in between", lower, upper);
+    }
+    return this;
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_2319e19_08f3409/rev_2319e19-08f3409/src/main/java/com/netflix/servo/aws/AwsInjectableTag.java;<<<<<<< MINE
+private static String getUrlValue(String path) {
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(metaDataUrl + path);
+            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line  = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            while( ( line = reader.readLine() ) != null ) {
+                stringBuilder.append( line );
+                stringBuilder.append( ls );
+            }
+            return stringBuilder.toString();
+        } catch (Exception e) {
+            log.warn("", e);
+            return "uknown";
+        } finally {
+            Closeables.closeQuietly(reader);
+        }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_fc7c719_f23a28a/rev_fc7c719-f23a28a/servo-core/src/main/java/com/netflix/servo/aws/AwsInjectableTag.java;<<<<<<< MINE
+private static String getUrlValue(String path) {
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(metaDataUrl + path);
+            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line  = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            while( ( line = reader.readLine() ) != null ) {
+                stringBuilder.append( line );
+                stringBuilder.append( ls );
+            }
+            return stringBuilder.toString();
+        } catch (Exception e) {
+            log.warn("", e);
+            return "uknown";
+        } finally {
+            Closeables.closeQuietly(reader);
+        }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_9d94784_8f1681d/rev_9d94784-8f1681d/src/main/java/graphql/execution/ExecutionContextBuilder.java;<<<<<<< MINE
+public ExecutionContext build(GraphQLSchema graphQLSchema, ExecutionStrategy executionStrategy, Object root, Document document, String operationName, Map<String, Object> args) {
+        // preconditions
+        assertNotNull(executionId,"You must provide a query identifier");
+
+        Map<String, FragmentDefinition> fragmentsByName = new LinkedHashMap<String, FragmentDefinition>();
+        Map<String, OperationDefinition> operationsByName = new LinkedHashMap<String, OperationDefinition>();
+
+        for (Definition definition : document.getDefinitions()) {
+            if (definition instanceof OperationDefinition) {
+                OperationDefinition operationDefinition = (OperationDefinition) definition;
+                operationsByName.put(operationDefinition.getName(), operationDefinition);
+            }
+            if (definition instanceof FragmentDefinition) {
+                FragmentDefinition fragmentDefinition = (FragmentDefinition) definition;
+                fragmentsByName.put(fragmentDefinition.getName(), fragmentDefinition);
+            }
+        }
+        if (operationName == null && operationsByName.size() > 1) {
+            throw new GraphQLException("missing operation name");
+        }
+        OperationDefinition operation;
+
+        if (operationName == null) {
+            operation = operationsByName.values().iterator().next();
+        } else {
+            operation = operationsByName.get(operationName);
+        }
+        if (operation == null) {
+            throw new GraphQLException();
+        }
+
+        Map<String, Object> variableValues = valuesResolver.getVariableValues(graphQLSchema, operation.getVariableDefinitions(), args);
+
+        return new ExecutionContext(
+                graphQLSchema,
+                executionId,
+                executionStrategy,
+                fragmentsByName,
+                operation,
+                variableValues,
+                root);
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_9d94784_8f1681d/rev_9d94784-8f1681d/src/main/java/graphql/execution/Execution.java;<<<<<<< MINE
+=======
+public ExecutionResult execute(GraphQLSchema graphQLSchema, Object root, Document document, String operationName, Map<String, Object> args) {
+        ExecutionContextBuilder executionContextBuilder = new ExecutionContextBuilder(new ValuesResolver());
+        ExecutionContext executionContext = executionContextBuilder.build(graphQLSchema, queryStrategy, mutationStrategy, root, document, operationName, args);
+        return executeOperation(executionContext, root, executionContext.getOperationDefinition());
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_9d94784_8f1681d/rev_9d94784-8f1681d/src/main/java/graphql/execution/Execution.java;<<<<<<< MINE
+public Execution(ExecutionStrategy executionStrategy) {
+        this.strategy = executionStrategy == null ? new SimpleExecutionStrategy() : executionStrategy;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_d4097e9_a339c65/rev_d4097e9-a339c65/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+@SuppressWarnings("DeprecatedIsStillUsed")
+    public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy executionStrategy) {
+        this.graphQLSchema = graphQLSchema;
+        this.executionStrategy = executionStrategy;
+=======
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy) {
+        this(graphQLSchema, queryStrategy, null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/execution/ExecutionContextBuilder.java;<<<<<<< MINE
+public ExecutionContext build(GraphQLSchema graphQLSchema, ExecutionStrategy executionStrategy, Object root, Document document, String operationName, Map<String, Object> args) {
+        Map<String, FragmentDefinition> fragmentsByName = new LinkedHashMap<String, FragmentDefinition>();
+        Map<String, OperationDefinition> operationsByName = new LinkedHashMap<String, OperationDefinition>();
+
+        for (Definition definition : document.getDefinitions()) {
+            if (definition instanceof OperationDefinition) {
+                OperationDefinition operationDefinition = (OperationDefinition) definition;
+                operationsByName.put(operationDefinition.getName(), operationDefinition);
+            }
+            if (definition instanceof FragmentDefinition) {
+                FragmentDefinition fragmentDefinition = (FragmentDefinition) definition;
+                fragmentsByName.put(fragmentDefinition.getName(), fragmentDefinition);
+            }
+        }
+        if (operationName == null && operationsByName.size() > 1) {
+            throw new GraphQLException("missing operation name");
+        }
+        OperationDefinition operation;
+
+        if (operationName == null) {
+            operation = operationsByName.values().iterator().next();
+        } else {
+            operation = operationsByName.get(operationName);
+        }
+        if (operation == null) {
+            throw new GraphQLException();
+        }
+
+        ExecutionContext executionContext = new ExecutionContext(instrumentation);
+        executionContext.setGraphQLSchema(graphQLSchema);
+        executionContext.setExecutionStrategy(executionStrategy);
+        executionContext.setOperationDefinition(operation);
+        executionContext.setRoot(root);
+        executionContext.setFragmentsByName(fragmentsByName);
+        Map<String, Object> variableValues = valuesResolver.getVariableValues(graphQLSchema, operation.getVariableDefinitions(), args);
+        executionContext.setVariables(variableValues);
+        return executionContext;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/execution/Execution.java;<<<<<<< MINE
+public ExecutionResult execute(GraphQLSchema graphQLSchema, Object root, Document document, String operationName, Map<String, Object> args) {
+        ExecutionContextBuilder executionContextBuilder = new ExecutionContextBuilder(new ValuesResolver(),instrumentation);
+        ExecutionContext executionContext = executionContextBuilder.build(graphQLSchema, strategy, root, document, operationName, args);
+        return executeOperation(executionContext, root, executionContext.getOperationDefinition());
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy executionStrategy) {
+        this(graphQLSchema, executionStrategy, NoOpInstrumentation.INSTANCE);
+=======
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy) {
+        this(graphQLSchema, queryStrategy, null);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+
+        Execution execution = new Execution(executionStrategy, instrumentation);
+        ExecutionResult result = execution.execute(graphQLSchema, context, document, operationName, arguments);
+
+        executionCtx.onEnd(result);
+
+        return result;
+=======
+        ExecutionId executionId = idProvider.provide(requestString, operationName, context);
+
+        Execution execution = new Execution(queryStrategy, mutationStrategy);
+        return execution.execute(executionId, graphQLSchema, context, document, operationName, arguments);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_50fd10b_f493a19/rev_50fd10b-f493a19/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
+        this(graphQLSchema,queryStrategy,mutationStrategy,NoOpInstrumentation.INSTANCE);
+=======
+@SuppressWarnings("DeprecatedIsStillUsed")
+    public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
+        this.graphQLSchema = graphQLSchema;
+        this.queryStrategy = queryStrategy;
+        this.mutationStrategy = mutationStrategy;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_a48f27d_5e9f899/rev_a48f27d-5e9f899/src/main/java/graphql/GraphQL.java;<<<<<<< MINE
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
+        this(graphQLSchema,queryStrategy,mutationStrategy,NoOpInstrumentation.INSTANCE);
+=======
+public GraphQL(GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy) {
+        this(graphQLSchema,queryStrategy,mutationStrategy, DEFAULT_EXECUTION_ID_PROVIDER);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_4127d9b_c278bc7/rev_4127d9b-c278bc7/src/main/java/graphql/schema/PropertyDataFetcher.java;<<<<<<< MINE
+            if (isBooleanProperty(outputType)) {
+                try {
+                    return getPropertyViaGetterUsingPrefix(object, "is");
+                } catch (NoSuchMethodException e) {
+                    return getPropertyViaGetterUsingPrefix(object, "get");
+                }
+            } else {
+                return getPropertyViaGetterUsingPrefix(object, "get");
+            }
+        } catch (NoSuchMethodException e1) {
+            return getPropertyViaFieldAccess(object);
+=======
+            Method method = findAccessibleMethod(object.getClass(), getterName);
+            return method.invoke(object);
+
+        } catch (NoSuchMethodException e) {
+            return getFieldValue(object, outputType);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        } catch (InvocationTargetException e) {
+            throw new RuntimeException(e);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_0072285_3e63dc1/rev_0072285-3e63dc1/src/main/java/graphql/schema/idl/errors/NotAnOutputTypeError.java;<<<<<<< MINE
+public NotAnOutputTypeError(TypeDefinition typeDefinition) {
+        super(typeDefinition, format("expected OutputType, but found %s type %s", typeDefinition.getName(), lineCol(typeDefinition)));
+    }
+=======
+public NotAnOutputTypeError(TypeDefinition typeDefinition) {
+        super(typeDefinition, format("expected OutputType, but found %s type", typeDefinition.getName()));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_0072285_3e63dc1/rev_0072285-3e63dc1/src/main/java/graphql/schema/idl/errors/NotAnInputTypeError.java;<<<<<<< MINE
+public NotAnInputTypeError(TypeDefinition typeDefinition) {
+        super(typeDefinition, format("expected InputType, but found %s type %s", typeDefinition.getName(), lineCol(typeDefinition)));
+    }
+=======
+public NotAnInputTypeError(TypeDefinition typeDefinition) {
+        super(typeDefinition, format("expected InputType, but found %s type", typeDefinition.getName()));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_0145206_7481a4c/rev_0145206-7481a4c/openAPI/src/main/java/jetbrains/exodus/entitystore/PersistentEntityStoreConfig.java;<<<<<<< MINE
+        this(false);
+=======
+        //noinspection unchecked
+        super(new Pair[]{
+                new Pair(REFACTORING_NULL_INDICES, false),
+                new Pair(REFACTORING_BLOB_NULL_INDICES, false),
+                new Pair(REFACTORING_HEAVY_LINKS, false),
+                new Pair(REFACTORING_HEAVY_PROPS, false),
+                new Pair(REFACTORING_DELETE_REDUNDANT_BLOBS, false),
+                new Pair(MAX_IN_PLACE_BLOB_SIZE, 10000),
+                new Pair(CACHING_DISABLED, false),
+                new Pair(REORDERING_DISABLED, false),
+                new Pair(EXPLAIN_ON, false),
+                new Pair(UNIQUE_INDICES_USE_BTREE, false),
+                new Pair(DEBUG_LINK_DATA_GETTER, false),
+                new Pair(ENTITY_ITERABLE_CACHE_SIZE, defaultEntityIterableCacheSize()),
+                new Pair(ENTITY_ITERABLE_CACHE_THREAD_COUNT, Runtime.getRuntime().availableProcessors() > 3 ? 2 : 1),
+                new Pair(ENTITY_ITERABLE_CACHE_CACHING_TIMEOUT, 10000L),
+                new Pair(ENTITY_ITERABLE_CACHE_DEFERRED_DELAY, 2000),
+                new Pair(ENTITY_ITERABLE_CACHE_MAX_KEY_SIZE, 1024),
+                new Pair(ENTITY_ITERABLE_CACHE_MAX_SIZE_OF_DIRECT_VALUE, 512),
+                new Pair(TRANSACTION_PROPS_CACHE_SIZE, 1024),
+                new Pair(TRANSACTION_LINKS_CACHE_SIZE, 4096),
+                new Pair(TRANSACTION_BLOB_STRINGS_CACHE_SIZE, 128)
+        });
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_bad3ed8_210f741/rev_bad3ed8-210f741/openAPI/src/main/java/jetbrains/exodus/entitystore/PersistentEntityStoreConfig.java;<<<<<<< MINE
+=======
+private PersistentEntityStoreConfig(final boolean ignoreSystemProperties) {
+        //noinspection unchecked
+        super(new Pair[]{
+                new Pair(REFACTORING_SKIP_ALL, false),
+                new Pair(REFACTORING_NULL_INDICES, false),
+                new Pair(REFACTORING_BLOB_NULL_INDICES, false),
+                new Pair(REFACTORING_HEAVY_LINKS, false),
+                new Pair(REFACTORING_HEAVY_PROPS, false),
+                new Pair(REFACTORING_DELETE_REDUNDANT_BLOBS, false),
+                new Pair(MAX_IN_PLACE_BLOB_SIZE, 10000),
+                new Pair(CACHING_DISABLED, false),
+                new Pair(REORDERING_DISABLED, false),
+                new Pair(EXPLAIN_ON, false),
+                new Pair(UNIQUE_INDICES_USE_BTREE, false),
+                new Pair(DEBUG_LINK_DATA_GETTER, false),
+                new Pair(ENTITY_ITERABLE_CACHE_SIZE, defaultEntityIterableCacheSize()),
+                new Pair(ENTITY_ITERABLE_CACHE_THREAD_COUNT, Runtime.getRuntime().availableProcessors() > 3 ? 2 : 1),
+                new Pair(ENTITY_ITERABLE_CACHE_CACHING_TIMEOUT, 10000L),
+                new Pair(ENTITY_ITERABLE_CACHE_DEFERRED_DELAY, 2000),
+                new Pair(ENTITY_ITERABLE_CACHE_MAX_SIZE_OF_DIRECT_VALUE, 512),
+                new Pair(TRANSACTION_PROPS_CACHE_SIZE, 1024),
+                new Pair(TRANSACTION_LINKS_CACHE_SIZE, 4096),
+                new Pair(TRANSACTION_BLOB_STRINGS_CACHE_SIZE, 128)
+        }, ignoreSystemProperties);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/RequestWriter.java;<<<<<<< MINE
+Future<T> execute(R request, final RequestCompletionPromise requestCompletionPromise) {
+        ChannelPromise promise = channel.newPromise();
+        channel.writeAndFlush(request, promise).addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                if (!future.isSuccess()) {
+                    requestCompletionPromise.tryFailure(future.cause());
+                }
+            }
+        }).addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                handler.onChannelWriteOperationCompleted(future);
+            }
+        });
+        return new RequestWrittenPromise(channel, promise);
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+private <T> ConnectionPromise<T, HttpRequest> makeConnection(Bootstrap bootstrap, UriInfo uriInfo, final HttpProtocolHandler<T> handler, final Observer<? super ObservableHttpResponse<T>> observer) {
+        final ConnectionPromise<T, HttpRequest> connectionPromise = new ConnectionPromise<T, HttpRequest>(eventExecutor, handler);
+        bootstrap.connect(uriInfo.getHost(), uriInfo.getPort())
+        .addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                if (future.isSuccess()) {
+                    connectionPromise.onConnect(future.channel());
+                } else {
+                    connectionPromise.tryFailure(future.cause());
+                    observer.onError(future.cause());
+                }
+            }
+        }).addListener(new ChannelFutureListener() {
+            @Override
+            public void operationComplete(ChannelFuture future) throws Exception {
+                handler.onChannelConnectOperationCompleted(future);
+            }
+        });
+        return connectionPromise;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+public <T> Observable<ObservableHttpResponse<T>> execute(final ValidatedFullHttpRequest request, final HttpProtocolHandler<T> handler) {
+        tryUpdateUserAgent(request);
+
+        final ObservableHttpClient self = this;
+        return Observable.create(new Observable.OnSubscribeFunc<ObservableHttpResponse<T>>() {
+            @Override
+            public Subscription onSubscribe(Observer<? super ObservableHttpResponse<T>> observer) {
+                UriInfo uriInfo = request.getUriInfo();
+                Bootstrap bootstrap = createBootstrap(handler, observer);
+                final ConnectionPromise<T, HttpRequest> connectionPromise = makeConnection(bootstrap, uriInfo, handler, observer);
+
+                RequestCompletionPromise<T, HttpRequest> requestCompletionPromise = new RequestCompletionPromise<T, HttpRequest>(self.eventExecutor, connectionPromise);
+
+                GenericFutureListener<Future<RequestWriter<T, HttpRequest>>> listener = new ConnectionListener<T, HttpRequest>(connectionPromise, request, requestCompletionPromise);
+                connectionPromise.addListener(listener);
+
+                return Subscriptions.create(new Action0() {
+
+                    @Override
+                    public void call() {
+                        try {
+                            if (connectionPromise.channel() != null) {
+                                connectionPromise.channel().close().sync()
+                                        .addListener(new ChannelFutureListener() {                                            
+                                            @Override
+                                            public void operationComplete(ChannelFuture future) throws Exception {
+                                                handler.onChannelCloseOperationCompleted(future);    
+                                            }
+                                        });
+                            }
+                        } catch (InterruptedException e) {
+                            Thread.currentThread().interrupt();
+                            throw new RuntimeException("Failed to unsubscribe");
+                        }
+                    }
+                });
+            }
+        });
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+@Override
+        protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg)
+                throws Exception {
+            if (msg instanceof HttpResponse) {
+                HttpResponse response = (HttpResponse) msg;
+                subject = PublishSubject.<T> create();
+                final ObservableHttpResponse<T> httpResponse = new ObservableHttpResponse<T>(response, subject);
+                ChannelPipeline pipeLine = ctx.channel().pipeline();
+                ChannelHandler observerHandler = pipeLine.get("content-handler");
+                if (observerHandler == null) {
+                    pipeLine.addLast("content-handler", new HttpMessageObserver<T>(observer, httpResponse));
+                } else {
+                    pipeLine.replace(observerHandler, "content-handler", new HttpMessageObserver<T>(observer, httpResponse));
+                }
+                observer.onNext(httpResponse);
+            }
+            if (msg instanceof HttpContent) {
+                ((HttpContent) msg).content().retain();
+            }
+            ctx.fireChannelRead(msg);
+            if (msg instanceof LastHttpContent) {
+                subject.onCompleted();
+                observer.onCompleted();    
+            }
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+@Override
+        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause)
+                throws Exception {
+            if (subject != null) {
+                subject.onError(cause);
+            }
+            observer.onError(cause);
+        }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ObservableHttpClient.java;<<<<<<< MINE
+private <T> Bootstrap createBootstrap(final HttpProtocolHandler<T> handler, final Observer<? super ObservableHttpResponse<T>> observer) {
+
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap
+                .group(this.eventLoopGroup)
+                .handler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel ch) throws Exception {
+                        ch.pipeline()
+                                //.addLast("log", new LoggingHandler(LogLevel.INFO))
+                                .addLast("http-codec", new HttpClientCodec(maxInitialLineLength, maxHeaderSize, maxChunkSize))
+                                .addLast("http-response-decoder", new HttpObservableTracker<T>(handler, observer))
+                                // we need to add this to catch any exception before channel read happens and 
+                                // deliver the exception to the observer
+                                .addLast("content-handler", new HttpMessageObserver<T>(observer, null));
+                    }
+                })
+                .option(ChannelOption.TCP_NODELAY, true)
+                .channel(NioSocketChannel.class);
+
+        for (ChannelSetting setting : channelSettings) {
+            bootstrap.option(setting.getOption(), setting.getValue());
+        }
+
+        return bootstrap;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/HttpMessageObserver.java;<<<<<<< MINE
+public HttpMessageObserver(Observer<? super ObservableHttpResponse<T>> observer, ObservableHttpResponse<T> response) {
+        if (observer == null) {
+            throw new IllegalArgumentException("observer is null");
+        }
+        this.observer = observer;
+        this.response = response;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/HttpMessageObserver.java;<<<<<<< MINE
+@SuppressWarnings("unchecked")
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        if (response != null) {
+            response.contentObserver().onNext((T) msg);
+        }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/HttpMessageObserver.java;<<<<<<< MINE
+@Override
+    public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
+        if (response != null) {
+            response.contentObserver().onError(cause);
+        } else {
+            observer.onError(cause);
+        }
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8760480_a77e513/rev_8760480-a77e513/src/main/java/rx/netty/protocol/http/ConnectionPromise.java;<<<<<<< MINE
+void onConnect(Channel channel) {
+        this.executor = channel.eventLoop();
+        this.channel = channel;
+        handler.configure(channel.pipeline());
+        trySuccess(new RequestWriter<T, R>(channel, handler));
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+CompoundByteIteratorBase(@NotNull ByteIterator current) {
+        this.current = current;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+CompoundByteIteratorBase() {
+        this(ByteIterable.EMPTY_ITERATOR);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+@Override
+    public boolean hasNext() {
+        if (current == null) {
+            return false;
+        }
+        if (current.hasNext()) {
+            return true;
+        }
+        current = nextIterator();
+        return hasNext();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+@Override
+    public long skip(final long length) {
+        long skipped = 0;
+        while (current != null) {
+            skipped += current.skip(length - skipped);
+            if (skipped >= length || !hasNext()) {
+                break;
+            }
+        }
+        return skipped;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+@Override
+    public byte next() {
+        if (!hasNext()) {
+            onFail("CompoundByteIterator: no more bytes available");
+        }
+        //noinspection ConstantConditions
+        return current.next();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_b1b59d5_956e4bc/rev_b1b59d5-956e4bc/environment/src/main/java/jetbrains/exodus/log/CompoundByteIteratorBase.java;<<<<<<< MINE
+=======
+@NotNull
+    protected ByteIterator getCurrent() {
+        if (current == null) {
+            throw new ExodusException("Can't get current ByteIterator, hasNext() == false");
+        }
+        return current;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_e08ae6e_5b08af2/rev_e08ae6e-5b08af2/openAPI/src/main/java/jetbrains/exodus/util/SharedRandomAccessFile.java;<<<<<<< MINE
+=======
+public SharedRandomAccessFile(File file, String mode) throws FileNotFoundException {
+        super(file, mode);
+        this.file = file;
+        clients = new AtomicInteger();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_6212f9c_b8030b1/rev_6212f9c-b8030b1/openAPI/src/main/java/jetbrains/exodus/ByteIterator.java;<<<<<<< MINE
+long skip(long bytes);
+=======
+public abstract long skip(long length);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/server/ConnectionLifecycleHandler.java;<<<<<<< MINE
+        super.channelActive(ctx); // Called before connection handler call to finish the pipeline before the connection
+                                  // is handled.
+
+        Observable<Void> handledObservable;
+        try {
+            eventsSubject.onEvent(ServerMetricsEvent.CONNECTION_HANDLING_START, Clock.onEndMillis(startTimeMillis));
+            handledObservable = connectionHandler.handle(connection);
+        } catch (Throwable throwable) {
+            handledObservable = Observable.error(throwable);
+        }
+
+        if (null == handledObservable) {
+            handledObservable = Observable.empty();
+=======
+            handleConnection();
+        } else {
+            super.channelActive(ctx);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/server/ConnectionLifecycleHandler.java;<<<<<<< MINE
+
+        handledObservable.subscribe(new Subscriber<Void>() {
+            @Override
+            public void onCompleted() {
+                eventsSubject.onEvent(ServerMetricsEvent.CONNECTION_HANDLING_SUCCESS,
+                                      Clock.onEndMillis(startTimeMillis));
+                connection.close();
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                invokeErrorHandler(e);
+                eventsSubject.onEvent(ServerMetricsEvent.CONNECTION_HANDLING_FAILED,
+                                      Clock.onEndMillis(startTimeMillis), e);
+                connection.close();
+            }
+
+            @Override
+            public void onNext(Void aVoid) {
+                // No Op.
+            }
+        });
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_9a0e62f_5841056/rev_9a0e62f-5841056/rx-netty/src/main/java/io/reactivex/netty/channel/ObservableConnection.java;<<<<<<< MINE
+=======
+public ObservableConnection(final ChannelHandlerContext ctx) {
+        super(ctx);
+        inputSubject = PublishSubject.create();
+        ChannelHandlerContext firstContext = ctx.pipeline().firstContext();
+        firstContext.fireUserEventTriggered(new NewRxConnectionEvent(inputSubject));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+private CollaboratedReadInputSubscriber(final Channel channel, Subscriber<? super I> op) {
+        super(op);
+        this.channel = channel;
+
+        fireDrainOnRequestMoreTask = new Runnable() {
+            @Override
+            public void run() {
+                /*
+                 * The below code has to be run on the eventloop as there is a race between if(registered) and fire
+                 * event. On unregistration, the pipeline is cleared and hence the event will never propagate to the
+                 * handler.
+                 */
+                if (channel.isRegistered()) {
+                    //channel.pipeline().fireUserEventTriggered(DrainInputSubscriberBuffer.INSTANCE);
+                } else {
+                    //drain();
+                }
+
+                /*
+                 * Since, this operation has to be after the drain (to check if drain caused was sufficient for the
+                 * subscriber), it is done in this task.
+                 */
+                if (!channel.config().isAutoRead() && shouldReadMore()) {
+                    /*If the draining exhausted requested, then don't trigger read.*/
+                    channel.read();
+                }
+            }
+        };
+
+        original = op;
+        original.add(Subscriptions.create(new Action0() {
+            @Override
+            public void call() {
+                /* When unsubscribed, drain the buffer to discard buffered items */
+                channel.eventLoop().execute(fireDrainOnRequestMoreTask);
+            }
+        }));
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+@Override
+    public void onCompleted() {
+        if (terminated) {
+            return;
+        }
+        terminated = true;
+        original.onCompleted();
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+@Override
+    public void onError(Throwable e) {
+        if (terminated) {
+            return;
+        }
+        terminated = true;
+        original.onError(e);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+@Override
+    public void onNext(I item) {
+/*
+        if (terminated) {
+            ReferenceCountUtil.release(item); // discard item if no one is subscribed.
+        } else if (requested > 0) {
+            invokeOnNext(item);
+        } else {
+            if (channel.config().isAutoRead()) {
+                */
+/*
+                 * If auto-read was on then turn it off on buffer start as there is no reason to read and buffer data.
+                 * If, it is desired to not turn off auto-read then the downstream subscriber should request larger
+                 * number of items.
+                 *//*
+
+                channel.config().setAutoRead(false);
+            }
+            original.onError(new MissingBackpressureException("Received more data on the channel than demanded by the subscriber."));
+        }
+*/
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+public boolean shouldReadMore() {
+        return !terminated /*&& REQUEST_UPDATER.get(this) > 0*/;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+long getRequested() {
+        return 0;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/CollaboratedReadInputSubscriber.java;<<<<<<< MINE
+=======
+private void invokeOnNext(I item) {
+        original.onNext(item);
+        /*if (REQUEST_UPDATER.get(this) != Long.MAX_VALUE) {
+            REQUEST_UPDATER.decrementAndGet(this);
+        }*/
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_137dbfd_a5e8a92/rev_137dbfd-a5e8a92/rxnetty/src/main/java/io/reactivex/netty/protocol/http/client/internal/HttpClientToConnectionBridge.java;<<<<<<< MINE
+@Override
+    public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+        if (evt instanceof ConnectionReuseEvent) {
+            resetSubscriptionState(connectionInputSubscriber);
+            connectionInputSubscriber = null;
+        } else if (PooledConnectionReleaseEvent.INSTANCE == evt) {
+            onPooledConnectionRelease(connectionInputSubscriber);
+        }
+        super.userEventTriggered(ctx, evt);
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_be2a71b_752d772/rev_be2a71b-752d772/rxnetty-common/src/main/java/io/reactivex/netty/threads/RxJavaEventloopScheduler.java;<<<<<<< MINE
+@Override
+    public Worker createWorker() {
+        final EventLoop eventLoop = eventLoopGroup.next();
+        return new EventloopWorker(eventLoop);
+    }
+=======
+@Override
+    public Worker createWorker() {
+        final EventLoop eventLoop = eventLoopGroup.next();
+
+        return new Worker() {
+
+            private final SubscriptionList subs = new SubscriptionList();
+
+            @Override
+            public Subscription schedule(final Action0 action) {
+                if (isUnsubscribed()) {
+                    return Subscriptions.unsubscribed();
+                }
+
+                /*If already on the eventloop then execute the action, else schedule it on the eventloop*/
+                if (eventLoop.inEventLoop()) {
+                    action.call();
+                    return Subscriptions.empty();
+                } else {
+                    final Future<?> result = eventLoop.submit(new Runnable() {
+                        @Override
+                        public void run() {
+                            action.call();
+                        }
+                    });
+
+                    Subscription toReturn = fromFuture(result);
+                    subs.add(toReturn);
+                    return toReturn;
+                }
+            }
+
+            @Override
+            public Subscription schedule(final Action0 action, long delayTime, TimeUnit unit) {
+
+                if (delayTime <= 0) {
+                    return schedule(action);
+                }
+
+                if (isUnsubscribed()) {
+                    return Subscriptions.unsubscribed();
+                }
+
+                final Future<?> result = eventLoop.schedule(new Runnable() {
+                    @Override
+                    public void run() {
+                        action.call();
+                    }
+                }, delayTime, unit);
+
+                Subscription toReturn = fromFuture(result);
+                subs.add(toReturn);
+                return toReturn;
+            }
+
+            @Override
+            public void unsubscribe() {
+                subs.unsubscribe();
+            }
+
+            @Override
+            public boolean isUnsubscribed() {
+                return subs.isUnsubscribed();
+            }
+
+            private Subscription fromFuture(final Future<?> result) {
+                return Subscriptions.create(new Action0() {
+                    @Override
+                    public void call() {
+                        result.cancel(false);
+                    }
+                });
+            }
+        };
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_ede1926_2477211/rev_ede1926-2477211/compiler/src/main/java/dagger/internal/codegen/AtInjectBinding.java;<<<<<<< MINE
+static AtInjectBinding create(TypeElement type, boolean mustHaveInjections) {
+    List<String> requiredKeys = new ArrayList<String>();
+    boolean hasInjectConstructor = false;
+    boolean hasNoArgsConstructor = false;
+
+    for (Element enclosed : type.getEnclosedElements()) {
+      switch (enclosed.getKind()) {
+      case FIELD:
+        if (hasAtInject(enclosed) && !enclosed.getModifiers().contains(Modifier.STATIC)) {
+          // Attach the non-static fields of 'type'.
+          requiredKeys.add(GeneratorKeys.get((VariableElement) enclosed));
+        }
+        break;
+
+      case CONSTRUCTOR:
+        ExecutableElement constructor = (ExecutableElement) enclosed;
+        List<? extends VariableElement> parameters = constructor.getParameters();
+        if (hasAtInject(enclosed)) {
+          if (hasAtSingleton(enclosed)) {
+            throw new IllegalArgumentException("Singleton annotations have no effect on "
+                + "constructors. Did you mean to annotate the class? "
+                + type.getQualifiedName().toString());
+          }
+          if (hasInjectConstructor) {
+            throw new IllegalArgumentException("Too many injectable constructors on "
+                + type.getQualifiedName().toString());
+          }
+          hasInjectConstructor = true;
+          for (VariableElement parameter : parameters) {
+            requiredKeys.add(GeneratorKeys.get(parameter));
+          }
+        } else if (parameters.isEmpty()) {
+          hasNoArgsConstructor = true;
+        }
+        break;
+
+      default:
+        if (hasAtInject(enclosed)) {
+          throw new IllegalArgumentException("Unexpected @Inject annotation on " + enclosed);
+        }
+      }
+    }
+
+    if (!hasInjectConstructor && requiredKeys.isEmpty() && mustHaveInjections) {
+      throw new IllegalArgumentException("No injectable members on "
+          + type.getQualifiedName().toString() + ". Do you want to add an injectable constructor?");
+    }
+
+    // Attach the supertype.
+    TypeMirror supertype = CodeGen.getApplicationSupertype(type);
+    String supertypeKey = supertype != null
+        ? GeneratorKeys.rawMembersKey(supertype)
+        : null;
+
+    String provideKey = hasInjectConstructor || (hasNoArgsConstructor && !requiredKeys.isEmpty())
+        ? GeneratorKeys.get(type.asType())
+        : null;
+    String membersKey = GeneratorKeys.rawMembersKey(type.asType());
+    return new AtInjectBinding(provideKey, membersKey, type, requiredKeys, supertypeKey);
+  }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+private void generateInjectAdapter(TypeElement type, ExecutableElement constructor,
+      List<Element> fields) throws IOException {
+    String packageName = getPackage(type).getQualifiedName().toString();
+    String strippedTypeName =
+        strippedTypeName(type.getQualifiedName().toString(), packageName);
+    TypeMirror supertype = getNextMemberInjectedAncestor(type);
+    String adapterName = adapterName(type, INJECT_ADAPTER_SUFFIX);
+    JavaFileObject sourceFile = processingEnv.getFiler().createSourceFile(adapterName, type);
+    JavaWriter writer = new JavaWriter(sourceFile.openWriter());
+    boolean isAbstract = type.getModifiers().contains(ABSTRACT);
+    boolean injectMembers = !fields.isEmpty() || supertype != null;
+    boolean disambiguateFields = !fields.isEmpty()
+        && (constructor != null)
+        && !constructor.getParameters().isEmpty();
+    boolean dependent = injectMembers
+        || ((constructor != null) && !constructor.getParameters().isEmpty());
+
+    writer.emitSingleLineComment(AdapterJavadocs.GENERATED_BY_DAGGER);
+    writer.emitPackage(packageName);
+    writer.emitImports(findImports(dependent, injectMembers, constructor != null));
+    writer.emitEmptyLine();
+    writer.emitJavadoc(bindingTypeDocs(strippedTypeName, isAbstract, injectMembers, dependent));
+    writer.beginType(adapterName, "class", EnumSet.of(PUBLIC, FINAL),
+        JavaWriter.type(Binding.class, strippedTypeName),
+        implementedInterfaces(strippedTypeName, injectMembers, constructor != null));
+    writeMemberBindingsFields(writer, fields, disambiguateFields);
+    if (constructor != null) {
+      writeParameterBindingsFields(writer, constructor, disambiguateFields);
+     }
+    if (supertype != null) {
+      writeSupertypeInjectorField(writer, type, supertype);
+    }
+    writer.emitEmptyLine();
+    writeInjectAdapterConstructor(writer, constructor, type, strippedTypeName, adapterName);
+    if (dependent) {
+      writeAttachMethod(writer, constructor, fields, disambiguateFields, strippedTypeName,
+          supertype, true);
+      writeGetDependenciesMethod(writer, constructor, fields, disambiguateFields, supertype, true);
+    }
+    if (constructor != null) {
+      writeGetMethod(writer, constructor, disambiguateFields, injectMembers, strippedTypeName);
+    }
+    if (injectMembers) {
+      writeMembersInjectMethod(writer, fields, disambiguateFields, strippedTypeName, supertype);
+    }
+    writer.endType();
+    writer.close();
+    if (supertype != null) {
+      generateParentBindings(type,
+          ((TypeElement) processingEnv.getTypeUtils().asElement(supertype)));
+    }
+  }
+=======
+private void generateInjectAdapter(TypeElement type, ExecutableElement constructor,
+      List<Element> fields) throws IOException {
+    String packageName = getPackage(type).getQualifiedName().toString();
+    String strippedTypeName =
+        strippedTypeName(type.getQualifiedName().toString(), packageName);
+    TypeMirror supertype = getApplicationSupertype(type);
+    String adapterName = adapterName(type, INJECT_ADAPTER_SUFFIX);
+    JavaFileObject sourceFile = processingEnv.getFiler().createSourceFile(adapterName, type);
+    JavaWriter writer = new JavaWriter(sourceFile.openWriter());
+    boolean isAbstract = type.getModifiers().contains(ABSTRACT);
+    boolean injectMembers = !fields.isEmpty() || supertype != null;
+    boolean disambiguateFields = !fields.isEmpty()
+        && (constructor != null)
+        && !constructor.getParameters().isEmpty();
+    boolean dependent = injectMembers
+        || ((constructor != null) && !constructor.getParameters().isEmpty());
+
+    writer.emitSingleLineComment(AdapterJavadocs.GENERATED_BY_DAGGER);
+    writer.emitPackage(packageName);
+    writer.emitImports(findImports(dependent, injectMembers, constructor != null));
+    writer.emitEmptyLine();
+    writer.emitJavadoc(bindingTypeDocs(strippedTypeName, isAbstract, injectMembers, dependent));
+    writer.beginType(adapterName, "class", EnumSet.of(PUBLIC, FINAL),
+        JavaWriter.type(Binding.class, strippedTypeName),
+        implementedInterfaces(strippedTypeName, injectMembers, constructor != null));
+    writeMemberBindingsFields(writer, fields, disambiguateFields);
+    if (constructor != null) {
+      writeParameterBindingsFields(writer, constructor, disambiguateFields);
+     }
+    if (supertype != null) {
+      writeSupertypeInjectorField(writer, supertype);
+    }
+    writer.emitEmptyLine();
+    writeInjectAdapterConstructor(writer, constructor, type, strippedTypeName, adapterName);
+    if (dependent) {
+      writeAttachMethod(writer, constructor, fields, disambiguateFields, strippedTypeName,
+          supertype, true);
+      writeGetDependenciesMethod(writer, constructor, fields, disambiguateFields, supertype, true);
+    }
+    if (constructor != null) {
+      writeGetMethod(writer, constructor, disambiguateFields, injectMembers, strippedTypeName);
+    }
+    if (injectMembers) {
+      writeMembersInjectMethod(writer, fields, disambiguateFields, strippedTypeName, supertype);
+    }
+    writer.endType();
+    writer.close();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+private void writeAttachMethod(JavaWriter writer, ExecutableElement constructor,
+      List<Element> fields, boolean disambiguateFields, String typeName, TypeMirror supertype,
+      boolean extendsBinding) throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.ATTACH_METHOD);
+    if (extendsBinding) {
+      writer.emitAnnotation(Override.class);
+    }
+    writer.emitAnnotation(SuppressWarnings.class, JavaWriter.stringLiteral("unchecked"));
+    writer.beginMethod(
+        "void", "attach", EnumSet.of(PUBLIC), Linker.class.getCanonicalName(), "linker");
+    if (supertype != null) {
+      writer.emitStatement("nextInjectableAncestor.attach(linker)");
+    }
+    if (constructor != null) {
+      for (VariableElement parameter : constructor.getParameters()) {
+        writer.emitStatement(
+            "%s = (%s) linker.requestBinding(%s, %s.class, getClass().getClassLoader())",
+            parameterName(disambiguateFields, parameter),
+            writer.compressType(JavaWriter.type(Binding.class, typeToString(parameter.asType()))),
+            JavaWriter.stringLiteral(GeneratorKeys.get(parameter)), typeName);
+      }
+    }
+    for (Element field : fields) {
+      writer.emitStatement(
+          "%s = (%s) linker.requestBinding(%s, %s.class, getClass().getClassLoader())",
+          fieldName(disambiguateFields, field),
+          writer.compressType(JavaWriter.type(Binding.class, typeToString(field.asType()))),
+          JavaWriter.stringLiteral(GeneratorKeys.get((VariableElement) field)), typeName);
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+=======
+private void writeAttachMethod(JavaWriter writer, ExecutableElement constructor,
+      List<Element> fields, boolean disambiguateFields, String typeName, TypeMirror supertype,
+      boolean extendsBinding) throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.ATTACH_METHOD);
+    if (extendsBinding) {
+      writer.emitAnnotation(Override.class);
+    }
+    writer.emitAnnotation(SuppressWarnings.class, JavaWriter.stringLiteral("unchecked"));
+    writer.beginMethod(
+        "void", "attach", EnumSet.of(PUBLIC), Linker.class.getCanonicalName(), "linker");
+    if (constructor != null) {
+      for (VariableElement parameter : constructor.getParameters()) {
+        writer.emitStatement(
+            "%s = (%s) linker.requestBinding(%s, %s.class, getClass().getClassLoader())",
+            parameterName(disambiguateFields, parameter),
+            writer.compressType(JavaWriter.type(Binding.class, typeToString(parameter.asType()))),
+            JavaWriter.stringLiteral(GeneratorKeys.get(parameter)), typeName);
+      }
+    }
+    for (Element field : fields) {
+      writer.emitStatement(
+          "%s = (%s) linker.requestBinding(%s, %s.class, getClass().getClassLoader())",
+          fieldName(disambiguateFields, field),
+          writer.compressType(JavaWriter.type(Binding.class, typeToString(field.asType()))),
+          JavaWriter.stringLiteral(GeneratorKeys.get((VariableElement) field)), typeName);
+    }
+    if (supertype != null) {
+      writer.emitStatement(
+          "%s = (%s) linker.requestBinding(%s, %s.class, getClass().getClassLoader()"
+              + ", false, true)",
+          "supertype",
+          writer.compressType(JavaWriter.type(Binding.class, rawTypeToString(supertype, '.'))),
+          JavaWriter.stringLiteral(GeneratorKeys.rawMembersKey(supertype)), typeName);
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+private void writeGetDependenciesMethod(JavaWriter writer, ExecutableElement constructor,
+      List<Element> fields, boolean disambiguateFields, TypeMirror supertype,
+      boolean extendsBinding) throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.GET_DEPENDENCIES_METHOD);
+    if (extendsBinding) {
+      writer.emitAnnotation(Override.class);
+    }
+    String setOfBindings = JavaWriter.type(Set.class, "Binding<?>");
+    writer.beginMethod("void", "getDependencies", EnumSet.of(PUBLIC), setOfBindings, "getBindings",
+        setOfBindings, "injectMembersBindings");
+    if (constructor != null) {
+      for (Element parameter : constructor.getParameters()) {
+        writer.emitStatement("getBindings.add(%s)", parameterName(disambiguateFields, parameter));
+      }
+    }
+    for (Element field : fields) {
+      writer.emitStatement("injectMembersBindings.add(%s)", fieldName(disambiguateFields, field));
+    }
+    if (supertype != null) {
+      writer.emitStatement("nextInjectableAncestor.getDependencies(null, injectMembersBindings)");
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+=======
+private void writeGetDependenciesMethod(JavaWriter writer, ExecutableElement constructor,
+      List<Element> fields, boolean disambiguateFields, TypeMirror supertype,
+      boolean extendsBinding) throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.GET_DEPENDENCIES_METHOD);
+    if (extendsBinding) {
+      writer.emitAnnotation(Override.class);
+    }
+    String setOfBindings = JavaWriter.type(Set.class, "Binding<?>");
+    writer.beginMethod("void", "getDependencies", EnumSet.of(PUBLIC), setOfBindings, "getBindings",
+        setOfBindings, "injectMembersBindings");
+    if (constructor != null) {
+      for (Element parameter : constructor.getParameters()) {
+        writer.emitStatement("getBindings.add(%s)", parameterName(disambiguateFields, parameter));
+      }
+    }
+    for (Element field : fields) {
+      writer.emitStatement("injectMembersBindings.add(%s)", fieldName(disambiguateFields, field));
+    }
+    if (supertype != null) {
+      writer.emitStatement("injectMembersBindings.add(%s)", "supertype");
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+private void writeMembersInjectMethod(JavaWriter writer, List<Element> fields,
+      boolean disambiguateFields, String strippedTypeName, TypeMirror supertype)
+      throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.MEMBERS_INJECT_METHOD, strippedTypeName);
+    writer.emitAnnotation(Override.class);
+    writer.beginMethod("void", "injectMembers", EnumSet.of(PUBLIC), strippedTypeName, "object");
+    for (Element field : fields) {
+      writer.emitStatement("object.%s = %s.get()",
+          field.getSimpleName(),
+          fieldName(disambiguateFields, field));
+    }
+    if (supertype != null) {
+      writer.emitStatement("nextInjectableAncestor.injectMembers(object)");
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+=======
+private void writeMembersInjectMethod(JavaWriter writer, List<Element> fields,
+      boolean disambiguateFields, String strippedTypeName, TypeMirror supertype)
+      throws IOException {
+    writer.emitJavadoc(AdapterJavadocs.MEMBERS_INJECT_METHOD, strippedTypeName);
+    writer.emitAnnotation(Override.class);
+    writer.beginMethod("void", "injectMembers", EnumSet.of(PUBLIC), strippedTypeName, "object");
+    for (Element field : fields) {
+      writer.emitStatement("object.%s = %s.get()",
+          field.getSimpleName(),
+          fieldName(disambiguateFields, field));
+    }
+    if (supertype != null) {
+      writer.emitStatement("supertype.injectMembers(object)");
+    }
+    writer.endMethod();
+    writer.emitEmptyLine();
+  }
+>>>>>>> YOURS

@@ -1,0 +1,1483 @@
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParams.java;<<<<<<< MINE
+  ApiImplicitParam[] value();
+=======
+    /**
+     * A list of {@link com.wordnik.swagger.annotations.ApiImplicitParam}s available to the API operation.
+     */
+    ApiImplicitParam[] value();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiResponses.java;<<<<<<< MINE
+  ApiResponse[] value();
+=======
+    /**
+     * A list of {@link com.wordnik.swagger.annotations.ApiResponse}s provided by the API operation.
+     */
+    ApiResponse[] value();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_eb281d3_9fc507c/rev_eb281d3-9fc507c/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/AuthorizationScope.java;<<<<<<< MINE
+  String scope();
+  String description();
+=======
+    /**
+     * The scope of the OAuth2 Authorization scheme to be used.
+     * <p/>
+     * The scope should be previously defined in the Resource Listing's authorization section.
+     */
+    String scope();
+
+    /**
+     * A brief description of the scope.
+     */
+    String description();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_1d2404b_b5961ad/rev_1d2404b-b5961ad/modules/swagger-models/src/main/java/com/wordnik/swagger/models/properties/ObjectProperty.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_279a695_e9ac84a/rev_279a695-e9ac84a/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiImplicitParams.java;<<<<<<< MINE
+  /**
+   * A list of {@link com.wordnik.swagger.annotations.ApiImplicitParam}s available to the API operation.
+   */
+  ApiImplicitParam[] value();
+=======
+    /**
+     * A list of {@link com.wordnik.swagger.annotations.ApiImplicitParam}s available to the API operation.
+     */
+    ApiImplicitParam[] value();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_f3b170d_2dcdd25/rev_f3b170d-2dcdd25/modules/swagger-annotations/src/main/java/com/wordnik/swagger/annotations/ApiModelProperty.java;<<<<<<< MINE
+  
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_c784806_eaf37e8/rev_c784806-eaf37e8/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/Reader.java;<<<<<<< MINE
+
+  private boolean isIgnored(String path) {
+    for (String item : config.getIgnoredRoutes()) {
+      final int length = item.length();
+      if (path.startsWith(item) && (path.length() == length || path.startsWith(PATH_DELIMITER, length))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  enum ContainerWrapper {
+    LIST("list") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    ARRAY("array") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    MAP("map") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new MapProperty(property);
+      }
+    },
+    SET("set") {
+      @Override
+      protected Property doWrap(Property property) {
+        ArrayProperty arrayProperty = new ArrayProperty(property);
+        arrayProperty.setUniqueItems(true);
+        return arrayProperty;
+      }
+    };
+
+    private final String container;
+
+    ContainerWrapper(String container) {
+      this.container = container;
+    }
+
+    public Property wrap(String container, Property property) {
+      if (this.container.equalsIgnoreCase(container)) {
+        return doWrap(property);
+      }
+      return null;
+    }
+
+    public static Property wrapContainer(String container, Property property, ContainerWrapper... allowed) {
+      final Set<ContainerWrapper> tmp = allowed.length > 0 ? EnumSet.copyOf(Arrays.asList(allowed)) : EnumSet.allOf(ContainerWrapper.class);
+      for (ContainerWrapper wrapper : tmp) {
+        final Property prop = wrapper.wrap(container, property);
+        if (prop != null) {
+          return prop;
+        }
+      }
+      return property;
+    }
+
+    protected abstract Property doWrap(Property property);
+  }
+=======
+
+  enum ContainerWrapper {
+    LIST("list") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    ARRAY("array") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    MAP("map") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new MapProperty(property);
+      }
+    },
+    SET("set") {
+      @Override
+      protected Property doWrap(Property property) {
+        ArrayProperty arrayProperty = new ArrayProperty(property);
+        arrayProperty.setUniqueItems(true);
+        return arrayProperty;
+      }
+    };
+
+    private final String container;
+
+    ContainerWrapper(String container) {
+      this.container = container;
+    }
+
+    public Property wrap(String container, Property property) {
+      if (this.container.equalsIgnoreCase(container)) {
+        return doWrap(property);
+      }
+      return null;
+    }
+
+    public static Property wrapContainer(String container, Property property, ContainerWrapper... allowed) {
+      final Set<ContainerWrapper> tmp = allowed.length > 0 ? EnumSet.copyOf(Arrays.asList(allowed)) : EnumSet.allOf(ContainerWrapper.class);
+      for (ContainerWrapper wrapper : tmp) {
+        final Property prop = wrapper.wrap(container, property);
+        if (prop != null) {
+          return prop;
+        }
+      }
+      return property;
+    }
+
+    protected abstract Property doWrap(Property property);
+  }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_3cd4c90_a084cf6/rev_3cd4c90-a084cf6/modules/swagger-jaxrs/src/main/java/com/wordnik/swagger/jaxrs/Reader.java;<<<<<<< MINE
+
+  public ObjectMapper getObjectMapper() {
+    return m;
+  }
+
+  public void setObjectMapper(ObjectMapper m) {
+    Reader.m = m;
+  }
+=======
+
+  private boolean isIgnored(String path) {
+    for (String item : config.getIgnoredRoutes()) {
+      final int length = item.length();
+      if (path.startsWith(item) && (path.length() == length || path.startsWith(PATH_DELIMITER, length))) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  enum ContainerWrapper {
+    LIST("list") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    ARRAY("array") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new ArrayProperty(property);
+      }
+    },
+    MAP("map") {
+      @Override
+      protected Property doWrap(Property property) {
+        return new MapProperty(property);
+      }
+    },
+    SET("set") {
+      @Override
+      protected Property doWrap(Property property) {
+        ArrayProperty arrayProperty = new ArrayProperty(property);
+        arrayProperty.setUniqueItems(true);
+        return arrayProperty;
+      }
+    };
+
+    private final String container;
+
+    ContainerWrapper(String container) {
+      this.container = container;
+    }
+
+    public Property wrap(String container, Property property) {
+      if (this.container.equalsIgnoreCase(container)) {
+        return doWrap(property);
+      }
+      return null;
+    }
+
+    public static Property wrapContainer(String container, Property property, ContainerWrapper... allowed) {
+      final Set<ContainerWrapper> tmp = allowed.length > 0 ? EnumSet.copyOf(Arrays.asList(allowed)) : EnumSet.allOf(ContainerWrapper.class);
+      for (ContainerWrapper wrapper : tmp) {
+        final Property prop = wrapper.wrap(container, property);
+        if (prop != null) {
+          return prop;
+        }
+      }
+      return property;
+    }
+
+    protected abstract Property doWrap(Property property);
+  }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_2338ebe_a2a9a04/rev_2338ebe-a2a9a04/modules/swagger-jaxrs/src/test/java/io/swagger/models/TestEnum.java;<<<<<<< MINE
+=======
+package io.swagger.models;
+
+public enum TestEnum {
+    ONE, TWO, THREE;
+}>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/Reader.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-jaxrs/src/main/java/io/swagger/jaxrs/utils/ReflectionUtils.java;<<<<<<< MINE
+=======
+
+    /**
+     * Returns the list of declared fields from the class <code>cls</code> and its superclasses
+     * excluding <code>Object</code> class. If the field from child class hides the field from superclass,
+     * the field from superclass won't be added to the result list.
+     *
+     * @param cls is the processing class
+     * @return list of Fields
+     */
+    public static List<Field> getDeclaredFields(Class<?> cls) {
+        if (cls.equals(Object.class)) {
+            return Collections.emptyList();
+        }
+        final List<Field> fields = new ArrayList<Field>();
+        final Set<String> fieldNames = new HashSet<String>();
+        for (Field field : cls.getDeclaredFields()) {
+            fields.add(field);
+            fieldNames.add(field.getName());
+        }
+        for (Field field : getDeclaredFields(cls.getSuperclass())) {
+            if (!fieldNames.contains(field.getName())) {
+                fields.add(field);
+            }
+        }
+        return fields;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_72b588a_0567e01/rev_72b588a-0567e01/modules/swagger-core/src/main/java/io/swagger/util/PropertyDeserializer.java;<<<<<<< MINE
+=======
+        
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_4698800_8db0f6a/rev_4698800-8db0f6a/modules/swagger-core/src/main/java/io/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_4698800_8db0f6a/rev_4698800-8db0f6a/modules/swagger-core/src/main/java/io/swagger/jackson/ModelResolver.java;<<<<<<< MINE
+    
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_e661e1a_9a6cf32/rev_e661e1a-9a6cf32/modules/swagger-core/src/main/java/io/swagger/util/ReflectionUtils.java;<<<<<<< MINE
+    
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/Swagger-core/revisions/rev_e661e1a_9a6cf32/rev_e661e1a-9a6cf32/modules/swagger-core/src/main/java/io/swagger/util/ReflectionUtils.java;<<<<<<< MINE
+    
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/NetworkParameters.java;<<<<<<< MINE
+=======
+    /**
+     * The alert signing key originally owned by Satoshi, and now passed on to Gavin along with a few others.
+     */
+    public static final byte[] SATOSHI_KEY = Hex.decode("04fc9702847840aaf195de8442ebecedf5b095cdbb9bc716bda9110971b28a49e0ead8564ff0db22209e0374782c093bb899692d524e9d6a6956e7c5ecbcd68284");
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/bitcoinj/revisions/rev_464b528_10c936c/rev_464b528-10c936c/src/com/google/bitcoin/core/NetworkParameters.java;<<<<<<< MINE
+=======
+    /**
+     * The key used to sign {@link AlertMessage}s. You can use {@link ECKey#verify(byte[], byte[], byte[])} to verify
+     * signatures using it.
+     */
+    public byte[] alertSigningKey;
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_2319e19_08f3409/rev_2319e19-08f3409/src/main/java/com/netflix/servo/InjectableTag.java;<<<<<<< MINE
+/*
+ * #%L
+ * servo
+ * %%
+ * Copyright (C) 2011 Netflix
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+package com.netflix.servo;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+/**
+ * User: gorzell
+ * Date: 12/27/11
+ * Time: 5:35 PM
+ */
+public enum InjectableTag implements Tag {
+    HOSTNAME("hostname", getHostName()),
+    IP("ip", getIp());
+
+    private final String key;
+    private final String value;
+    private static InetAddress address;
+
+    static {
+        try {
+            address = InetAddress.getLocalHost();
+        } catch (UnknownHostException e) {
+            address = null;
+        }
+    }
+
+    private InjectableTag(String key, String val) {
+        this.key = key;
+        this.value = val;
+    }
+
+    public String getKey(){
+        return key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    private static String getHostName() {
+        return address != null ? address.getHostName() : "unkownHost";
+    }
+
+    private static String getIp() {
+        return address != null ? address.getHostAddress() : "unknownHost";
+    }
+}=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_2319e19_08f3409/rev_2319e19-08f3409/src/main/java/com/netflix/servo/aws/AwsInjectableTag.java;<<<<<<< MINE
+/*
+ * #%L
+ * servo
+ * %%
+ * Copyright (C) 2011 Netflix
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+package com.netflix.servo.aws;
+
+import com.google.common.io.Closeables;
+
+import com.netflix.servo.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+/**
+ * User: gorzell
+ * Date: 12/27/11
+ * Time: 5:47 PM
+ */
+public enum AwsInjectableTag implements Tag {
+    AUTOSCALE_GROUP("autoScalingGroup", getAutoScaleGroup()),
+    INSTANCE_ID("instanceId", getInstanceId());
+
+    private final String key;
+    private final String value;
+
+    private AwsInjectableTag(String key, String val) {
+        this.key = key;
+        this.value = val;
+    }
+
+    private static final Logger log = LoggerFactory.getLogger(AwsInjectableTag.class);
+
+    private static final String metaDataUrl = "http://169.254.169.254/latest/meta-data";
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    private static String getAutoScaleGroup() {
+        return "";
+    }
+
+    private static String getInstanceId() {
+        return getUrlValue("/instance-id");
+    }
+
+    private static String getUrlValue(String path) {
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(metaDataUrl + path);
+            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line  = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            while( ( line = reader.readLine() ) != null ) {
+                stringBuilder.append( line );
+                stringBuilder.append( ls );
+            }
+            return stringBuilder.toString();
+        } catch (Exception e) {
+            log.warn("", e);
+            return "uknown";
+        } finally {
+            Closeables.closeQuietly(reader);
+        }
+    }
+
+}=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_fc7c719_f23a28a/rev_fc7c719-f23a28a/servo-core/src/main/java/com/netflix/servo/aws/AwsInjectableTag.java;<<<<<<< MINE
+/*
+ * #%L
+ * servo
+ * %%
+ * Copyright (C) 2011 Netflix
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+package com.netflix.servo.aws;
+
+import com.google.common.io.Closeables;
+
+import com.netflix.servo.Tag;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+
+/**
+ * User: gorzell
+ * Date: 12/27/11
+ * Time: 5:47 PM
+ */
+public enum AwsInjectableTag implements Tag {
+    AUTOSCALE_GROUP("autoScalingGroup", getAutoScaleGroup()),
+    INSTANCE_ID("instanceId", getInstanceId());
+
+    private final String key;
+    private final String value;
+
+    private AwsInjectableTag(String key, String val) {
+        this.key = key;
+        this.value = val;
+    }
+
+    private static final Logger log = LoggerFactory.getLogger(AwsInjectableTag.class);
+
+    private static final String metaDataUrl = "http://169.254.169.254/latest/meta-data";
+
+    public String getKey() {
+        return key;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    private static String getAutoScaleGroup() {
+        return "";
+    }
+
+    private static String getInstanceId() {
+        return getUrlValue("/instance-id");
+    }
+
+    private static String getUrlValue(String path) {
+        BufferedReader reader = null;
+        try {
+            URL url = new URL(metaDataUrl + path);
+            reader = new BufferedReader(new InputStreamReader(url.openStream()));
+            String line  = null;
+            StringBuilder stringBuilder = new StringBuilder();
+            String ls = System.getProperty("line.separator");
+            while( ( line = reader.readLine() ) != null ) {
+                stringBuilder.append( line );
+                stringBuilder.append( ls );
+            }
+            return stringBuilder.toString();
+        } catch (Exception e) {
+            log.warn("", e);
+            return "uknown";
+        } finally {
+            Closeables.closeQuietly(reader);
+        }
+    }
+
+}=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_8b6bb73_2bd108d/rev_8b6bb73-2bd108d/src/main/java/org/junit/contrib/truth/subjects/Subject.java;<<<<<<< MINE
+    
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_8b6bb73_2bd108d/rev_8b6bb73-2bd108d/src/main/java/org/junit/contrib/truth/subjects/Subject.java;<<<<<<< MINE
+  
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/truth/revisions/rev_8b6bb73_2bd108d/rev_8b6bb73-2bd108d/src/main/java/org/junit/contrib/truth/subjects/Subject.java;<<<<<<< MINE
+  
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_56eb2a7_b20ae0a/rev_56eb2a7-b20ae0a/src/main/java/graphql/execution/ExecutionContext.java;<<<<<<< MINE
+    private final Instrumentation instrumentation;
+    private GraphQLSchema graphQLSchema;
+    private ExecutionStrategy executionStrategy;
+    private Map<String, FragmentDefinition> fragmentsByName = new LinkedHashMap<String, FragmentDefinition>();
+    private OperationDefinition operationDefinition;
+    private Map<String, Object> variables = new LinkedHashMap<String, Object>();
+    private Object root;
+    private List<GraphQLError> errors = new ArrayList<GraphQLError>();
+=======
+    private final GraphQLSchema graphQLSchema;
+    private final ExecutionId executionId;
+    private final ExecutionStrategy queryStrategy;
+    private final ExecutionStrategy mutationStrategy;
+    private final Map<String, FragmentDefinition> fragmentsByName;
+    private final OperationDefinition operationDefinition;
+    private final Map<String, Object> variables;
+    private final Object root;
+    private final List<GraphQLError> errors = new CopyOnWriteArrayList<GraphQLError>();
+
+    public ExecutionContext(ExecutionId executionId, GraphQLSchema graphQLSchema, ExecutionStrategy queryStrategy, ExecutionStrategy mutationStrategy, Map<String, FragmentDefinition> fragmentsByName, OperationDefinition operationDefinition, Map<String, Object> variables, Object root) {
+        this.graphQLSchema = graphQLSchema;
+        this.executionId = executionId;
+        this.queryStrategy = queryStrategy;
+        this.mutationStrategy = mutationStrategy;
+        this.fragmentsByName = fragmentsByName;
+        this.operationDefinition = operationDefinition;
+        this.variables = variables;
+        this.root = root;
+    }
+
+    public ExecutionId getExecutionId() {
+        return executionId;
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/schema/GraphQLNonNull.java;<<<<<<< MINE
+=======
+    /**
+     * A factory method for creating non null types so that when used with static imports allows
+     * more readable code such as
+     * {@code .type(nonNull(GraphQLString)) }
+     *
+     * @param wrappedType the type to wrap as being non null
+     * @return a GraphQLNonNull of that wrapped type
+     */
+    public static GraphQLNonNull nonNull(GraphQLType wrappedType) {
+        return new GraphQLNonNull(wrappedType);
+    }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/schema/GraphQLList.java;<<<<<<< MINE
+=======
+    /**
+     * A factory method for creating list types so that when used with static imports allows
+     * more readable code such as
+     * {@code .type(list(GraphQLString)) }
+     *
+     * @param wrappedType the type to wrap as being a list
+     *
+     * @return a GraphQLList of that wrapped type
+     */
+    public static GraphQLList list(GraphQLType wrappedType) {
+        return new GraphQLList(wrappedType);
+    }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/relay/ConnectionCursor.java;<<<<<<< MINE
+    private final String value;
+
+    public ConnectionCursor(String value) {
+        this.value = value;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+
+
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ConnectionCursor that = (ConnectionCursor) o;
+
+        if (value != null ? !value.equals(that.value) : that.value != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return value != null ? value.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return value;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/graphql-java/revisions/rev_43abaef_62ab848/rev_43abaef-62ab848/src/main/java/graphql/relay/Edge.java;<<<<<<< MINE
+    Object node;
+    ConnectionCursor cursor;
+
+    public Object getNode() {
+        return node;
+    }
+
+    public void setNode(Object node) {
+        this.node = node;
+    }
+
+    public ConnectionCursor getCursor() {
+        return cursor;
+    }
+
+    public void setCursor(ConnectionCursor cursor) {
+        this.cursor = cursor;
+    }
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_e4ff63b_ce61863/rev_e4ff63b-ce61863/servo-core/src/main/java/com/netflix/servo/jmx/JmxMonitorRegistry.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_e4ff63b_ce61863/rev_e4ff63b-ce61863/servo-core/src/main/java/com/netflix/servo/jmx/JmxMonitorRegistry.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_e4ff63b_ce61863/rev_e4ff63b-ce61863/servo-core/src/main/java/com/netflix/servo/jmx/JmxMonitorRegistry.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/servo/revisions/rev_76a9a85_f82768d/rev_76a9a85-f82768d/servo-aws/src/main/java/com/netflix/servo/aws/AwsPropertyKeys.java;<<<<<<< MINE
+    public static final String awsCredentialsFile = "com.netflix.servo.aws.credentialsFile";
+    public static final String awsAutoScalingEndpoint = "com.netflix.servo.aws.endpoint.autoscaling";
+    public static final String awsCloudWatchEndpoint = "com.netflix.servo.aws.endpoint.cloudwatch";
+=======
+	private String bundle;
+	
+	/**
+	 * Constructor responsible to instantiate the type of bundle
+	 */
+	private AwsPropertyKeys(String bundle) {
+       this.bundle = bundle;
+    }
+	
+	public String getBundle() {
+		return bundle;
+	}
+	
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_a9019b9_0ac52d6/rev_a9019b9-0ac52d6/openAPI/src/main/java/jetbrains/exodus/env/EnvironmentConfig.java;<<<<<<< MINE
+    public static final String GC_USE_EXCLUSIVE_TRANSACTION = "exodus.gc.useExclusiveTransaction";
+
+=======
+    /**
+     * If a file is successfully cleaned then delete after this number of milliseconds.
+     */
+    public static final String GC_FILES_DELETION_DELAY = "exodus.gc.filesDeletionDelay"; // in milliseconds
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/injector/internal/Keys.java;<<<<<<< MINE
+=======
+  /** Returns true if {@code name} is the name of a platform-provided class. */
+  public static boolean isPlatformType(String name) {
+    return name.startsWith("java.") || name.startsWith("javax.") || name.startsWith("android.");
+  }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_c3b97b6_f554e50/rev_c3b97b6-f554e50/src/main/java/com/squareup/codegen/CodeGen.java;<<<<<<< MINE
+=======
+  /** Returns a string for the raw type of {@code type}. Primitive types are always boxed. */
+  public static String rawTypeToString(TypeMirror type, char innerClassSeparator) {
+    if (!(type instanceof DeclaredType)) {
+      throw new IllegalArgumentException("Unexpected type: " + type);
+    }
+    StringBuilder result = new StringBuilder();
+    DeclaredType declaredType = (DeclaredType) type;
+    rawTypeToString(result, (TypeElement) declaredType.asElement(), innerClassSeparator);
+    return result.toString();
+  }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/volley/revisions/rev_f746ab4_2b1e41c/rev_f746ab4-2b1e41c/src/com/android/volley/VolleyLog.java;<<<<<<< MINE
+    public static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+=======
+    public static boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+
+    /**
+     * Customize the log tag for your application, so that other apps
+     * using Volley don't mix their logs with yours.
+     * <br />
+     * Enable the log property for your tag before starting your app:
+     * <br />
+     * {@code adb shell setprop log.tag.&lt;tag&gt;}
+     */
+    public static void setTag(String tag) {
+        d("Changing log tag to %s", tag);
+        TAG = tag;
+
+        // Reinitialize the DEBUG "constant"
+        DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/volley/revisions/rev_b4448a3_f746ab4/rev_b4448a3-f746ab4/src/com/android/volley/VolleyLog.java;<<<<<<< MINE
+    public static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+=======
+    public static boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+
+    /**
+     * Customize the log tag for your application, so that other apps
+     * using Volley don't mix their logs with yours.
+     * <br />
+     * Enable the log property for your tag before starting your app:
+     * <br />
+     * {@code adb shell setprop log.tag.&lt;tag&gt;}
+     */
+    public static void setTag(String tag) {
+        d("Changing log tag to %s", tag);
+        TAG = tag;
+
+        // Reinitialize the DEBUG "constant"
+        DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/volley/revisions/rev_2b1e41c_cc6ed2d/rev_2b1e41c-cc6ed2d/src/com/android/volley/VolleyLog.java;<<<<<<< MINE
+    public static final boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+=======
+    public static boolean DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+
+    /**
+     * Customize the log tag for your application, so that other apps
+     * using Volley don't mix their logs with yours.
+     * <br />
+     * Enable the log property for your tag before starting your app:
+     * <br />
+     * {@code adb shell setprop log.tag.&lt;tag&gt;}
+     */
+    public static void setTag(String tag) {
+        d("Changing log tag to %s", tag);
+        TAG = tag;
+
+        // Reinitialize the DEBUG "constant"
+        DEBUG = Log.isLoggable(TAG, Log.VERBOSE);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_6212f9c_b8030b1/rev_6212f9c-b8030b1/openAPI/src/main/java/jetbrains/exodus/ByteIterator.java;<<<<<<< MINE
+    /**
+     * @return next byte
+     */
+    byte next();
+=======
+    public abstract boolean hasNext();
+
+    public abstract byte next();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/xodus/revisions/rev_6212f9c_b8030b1/rev_6212f9c-b8030b1/environment/src/main/java/jetbrains/exodus/log/ByteIteratorWithAddress.java;<<<<<<< MINE
+    ByteIteratorWithAddress EMPTY = new ByteIteratorWithAddress() {
+
+        @Override
+        public boolean hasNext() {
+            return false;
+        }
+
+        @Override
+        public byte next() {
+            return (byte) 0;
+        }
+
+        @Override
+        public long getAddress() {
+            return Loggable.NULL_ADDRESS;
+        }
+
+        @Override
+        public long skip(long bytes) {
+            return 0;
+        }
+    };
+
+    long getAddress();
+=======
+    public abstract long getAddress();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_57f1dad_0e84393/rev_57f1dad-0e84393/rx-netty/src/main/java/io/reactivex/netty/client/AbstractClientBuilder.java;<<<<<<< MINE
+    public B withName(String name) {
+        this.name = name;
+        return returnBuilder();
+    }
+
+    public B withMetricEventsListenerFactory(MetricEventsListenerFactory eventListenersFactory) {
+        this.eventListenersFactory = eventListenersFactory;
+        return returnBuilder();
+    }
+
+=======
+    /**
+     * Overrides all the connection pool settings done previous to this call and disables connection pooling for this
+     * client, unless enabled again after this call returns.
+     *
+     * @return This builder.
+     */
+    public B withNoConnectionPooling() {
+        poolBuilder = null;
+        return returnBuilder();
+    }
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_d9d306a_4f8a41d/rev_d9d306a-4f8a41d/rxnetty/src/main/java/io/reactivex/netty/protocol/http/UnicastContentSubject.java;<<<<<<< MINE
+        /** Following Observers are associated with the states:
+         * UNSUBSCRIBED => {@link BufferedObserver}
+         * SUBSCRIBED => actual observer
+         * DISPOSED => {@link Subscribers#empty()}
+         */
+        private volatile Observer<? super T> observerRef = new BufferedObserver();
+=======
+        private final BufferUntilSubscriber<T> bufferedSubject = BufferUntilSubscriber.create();
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClient.java;<<<<<<< MINE
+    public static HttpClient<ByteBuf, ByteBuf> newClient(ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return newClient(HTTP_CLIENT_NO_NAME, serverPool);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String host, int port) {
+        return newClient(HTTP_CLIENT_NO_NAME, host, port);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, String host, int port) {
+        return _newClient(TcpClient.newClient(name, new InetSocketAddress(host, port)));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return _newClient(TcpClient.newClient(name, serverPool));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String host, int port) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, host, port);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name, String host,
+                                                        int port) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, new InetSocketAddress(host, port)));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass,
+                                                        ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, serverPool);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name,
+                                                        ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, serverPool));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(SocketAddress remoteAddress) {
+        return newClient(HTTP_CLIENT_NO_NAME, remoteAddress);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, SocketAddress remoteAddress) {
+        return _newClient(TcpClient.newClient(name, remoteAddress));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass,
+                                                        SocketAddress remoteAddress) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, remoteAddress);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name,
+                                                        SocketAddress remoteAddress) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, remoteAddress));
+    }
+
+    private static HttpClient<ByteBuf, ByteBuf> _newClient(TcpClient<ByteBuf, ByteBuf> tcpClient) {
+        return HttpClientImpl.create(tcpClient);
+    }
+=======
+    /**
+     * Creates a new client instances, inheriting all configurations from this client and using the passed
+     * {@code sslEngineFactory} for all secured connections created by the newly created client instance.
+     *
+     * @param sslEngineFactory {@link SSLEngineFactory} for all secured connections created by the newly created client
+     *                                                 instance.
+     *
+     * @return A new {@link HttpClient} instance.
+     */
+    public abstract HttpClient<I, O> sslEngineFactory(SSLEngineFactory sslEngineFactory);
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return newClient(HTTP_CLIENT_NO_NAME, serverPool);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String host, int port) {
+        return newClient(HTTP_CLIENT_NO_NAME, host, port);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, String host, int port) {
+        return _newClient(TcpClient.newClient(name, new InetSocketAddress(host, port)));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return _newClient(TcpClient.newClient(name, serverPool));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String host, int port) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, host, port);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name, String host,
+                                                        int port) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, new InetSocketAddress(host, port)));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass,
+                                                        ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, serverPool);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name,
+                                                        ServerPool<ClientMetricsEvent<?>> serverPool) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, serverPool));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(SocketAddress remoteAddress) {
+        return newClient(HTTP_CLIENT_NO_NAME, remoteAddress);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(String name, SocketAddress remoteAddress) {
+        return _newClient(TcpClient.newClient(name, remoteAddress));
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass,
+                                                        SocketAddress remoteAddress) {
+        return newClient(eventLoopGroup, channelClass, HTTP_CLIENT_NO_NAME, remoteAddress);
+    }
+
+    public static HttpClient<ByteBuf, ByteBuf> newClient(EventLoopGroup eventLoopGroup,
+                                                        Class<? extends Channel> channelClass, String name,
+                                                        SocketAddress remoteAddress) {
+        return _newClient(TcpClient.newClient(eventLoopGroup, channelClass, name, remoteAddress));
+    }
+
+    private static HttpClient<ByteBuf, ByteBuf> _newClient(TcpClient<ByteBuf, ByteBuf> tcpClient) {
+        return HttpClientImpl.create(tcpClient);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    @Override
+    public abstract HttpClientRequest<I, O> setBytesContent(byte[] content);
+=======
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeContent(Observable<I> contentSource,
+                                                                                               Func0<T> trailerFactory,
+                                                                                               Func2<T, I, T> trailerMutator);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request. This method provides a way to
+     * write trailing headers.
+     *
+     * A new instance of {@link TrailingHeaders} will be created using the passed {@code trailerFactory} and the passed
+     * {@code trailerMutator} will be invoked for every item emitted from the content source, giving a chance to modify
+     * the trailing headers instance.
+     *
+     * @param contentSource Content source for the request.
+     * @param trailerFactory A factory function to create a new {@link TrailingHeaders} per subscription of the content.
+     * @param trailerMutator A function to mutate the trailing header on each item emitted from the content source.
+     * @param flushSelector A {@link Func1} which is invoked for every item emitted from {@code msgs}. All pending
+     * writes are flushed, iff this function returns, {@code true}.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeContent(Observable<I> contentSource,
+                                                                                               Func0<T> trailerFactory,
+                                                                                               Func2<T, I, T> trailerMutator,
+                                                                                               Func1<I, Boolean> flushSelector);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request.
+     *
+     * @param contentSource Content source for the request.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    public abstract Observable<HttpClientResponse<O>> writeStringContent(Observable<String> contentSource);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request.
+     *
+     * @param contentSource Content source for the request.
+     * @param flushSelector A {@link Func1} which is invoked for every item emitted from {@code msgs}. All pending
+     * writes are flushed, iff this function returns, {@code true}.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    public abstract Observable<HttpClientResponse<O>> writeStringContent(Observable<String> contentSource,
+                                                                         Func1<String, Boolean> flushSelector);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request. This method provides a way to
+     * write trailing headers.
+     *
+     * A new instance of {@link TrailingHeaders} will be created using the passed {@code trailerFactory} and the passed
+     * {@code trailerMutator} will be invoked for every item emitted from the content source, giving a chance to modify
+     * the trailing headers instance.
+     *
+     * @param contentSource Content source for the request.
+     * @param trailerFactory A factory function to create a new {@link TrailingHeaders} per subscription of the content.
+     * @param trailerMutator A function to mutate the trailing header on each item emitted from the content source.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeStringContent(Observable<String> contentSource,
+                                                                                                     Func0<T> trailerFactory,
+                                                                                                     Func2<T, String, T> trailerMutator);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request. This method provides a way to
+     * write trailing headers.
+     *
+     * A new instance of {@link TrailingHeaders} will be created using the passed {@code trailerFactory} and the passed
+     * {@code trailerMutator} will be invoked for every item emitted from the content source, giving a chance to modify
+     * the trailing headers instance.
+     *
+     * @param contentSource Content source for the request.
+     * @param trailerFactory A factory function to create a new {@link TrailingHeaders} per subscription of the content.
+     * @param trailerMutator A function to mutate the trailing header on each item emitted from the content source.
+     * @param flushSelector A {@link Func1} which is invoked for every item emitted from {@code msgs}. All pending
+     * writes are flushed, iff this function returns, {@code true}.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeStringContent(Observable<String> contentSource,
+                                                                                                     Func0<T> trailerFactory,
+                                                                                                     Func2<T, String, T> trailerMutator,
+                                                                                                     Func1<String, Boolean> flushSelector);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request.
+     *
+     * @param contentSource Content source for the request.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    public abstract Observable<HttpClientResponse<O>> writeBytesContent(Observable<byte[]> contentSource);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request.
+     *
+     * @param contentSource Content source for the request.
+     * @param flushSelector A {@link Func1} which is invoked for every item emitted from {@code msgs}. All pending
+     * writes are flushed, iff this function returns, {@code true}.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    public abstract Observable<HttpClientResponse<O>> writeBytesContent(Observable<byte[]> contentSource,
+                                                                        Func1<byte[], Boolean> flushSelector);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request. This method provides a way to
+     * write trailing headers.
+     *
+     * A new instance of {@link TrailingHeaders} will be created using the passed {@code trailerFactory} and the passed
+     * {@code trailerMutator} will be invoked for every item emitted from the content source, giving a chance to modify
+     * the trailing headers instance.
+     *
+     * @param contentSource Content source for the request.
+     * @param trailerFactory A factory function to create a new {@link TrailingHeaders} per subscription of the content.
+     * @param trailerMutator A function to mutate the trailing header on each item emitted from the content source.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeBytesContent(Observable<byte[]> contentSource,
+                                                                                                    Func0<T> trailerFactory,
+                                                                                                    Func2<T, byte[], T> trailerMutator);
+
+    /**
+     * Uses the passed {@link Observable} as the source of content for this request. This method provides a way to
+     * write trailing headers.
+     *
+     * A new instance of {@link TrailingHeaders} will be created using the passed {@code trailerFactory} and the passed
+     * {@code trailerMutator} will be invoked for every item emitted from the content source, giving a chance to modify
+     * the trailing headers instance.
+     *
+     * @param contentSource Content source for the request.
+     * @param trailerFactory A factory function to create a new {@link TrailingHeaders} per subscription of the content.
+     * @param trailerMutator A function to mutate the trailing header on each item emitted from the content source.
+     * @param flushSelector A {@link Func1} which is invoked for every item emitted from {@code msgs}. All pending
+     * writes are flushed, iff this function returns, {@code true}.
+     *
+     * @return An new instance of {@link Observable} which can be subscribed to execute the request.
+     */
+    @Experimental
+    public abstract <T extends TrailingHeaders> Observable<HttpClientResponse<O>> writeBytesContent(Observable<byte[]> contentSource,
+                                                                                                    Func0<T> trailerFactory,
+                                                                                                    Func2<T, byte[], T> trailerMutator,
+                                                                                                    Func1<byte[], Boolean> flushSelector);
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/http/clientNew/HttpClientRequest.java;<<<<<<< MINE
+    /**
+     * Returns the absolute URI for this request including the scheme, host and port portion of the URI.
+     *
+     * @return The absolute URI for this request.
+     */
+    @Override
+    public abstract String getAbsoluteUri();
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/tcp/client/IdleConnectionsHolder.java;<<<<<<< MINE
+    private MetricEventsSubject<ClientMetricsEvent<?>> metricEventsSubject;
+
+    IdleConnectionsHolder(MetricEventsSubject<ClientMetricsEvent<?>> metricEventsSubject) {
+        this.metricEventsSubject = metricEventsSubject;
+    }
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/protocol/tcp/server/TcpServer.java;<<<<<<< MINE
+=======
+
+    /**
+     * Creates a new server using the passed port.
+     *
+     * @param port Port for the server. {@code 0} to use ephemeral port.
+     * @return A new {@link TcpServer}
+     */
+    public static TcpServer<ByteBuf, ByteBuf> newServer(int port) {
+        return new TcpServerImpl<ByteBuf, ByteBuf>(port);
+    }
+
+    /**
+     * Creates a new server using the passed port.
+     *
+     * @param port Port for the server. {@code 0} to use ephemeral port.
+     * @param eventLoopGroup Eventloop group to be used for server as well as client sockets.
+     * @param channelClass The class to be used for server channel.
+     *
+     * @return A new {@link TcpServer}
+     */
+    public static TcpServer<ByteBuf, ByteBuf> newServer(int port, EventLoopGroup eventLoopGroup,
+                                                         Class<? extends ServerChannel> channelClass) {
+        return new TcpServerImpl<ByteBuf, ByteBuf>(port, eventLoopGroup, eventLoopGroup, channelClass);
+    }
+
+    /**
+     * Creates a new server using the passed port.
+     *
+     * @param port Port for the server. {@code 0} to use ephemeral port.
+     * @param serverGroup Eventloop group to be used for server sockets.
+     * @param clientGroup Eventloop group to be used for client sockets.
+     * @param channelClass The class to be used for server channel.
+     *
+     * @return A new {@link TcpServer}
+     */
+    public static TcpServer<ByteBuf, ByteBuf> newServer(int port, EventLoopGroup serverGroup,
+                                                         EventLoopGroup clientGroup,
+                                                         Class<? extends ServerChannel> channelClass) {
+        return new TcpServerImpl<ByteBuf, ByteBuf>(port, serverGroup, clientGroup, channelClass);
+    }
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/DefaultChannelOperations.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/DefaultChannelOperations.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/ChannelOperations.java;<<<<<<< MINE
+    Observable<Void> write(W msg);
+=======
+    Func1<String, Boolean> FLUSH_ON_EACH_STRING = new Func1<String, Boolean>() {
+        @Override
+        public Boolean call(String next) {
+            return true;
+        }
+    };
+
+    /**
+     * Flush selector that always returns true.
+     */
+    Func1<byte[], Boolean> FLUSH_ON_EACH_BYTES = new Func1<byte[], Boolean>() {
+        @Override
+        public Boolean call(byte[] next) {
+            return true;
+        }
+    };
+
+    /**
+     * Flush selector that always returns true.
+     */
+    Func1<FileRegion, Boolean> FLUSH_ON_EACH_FILE_REGION = new Func1<FileRegion, Boolean>() {
+        @Override
+        public Boolean call(FileRegion next) {
+            return true;
+        }
+    };
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/RxNetty/revisions/rev_8530e8d_549e21f/rev_8530e8d-549e21f/rxnetty/src/main/java/io/reactivex/netty/channel/ChannelOperations.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_66e14ce_cb95092/rev_66e14ce-cb95092/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+  /**
+   * An unmodifiable map containing all of the bindings available in this linker, fully linked.
+   * This will be null if the bindings are not yet fully linked. It provides both a signal
+   * of completion of the {@link #linkAll()} method, as well as a place to reference the final,
+   * fully linked map of bindings.
+   */
+  private volatile Map<String, Binding<?>> linkedBindings = null;
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Linker.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Keys.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/Keys.java;<<<<<<< MINE
+  /** Returns true if {@code key} is a binding that supports members injection. */
+  public static boolean isMembersInjection(String key) {
+    return key.startsWith("members/");
+  }
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/internal/SetBinding.java;<<<<<<< MINE
+  private final Set<Binding<?>> contributors = new LinkedHashSet<Binding<?>>();
+
+=======
+  /**
+   * A {@link SetBinding} with whose contributing bindings this set-binding provides a union
+   * view.
+   */
+  private final SetBinding<T> parent;
+
+  /**
+   * A {@link Set} of {@link Binding} instances which contribute values to the injected set.
+   */
+  private final List<Binding<?>> contributors;
+
+  /**
+   * Creates a new {@code SetBinding} with the given "provides" key, and the requiredBy object
+   * for traceability.
+   */
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/core/src/main/java/dagger/ObjectGraph.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/ModuleAdapterProcessor.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+  private void generateParentBindings(TypeElement originChild, TypeElement ancestor)
+      throws IOException {
+    List<Element> ancestorFields = createInjectedClass(ancestor.toString()).fields;
+    TypeMirror nextAncestor = getNextMemberInjectedAncestor(ancestor);
+    TypeElement nextAncestorElement =
+        (nextAncestor != null) ? (TypeElement) processingEnv.getTypeUtils().asElement(nextAncestor)
+            : null;
+    String ancestorPackageName = getPackage(ancestor).getQualifiedName().toString();
+    String strippedAncestorType =
+        strippedTypeName(ancestor.getQualifiedName().toString(), ancestorPackageName);
+    String adapterName = parentAdapterName(originChild, ancestor);
+    JavaFileObject sourceFile = processingEnv.getFiler().createSourceFile(adapterName, ancestor);
+    JavaWriter writer = new JavaWriter(sourceFile.openWriter());
+    writer.emitSingleLineComment(AdapterJavadocs.GENERATED_BY_DAGGER);
+    writer.emitPackage(ancestorPackageName);
+    writer.emitImports(MembersInjector.class.getCanonicalName(), Binding.class.getCanonicalName());
+    writer.emitEmptyLine();
+    writer.emitJavadoc(AdapterJavadocs.PARENT_ADAPTER_TYPE);
+    writer.beginType(adapterName, "class", EnumSet.of(PUBLIC, FINAL), null,
+        JavaWriter.type(MembersInjector.class, strippedAncestorType));
+    writeMemberBindingsFields(writer, ancestorFields, false);
+    if (nextAncestor != null) {
+      writeSupertypeInjectorField(writer, originChild, nextAncestor); // next injectable ancestor
+    }
+    writer.emitEmptyLine();
+    writeAttachMethod(writer, null, ancestorFields, false, strippedAncestorType, nextAncestor,
+        false);
+    writeGetDependenciesMethod(writer, null, ancestorFields, false, nextAncestor, false);
+    writeMembersInjectMethod(writer, ancestorFields, false, strippedAncestorType, nextAncestor);
+    writer.endType();
+    writer.close();
+    if (nextAncestor != null) {
+      generateParentBindings(originChild, nextAncestorElement);
+    }
+  }
+
+  /**
+   * Returns the closest ancestor that has members injected or {@code null}
+   * if the class has no ancestors with injected members.
+   */
+  private TypeMirror getNextMemberInjectedAncestor(TypeElement type) {
+    TypeMirror nextAncestor = type.getSuperclass();
+    TypeElement nextAncestorElement =
+        (TypeElement) processingEnv.getTypeUtils().asElement(nextAncestor);
+    if (isPlatformType(nextAncestor.toString())) {
+      return null;
+    }
+    if (!createInjectedClass(nextAncestorElement.toString()).fields.isEmpty()) {
+      return nextAncestor;
+    }
+    return getNextMemberInjectedAncestor(nextAncestorElement);
+  }
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/dagger/revisions/rev_1bc7c83_8f2e49e/rev_1bc7c83-8f2e49e/compiler/src/main/java/dagger/internal/codegen/InjectAdapterProcessor.java;<<<<<<< MINE
+
+=======
+>>>>>>> YOURS
+/home/paper219/Desktop/analysis/demonstration/projects/volley/revisions/rev_0d6df2e_331e52b/rev_0d6df2e-331e52b/src/test/java/com/android/volley/toolbox/ImageRequestTest.java;<<<<<<< MINE
+=======
+
+>>>>>>> YOURS
